@@ -6,6 +6,8 @@
 
 declare(strict_types=1);
 
+@ini_set('display_errors', '0');
+
 // Configure writable session storage for serverless / read-only filesystems
 if (function_exists('sys_get_temp_dir')) {
     $tmpDir = sys_get_temp_dir();

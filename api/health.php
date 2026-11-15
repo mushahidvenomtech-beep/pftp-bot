@@ -6,6 +6,10 @@
 
 declare(strict_types=1);
 
+// Prevent premature output so headers and status codes can always be sent cleanly
+@ini_set('display_errors', '0');
+ob_start();
+
 require_once __DIR__ . '/../chatbot/config/database.php';
 
 header('Content-Type: application/json; charset=UTF-8');
