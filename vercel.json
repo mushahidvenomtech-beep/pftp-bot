@@ -1,38 +1,42 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "api/*.php": {
       "runtime": "vercel-php@0.9.0"
     }
   },
-  "headers": [
+  "routes": [
     {
-      "source": "/embed.js",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
-      ]
+      "src": "/embed.js",
+      "dest": "/embed.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Cache-Control": "public, max-age=3600"
+      }
     },
     {
-      "source": "/chatbot/assets/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
-      ]
+      "src": "/chatbot/assets/(.*)",
+      "dest": "/chatbot/assets/$1",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "public, max-age=86400"
+      }
     },
     {
-      "source": "/chatbot/admin/assets/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
-      ]
-    }
-  ],
-  "rewrites": [
+      "src": "/chatbot/admin/assets/(.*)",
+      "dest": "/chatbot/admin/assets/$1",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "public, max-age=86400"
+      }
+    },
     {
-      "source": "/(.*)",
-      "destination": "/api/index.php"
+      "src": "/favicon.ico",
+      "dest": "/chatbot/assets/images/pftp-logo.png"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
     }
   ]
 }

@@ -85,15 +85,24 @@ function getDBConnection(): PDO
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES   => false,
-            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
+            PDO::ATTR_TIMEOUT            => 2
         ];
+
+        // PHP 8.5+ deprecates PDO::MYSQL_ATTR_INIT_COMMAND in favor of Pdo\Mysql::ATTR_INIT_COMMAND
+        if (class_exists('Pdo\Mysql', false) && defined('Pdo\Mysql::ATTR_INIT_COMMAND')) {
+            $options[\Pdo\Mysql::ATTR_INIT_COMMAND] = "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci";
+        } elseif (defined('PDO::MYSQL_ATTR_INIT_COMMAND')) {
+            $options[@constant('PDO::MYSQL_ATTR_INIT_COMMAND')] = "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci";
+        }
 
         // Cloud MySQL SSL Encryption: automatically enable if remote host or explicit flag
         $isRemote = (DB_HOST !== '127.0.0.1' && DB_HOST !== 'localhost');
         $sslFlag = pftpGetEnv('DB_SSL') ?: pftpGetEnv('MYSQL_SSL');
         if ($isRemote || $sslFlag === 'true' || $sslFlag === '1') {
-            if (defined('PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT')) {
-                $options[PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT] = false;
+            if (class_exists('Pdo\Mysql', false) && defined('Pdo\Mysql::ATTR_SSL_VERIFY_SERVER_CERT')) {
+                $options[\Pdo\Mysql::ATTR_SSL_VERIFY_SERVER_CERT] = false;
+            } elseif (defined('PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT')) {
+                $options[@constant('PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT')] = false;
             }
         }
 
@@ -116,10 +125,10 @@ function getChatbotSetting(string $key, ?string $default = null, bool $forceRefr
     static $settingsCache = null;
 
     if ($settingsCache === null || $forceRefresh) {
+        $settingsCache = [];
         try {
             $db = getDBConnection();
             $stmt = $db->query("SELECT setting_key, setting_value FROM chatbot_settings");
-            $settingsCache = [];
             while ($row = $stmt->fetch()) {
                 $settingsCache[$row['setting_key']] = $row['setting_value'];
             }
