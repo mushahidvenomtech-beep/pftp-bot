@@ -1,0 +1,2628 @@
+-- ===================================================================
+-- PFTP Website AI Chatbot - Knowledge Base Dataset
+-- 16 Courses • English, Urdu & Roman Urdu • Counselling Q&A
+-- Charset: utf8mb4
+-- ===================================================================
+
+USE `pftp_chatbot`;
+
+-- Truncate to avoid duplicate keys during re-runs
+TRUNCATE TABLE `knowledge_base`;
+
+INSERT INTO `knowledge_base`
+(`category`, `language`, `question`, `question_variations`, `answer`, `keywords`, `possible_careers`, `status`)
+VALUES
+
+-- ===================================================================
+-- 1. DIGITAL MARKETING
+-- ===================================================================
+(
+  'Digital Marketing',
+  'en',
+  'Why should I take the Digital Marketing course?',
+  'Digital Marketing|Digital Media Marketing|Digital Marketing Course|Digital Media Marketing Course|What do you teach in Digital Marketing|What do we learn in digital marketing|What do we learn in Digital media Marketing|What is Digital Marketing|What is Digital Media Marketing|Why study digital marketing?|What will I learn in digital marketing?|Is digital marketing good for career?|Digital marketing syllabus',
+  'Every business needs customers, and today many customers discover products and services online. Digital Marketing teaches you how businesses attract customers through social media, Google, paid advertisements, and online campaigns. Consider this course if you enjoy creativity, business, communication, and understanding customer behaviour.',
+  'digital marketing, digital media marketing, smm, online ads, meta ads, facebook ads, google ads, lead generation, campaigns, customer behaviour, what do you teach in digital marketing, what do we learn in digital marketing, what do we learn in digital media marketing, what is digital marketing, what is digital media marketing',
+  'Digital Marketing Executive; Social Media Manager; Meta Ads Specialist; Google Ads Specialist (with platform-specific training); Lead Generation Specialist; Freelance Digital Marketer',
+  'active'
+),
+(
+  'Digital Marketing',
+  'ur',
+  'آپ کو ڈیجیٹل مارکیٹنگ کا کورس کیوں کرنا چاہیے؟',
+  'ڈیجیٹل مارکیٹنگ|ڈیجیٹل میڈیا مارکیٹنگ|ڈیجیٹل مارکیٹنگ کورس|ڈیجیٹل میڈیا مارکیٹنگ کورس|ڈیجیٹل مارکیٹنگ کیا ہے؟|ڈیجیٹل مارکیٹنگ کورس میں کیا سکھایا جاتا ہے؟|ڈیجیٹل مارکیٹنگ کے فوائد|ڈیجیٹل مارکیٹنگ میں کیا سیکھیں گے؟',
+  'آج تقریباً ہر کاروبار کو آن لائن کسٹمرز کی ضرورت ہے۔ ڈیجیٹل مارکیٹنگ آپ کو سکھاتی ہے کہ سوشل میڈیا، گوگل اور آن لائن اشتہارات کے ذریعے کاروبار کو کس طرح آگے بڑھایا جاتا ہے۔ اگر آپ کو تخلیقی کام، بزنس اور لوگوں کے ساتھ رابطہ کرنا پسند ہے تو یہ کورس آپ کے لیے اچھا انتخاب ہو سکتا ہے۔',
+  'ڈیجیٹل مارکیٹنگ, ڈیجیٹل میڈیا مارکیٹنگ, سوشل میڈیا, اشتہارات, فیس بک ایڈز, گوگل ایڈز, بزنس مارکیٹنگ, کیا سکھایا جاتا ہے, ڈیجیٹل مارکیٹنگ کورس',
+  'Digital Marketing Executive; Social Media Manager; Meta Ads Specialist; Google Ads Specialist; Lead Generation Specialist; Freelance Digital Marketer',
+  'active'
+),
+(
+  'Digital Marketing',
+  'roman_ur',
+  'Aap ko Digital Marketing course kyun karna chahiye?',
+  'Ap Digital Marketing k course my kia sikhaty hy|ap Digital Media Marketing k course my kia sikhaty hy|Digital Marketing|Digital Media Marketing|Digital Marketing Course|Digital Media Marketing Course|Digital marketing kya hai?|Digital marketing mein kya sikhaya jata hai?|Mujhe digital marketing karni chahiye?|Social media marketing course|Digital media marketing kya hai?|Digital marketing me kya sikhate hain|Digital marketing me kia sikhate hein',
+  'Aaj har business ko online customers ki zaroorat hai. Digital Marketing aapko sikhati hai ke social media, Google aur paid advertisements ke zariye businesses ko kaise grow kiya jata hai. Agar aapko creativity, business aur marketing mein interest hai, to ye course aapke liye achha option ho sakta hai.',
+  'ap digital marketing k course my kia sikhaty hy, ap digital media marketing k course my kia sikhaty hy, digital media marketing, digital marketing, digital marketing course, digital media marketing course, online marketing, social media ads, meta ads, google ads, marketing seekhna, customer growth, smm',
+  'Digital Marketing Executive; Social Media Manager; Meta Ads Specialist; Google Ads Specialist (with platform-specific training); Lead Generation Specialist; Freelance Digital Marketer',
+  'active'
+),
+
+-- ===================================================================
+-- 2. FREELANCING
+-- ===================================================================
+(
+  'Freelancing',
+  'en',
+  'Why should I take the Freelancing course?',
+  'Why learn freelancing?|How does freelancing work?|What is included in the freelancing course?|How to start freelancing?|Fiverr and Upwork training',
+  'If you want to work independently instead of depending only on traditional office jobs, freelancing can introduce you to a different way of working. You learn how to present your skills online, create professional profiles, find clients, write proposals, communicate with customers, and manage projects. Freelancing is a way to sell your skills, not a skill by itself; you also need a service such as design, writing, marketing, or development.',
+  'freelancing, fiverr, upwork, freelance clients, proposal writing, bidding, remote work, work from home, independent career',
+  'Freelance Service Provider; Virtual Assistant; Online Project Coordinator; Independent Designer or Developer; Freelance Digital Marketer',
+  'active'
+),
+(
+  'Freelancing',
+  'ur',
+  'آپ کو فری لانسنگ کا کورس کیوں کرنا چاہیے؟',
+  'فری لانسنگ کیا ہے؟|فری لانسنگ کیسے شروع کریں؟|فائیور اور اپ ورک کیسے سیکھیں؟|آن لائن کمائی کیسے کریں؟',
+  'اگر آپ روایتی نوکری کے بجائے آزادانہ طور پر کام کرنا چاہتے ہیں تو فری لانسنگ آپ کو آن لائن کام کرنے کا طریقہ سکھا سکتی ہے۔ آپ Fiverr اور Upwork جیسے پلیٹ فارمز پر پروفائل بنانا، کلائنٹس تلاش کرنا، پروپوزل لکھنا اور پروجیکٹس مکمل کرنا سیکھتے ہیں۔ فری لانسنگ کے لیے کسی عملی مہارت میں مہارت حاصل کرنا بھی ضروری ہے۔',
+  'فری لانسنگ, فائیور, اپ ورک, آن لائن کام, پروپوزل, کلائنٹس, آزادانہ کام',
+  'Freelance Service Provider; Virtual Assistant; Online Project Coordinator; Independent Designer or Developer; Freelance Digital Marketer',
+  'active'
+),
+(
+  'Freelancing',
+  'roman_ur',
+  'Aap ko Freelancing course kyun karna chahiye?',
+  'Freelancing kya hai?|Freelancing kaise start karein?|Fiverr aur upwork kaise seekhein?|Online earning freelancing',
+  'Agar aap office job ke bajaye independently kaam karna chahte hain, to freelancing aapko online clients ke saath kaam karna sikhati hai. Aap Fiverr aur Upwork par profile banana, clients dhoondhna, proposals likhna aur projects manage karna seekhte hain. Freelancing ke liye graphic designing, writing, marketing ya development jaisi practical skill bhi zaroori hoti hai.',
+  'freelancing, fiverr, upwork, clients dhoondna, proposal writing, remote work, online kam',
+  'Freelance Service Provider; Virtual Assistant; Online Project Coordinator; Independent Designer or Developer; Freelance Digital Marketer',
+  'active'
+),
+
+-- ===================================================================
+-- 3. GRAPHIC DESIGN
+-- ===================================================================
+(
+  'Graphic Design',
+  'en',
+  'Why should I take the Graphic Design course?',
+  'Why learn graphic design?|What does graphic design teach?|Is graphic designing a good career?|Photoshop and Illustrator training',
+  'Almost every business needs visual content, including logos, social media posts, advertisements, brochures, and brand identities. Graphic Design helps you turn creative ideas into professional visual designs. If you enjoy colours, typography, creativity, and visual communication, this can be a strong career direction.',
+  'graphic design, photoshop, illustrator, logo design, typography, branding, visual content, brochure, banner design',
+  'Graphic Designer; Logo Designer; Brand Identity Designer; Social Media Designer; Advertising Creative Designer; Freelance Designer',
+  'active'
+),
+(
+  'Graphic Design',
+  'ur',
+  'آپ کو گرافک ڈیزائننگ کا کورس کیوں کرنا چاہیے؟',
+  'گرافک ڈیزائننگ کیا ہے؟|گرافک ڈیزائننگ میں کیا سکھایا جاتا ہے؟|فوٹو شاپ اور السٹریٹر کورس',
+  'آج ہر کاروبار کو اپنی تشہیر کے لیے لوگو، سوشل میڈیا پوسٹس، اشتہارات اور مختلف ڈیزائنز کی ضرورت ہوتی ہے۔ گرافک ڈیزائننگ آپ کو تخلیقی خیالات کو خوبصورت اور پروفیشنل ڈیزائن میں تبدیل کرنا سکھاتی ہے۔ اگر آپ کو رنگوں، ڈیزائننگ اور تخلیقی کام میں دلچسپی ہے تو یہ کورس آپ کے لیے اچھا انتخاب ہو سکتا ہے۔',
+  'گرافک ڈیزائننگ, فوٹو شاپ, السٹریٹر, لوگو ڈیزائن, بینر, برانڈنگ',
+  'Graphic Designer; Logo Designer; Brand Identity Designer; Social Media Designer; Advertising Creative Designer; Freelance Designer',
+  'active'
+),
+(
+  'Graphic Design',
+  'roman_ur',
+  'Aap ko Graphic Design course kyun karna chahiye?',
+  'Graphic design kya hai?|Graphic designing seekhne ka faida?|Photoshop illustrator course|Design kaise seekhein',
+  'Aaj har business ko logos, social media posts, advertisements aur branding designs ki zaroorat hoti hai. Graphic Designing aapko apne creative ideas ko professional designs mein convert karna sikhati hai. Agar aapko creativity, colours aur designing pasand hai to ye course aapke liye achha career option ho sakta hai.',
+  'graphic design, photoshop, illustrator, logo design, creative designing, branding, banner',
+  'Graphic Designer; Logo Designer; Brand Identity Designer; Social Media Designer; Advertising Creative Designer; Freelance Designer',
+  'active'
+),
+
+-- ===================================================================
+-- 4. VIDEO EDITING
+-- ===================================================================
+(
+  'Video Editing',
+  'en',
+  'Why should I take the Video Editing course?',
+  'Why learn video editing?|What software is taught in video editing?|Video editing career opportunities|Premiere Pro CapCut training',
+  'Video is one of the most widely used forms of online content. Businesses, YouTubers, influencers, educational platforms, and advertising agencies all need video content. This course can help you turn raw footage into engaging videos using editing techniques, transitions, captions, audio, and effects.',
+  'video editing, premiere pro, after effects, capcut, reels, shorts, youtube video editing, transitions, sound design',
+  'Video Editor; YouTube Video Editor; Reels and Shorts Editor; Advertising Video Editor; Wedding and Event Video Editor; Freelance Video Editor',
+  'active'
+),
+(
+  'Video Editing',
+  'ur',
+  'آپ کو ویڈیو ایڈیٹنگ کا کورس کیوں کرنا چاہیے؟',
+  'ویڈیو ایڈیٹنگ کیا ہے؟|ویڈیو ایڈیٹنگ میں کیا سکھاتے ہیں؟|پریمیئر پرو اور کیپ کٹ کورس',
+  'آج یوٹیوب، انسٹاگرام، فیس بک اور مختلف کاروباروں کو ویڈیوز کی ضرورت ہوتی ہے۔ ویڈیو ایڈیٹنگ آپ کو عام ویڈیو فوٹیج کو خوبصورت، دلچسپ اور پروفیشنل ویڈیو میں تبدیل کرنا سکھاتی ہے۔ اگر آپ کو ویڈیوز اور تخلیقی کام کا شوق ہے تو یہ کورس آپ کے لیے اچھا انتخاب ہو سکتا ہے۔',
+  'ویڈیو ایڈیٹنگ, پریمیئر پرو, کیپ کٹ, ریلز, یوٹیوب ویڈیوز, ایڈیٹنگ',
+  'Video Editor; YouTube Video Editor; Reels and Shorts Editor; Advertising Video Editor; Wedding and Event Video Editor; Freelance Video Editor',
+  'active'
+),
+(
+  'Video Editing',
+  'roman_ur',
+  'Aap ko Video Editing course kyun karna chahiye?',
+  'Video editing kya hai?|Video editing ka scope kya hai?|Reels shorts editing course|Video editing kaise seekhein',
+  'Aaj YouTube, Instagram, Facebook aur businesses ko professional videos ki zaroorat hoti hai. Video Editing aapko raw footage ko engaging videos mein convert karna sikhati hai. Agar aapko videos banana, editing aur creative storytelling pasand hai to ye course aapke liye achha option ho sakta hai.',
+  'video editing, premiere pro, capcut, youtube videos, reels editing, shorts editing, video banane ka course',
+  'Video Editor; YouTube Video Editor; Reels and Shorts Editor; Advertising Video Editor; Wedding and Event Video Editor; Freelance Video Editor',
+  'active'
+),
+
+-- ===================================================================
+-- 5. YOUTUBE AUTOMATION
+-- ===================================================================
+(
+  'YouTube Automation',
+  'en',
+  'Why should I take the YouTube Automation course?',
+  'What is YouTube Automation?|Can I run a channel without showing my face?|Faceless YouTube channel guide|How to automate YouTube?',
+  'If you are interested in YouTube but do not necessarily want to appear in front of a camera, this field may interest you. You can learn how to research topics, plan content, prepare scripts, create voiceovers, design thumbnails, edit videos, and manage a YouTube channel. Monetization is not guaranteed and depends on original content, audience engagement, and platform policies.',
+  'youtube automation, faceless channel, youtube channel, scripts, voiceovers, thumbnails, channel management, monetization',
+  'YouTube Channel Manager; YouTube SEO Specialist; Content Researcher; Scriptwriter; Thumbnail Designer; Faceless Channel Creator',
+  'active'
+),
+(
+  'YouTube Automation',
+  'ur',
+  'آپ کو یوٹیوب آٹومیشن کا کورس کیوں کرنا چاہیے؟',
+  'یوٹیوب آٹومیشن کیا ہے؟|کیمرے کے سامنے آئے بغیر یوٹیوب چینل کیسے چلائیں؟|فیس لیس یوٹیوب چینل',
+  'اگر آپ یوٹیوب پر کام کرنا چاہتے ہیں لیکن کیمرے کے سامنے نہیں آنا چاہتے تو یوٹیوب آٹومیشن آپ کے لیے دلچسپی کا شعبہ ہو سکتا ہے۔ اس میں آپ چینل کی ریسرچ، اسکرپٹ رائٹنگ، وائس اوور، تھمب نیل ڈیزائننگ، ویڈیو ایڈیٹنگ اور چینل مینجمنٹ سیکھ سکتے ہیں۔ یوٹیوب سے آمدنی کی ضمانت نہیں ہوتی۔',
+  'یوٹیوب آٹومیشن, فیس لیس چینل, یوٹیوب چینل, اسکرپٹ, تھمب نیل, وائس اوور',
+  'YouTube Channel Manager; YouTube SEO Specialist; Content Researcher; Scriptwriter; Thumbnail Designer; Faceless Channel Creator',
+  'active'
+),
+(
+  'YouTube Automation',
+  'roman_ur',
+  'Aap ko YouTube Automation course kyun karna chahiye?',
+  'YouTube automation kya hai?|Bina chehra dikhaye channel kaise banayein?|Faceless YouTube channel course',
+  'Agar aap YouTube par kaam karna chahte hain lekin camera ke samne nahi aana chahte, to YouTube Automation aapke liye interesting field ho sakti hai. Is mein aap topic research, scripts, voiceovers, thumbnails, video editing aur channel management seekhte hain. YouTube monetization guaranteed nahi hoti; original content aur platform policies follow karna zaroori hai.',
+  'youtube automation, faceless youtube, camera ke baghair channel, script writing, voiceover, youtube seo',
+  'YouTube Channel Manager; YouTube SEO Specialist; Content Researcher; Scriptwriter; Thumbnail Designer; Faceless Channel Creator',
+  'active'
+),
+
+-- ===================================================================
+-- 6. CONTENT WRITING
+-- ===================================================================
+(
+  'Content Writing',
+  'en',
+  'Why should I take the Content Writing course?',
+  'What is content writing?|Why learn content writing?|Copywriting vs content writing|How to become a content writer?',
+  'Websites, businesses, blogs, and digital platforms need quality written content to communicate with their audiences. Content Writing helps you express ideas clearly, research topics, write articles, prepare website content, and create persuasive marketing copy. It may suit you if you enjoy reading, writing, and research.',
+  'content writing, copywriting, blog writing, article writing, creative writing, seo writing, website copy',
+  'Content Writer; Blog Writer; Website Content Writer; SEO Content Writer; Copywriter; Product Description Writer',
+  'active'
+),
+(
+  'Content Writing',
+  'ur',
+  'آپ کو کانٹینٹ رائٹنگ کا کورس کیوں کرنا چاہیے؟',
+  'کانٹینٹ رائٹنگ کیا ہے؟|کانٹینٹ رائٹنگ میں کیا سکھایا جاتا ہے؟|آرٹیکل اور بلاگ رائٹنگ کورس',
+  'ہر ویب سائٹ اور کاروبار کو اپنی بات لوگوں تک پہنچانے کے لیے اچھے الفاظ اور معیاری تحریر کی ضرورت ہوتی ہے۔ کانٹینٹ رائٹنگ آپ کو آرٹیکلز، بلاگز، ویب سائٹ کے مواد اور اشتہارات کے لیے مؤثر تحریر لکھنا سکھاتی ہے۔ اگر آپ کو لکھنے اور تحقیق کرنے کا شوق ہے تو یہ کورس آپ کے لیے مناسب ہو سکتا ہے۔',
+  'کانٹینٹ رائٹنگ, کاپی رائٹنگ, بلاگ رائٹنگ, تحریر, آرٹیکل',
+  'Content Writer; Blog Writer; Website Content Writer; SEO Content Writer; Copywriter; Product Description Writer',
+  'active'
+),
+(
+  'Content Writing',
+  'roman_ur',
+  'Aap ko Content Writing course kyun karna chahiye?',
+  'Content writing kya hai?|Article likhna kaise seekhein?|Content writing ka scope|Copywriting course',
+  'Har website aur business ko apni baat audience tak pohanchane ke liye quality content chahiye hota hai. Content Writing aapko articles, blogs, website content aur marketing copy likhna sikhati hai. Agar aapko writing, reading aur research pasand hai to ye course aapke liye achha option ho sakta hai.',
+  'content writing, copywriting, blog writing, articles likhna, english writing',
+  'Content Writer; Blog Writer; Website Content Writer; SEO Content Writer; Copywriter; Product Description Writer',
+  'active'
+),
+
+-- ===================================================================
+-- 7. SEARCH ENGINE OPTIMIZATION (SEO)
+-- ===================================================================
+(
+  'Search Engine Optimization (SEO)',
+  'en',
+  'Why should I take the Search Engine Optimization (SEO) course?',
+  'What is SEO?|Why learn SEO?|How does Google ranking work?|SEO course outline and benefits',
+  'When people search for a product or service on Google, businesses want their websites to appear in relevant search results. SEO teaches you how to improve website visibility through keyword research, technical improvements, content optimization, and link-building strategies. Results take time and are not guaranteed.',
+  'seo, search engine optimization, google ranking, keyword research, backlinks, on-page seo, off-page seo, technical seo, website visibility',
+  'SEO Executive; SEO Specialist; Technical SEO Assistant; On-Page SEO Specialist; SEO Content Strategist; Freelance SEO Consultant',
+  'active'
+),
+(
+  'Search Engine Optimization (SEO)',
+  'ur',
+  'آپ کو SEO (سرچ انجن آپٹیمائزیشن) کا کورس کیوں کرنا چاہیے؟',
+  'SEO کیا ہے؟|گوگل رینکنگ کیسے حاصل کریں؟|SEO کورس میں کیا سکھایا جاتا ہے؟',
+  'جب لوگ گوگل پر کسی چیز کو تلاش کرتے ہیں تو کاروبار چاہتے ہیں کہ ان کی ویب سائٹ سرچ رزلٹس میں نظر آئے۔ SEO آپ کو سکھاتا ہے کہ ویب سائٹ کو سرچ انجنز کے لیے کیسے بہتر بنایا جاتا ہے، صحیح کی ورڈز کیسے تلاش کیے جاتے ہیں اور آن لائن موجودگی کیسے بہتر کی جاتی ہے۔ نتائج میں وقت لگ سکتا ہے اور اس کی کوئی فوری ضمانت نہیں ہوتی۔',
+  'ایس ای او, سرچ انجن آپٹیمائزیشن, گوگل رینکنگ, کی ورڈز, بیک لنکس',
+  'SEO Executive; SEO Specialist; Technical SEO Assistant; On-Page SEO Specialist; SEO Content Strategist; Freelance SEO Consultant',
+  'active'
+),
+(
+  'Search Engine Optimization (SEO)',
+  'roman_ur',
+  'Aap ko Search Engine Optimization (SEO) course kyun karna chahiye?',
+  'SEO kya hai?|Google par website rank kaise karein?|SEO seekhne ke fayde|SEO specialist training',
+  'Jab log Google par kisi product ya service ko search karte hain to businesses chahte hain ke unki website search results mein nazar aaye. SEO aapko keyword research, website optimization, technical SEO aur content optimization sikhata hai. SEO results mein waqt lag sakta hai.',
+  'seo, google ranking, keywords, website traffic, ranking, on-page seo, off-page seo',
+  'SEO Executive; SEO Specialist; Technical SEO Assistant; On-Page SEO Specialist; SEO Content Strategist; Freelance SEO Consultant',
+  'active'
+),
+
+-- ===================================================================
+-- 8. FULL STACK WEB DEVELOPMENT
+-- ===================================================================
+(
+  'Full Stack Web Development',
+  'en',
+  'Why should I take the Full Stack Web Development course?',
+  'What is Full Stack Development?|Why learn full stack web development?|Web development curriculum|Frontend and backend coding',
+  'Almost every modern business needs a website or web application. Full Stack Development helps you understand how websites work from both the frontend and backend. You can learn to build interactive websites, connect databases, develop APIs, implement authentication, and deploy web applications. It is a good direction if you enjoy coding and logical problem-solving.',
+  'full stack web development, web development, html, css, javascript, php, nodejs, react, database, mysql, apis, coding, backend, frontend',
+  'Frontend Developer; Backend Developer; Full Stack Developer; React Developer; Node.js Developer; Web Application Developer',
+  'active'
+),
+(
+  'Full Stack Web Development',
+  'ur',
+  'آپ کو فل اسٹیک ویب ڈویلپمنٹ کا کورس کیوں کرنا چاہیے؟',
+  'فل اسٹیک ویب ڈویلپمنٹ کیا ہے؟|ویب سائٹ بنانا کیسے سیکھیں؟|ویب ڈویلپمنٹ کورس کی تفصیلات',
+  'آج تقریباً ہر کاروبار کو ویب سائٹ یا ویب ایپلیکیشن کی ضرورت ہوتی ہے۔ فل اسٹیک ویب ڈویلپمنٹ آپ کو ویب سائٹ کا فرنٹ اینڈ اور بیک اینڈ دونوں بنانا سکھاتی ہے۔ آپ ویب سائٹس، ڈیٹا بیس، APIs اور مکمل ویب ایپلیکیشنز تیار کرنا سیکھ سکتے ہیں۔ اگر آپ کو کوڈنگ اور لاجیکل سوچ کا شوق ہے تو یہ ایک بہترین فیلڈ ہے۔',
+  'فل اسٹیک, ویب ڈویلپمنٹ, ویب سائٹ بنانا, ایچ ٹی ایم ایل, جاوا اسکرپٹ, پی ایچ پی, ڈیٹا بیس',
+  'Frontend Developer; Backend Developer; Full Stack Developer; React Developer; Node.js Developer; Web Application Developer',
+  'active'
+),
+(
+  'Full Stack Web Development',
+  'roman_ur',
+  'Aap ko Full Stack Web Development course kyun karna chahiye?',
+  'Full stack web development kya hai?|Website development kaise seekhein?|Web developer kaise banein?|HTML CSS JS PHP course',
+  'Aaj har modern business ko website ya web application ki zaroorat hoti hai. Full Stack Web Development aapko frontend aur backend dono develop karna sikhati hai. Agar aapko coding, logical thinking aur technology mein interest hai to ye ek strong career direction ho sakti hai.',
+  'full stack web development, web dev, coding seekhna, website banana, frontend backend, php mysql react',
+  'Frontend Developer; Backend Developer; Full Stack Developer; React Developer; Node.js Developer; Web Application Developer',
+  'active'
+),
+
+-- ===================================================================
+-- 9. ARTIFICIAL INTELLIGENCE (AI)
+-- ===================================================================
+(
+  'Artificial Intelligence (AI)',
+  'en',
+  'Why should I take the Artificial Intelligence (AI) course?',
+  'What is taught in the AI course?|Why learn Artificial Intelligence?|Prompt engineering and Generative AI course|AI tools training',
+  'Artificial Intelligence is changing how people work, create content, analyse information, and automate tasks. This course can introduce you to AI tools, prompt engineering, generative AI, productivity workflows, and automation. It is worth exploring if you want to understand modern technology and apply AI in practical work.',
+  'artificial intelligence, ai, prompt engineering, chatgpt, generative ai, automation, llm, productivity tools, ai workflows',
+  'AI Tools Specialist; AI Automation Assistant; AI Content Creator; Prompt Designer; AI Workflow Builder; Chatbot Developer (with additional technical training)',
+  'active'
+),
+(
+  'Artificial Intelligence (AI)',
+  'ur',
+  'آپ کو آرٹیفیشل انٹیلیجنس (AI) کا کورس کیوں کرنا چاہیے؟',
+  'مصنوعی ذہانت کیا ہے؟|AI کورس میں کیا سکھایا جائے گا؟|پرامپٹ انجینئرنگ اور AI ٹولز',
+  'مصنوعی ذہانت آج کام کرنے، مواد بنانے اور مختلف کاموں کو خودکار بنانے کے طریقوں کو تبدیل کر رہی ہے۔ AI کورس میں آپ جدید AI ٹولز، پرامپٹ انجینئرنگ، جنریٹو AI اور آٹومیشن کے بارے میں سیکھ سکتے ہیں۔ اگر آپ جدید ٹیکنالوجی کے ساتھ اپنے آپ کو اپڈیٹ رکھنا چاہتے ہیں تو یہ فیلڈ آپ کے لیے ہے۔',
+  'آرٹیفیشل انٹیلیجنس, مصنوعی ذہانت, پرامپٹ انجینئرنگ, چیٹ جی پی ٹی, آٹومیشن, اے آئی ٹولز',
+  'AI Tools Specialist; AI Automation Assistant; AI Content Creator; Prompt Designer; AI Workflow Builder; Chatbot Developer',
+  'active'
+),
+(
+  'Artificial Intelligence (AI)',
+  'roman_ur',
+  'Aap ko Artificial Intelligence (AI) course kyun karna chahiye?',
+  'AI course kya hai?|Artificial intelligence mein kya sikhate hain?|Prompt engineering seekhna|AI tools seekhne ka tareeqa',
+  'Artificial Intelligence aaj kaam karne, content banane aur tasks automate karne ke tareeqon ko change kar rahi hai. Is course mein aap AI tools, prompt engineering, generative AI aur automation seekh sakte hain. Agar aap modern technology ke saath skills develop karna chahte hain to ye field explore karne ke qabil hai.',
+  'artificial intelligence, ai course, prompt engineering, chatgpt, modern ai tools, automation',
+  'AI Tools Specialist; AI Automation Assistant; AI Content Creator; Prompt Designer; AI Workflow Builder; Chatbot Developer (with additional technical training)',
+  'active'
+),
+
+-- ===================================================================
+-- 10. CYBER SECURITY
+-- ===================================================================
+(
+  'Cyber Security',
+  'en',
+  'Why should I take the Cyber Security course?',
+  'What is cyber security?|Why learn cyber security?|Ethical hacking and network defense course|Is cyber security good for beginners?',
+  'As more businesses and individuals use the internet, protecting systems, networks, and information becomes increasingly important. Cyber Security introduces you to digital threats, network security, system protection, vulnerability assessment, and ethical security practices. Professional roles require hands-on practice and may require further training or certifications.',
+  'cyber security, network security, ethical hacking, digital threats, vulnerability assessment, information security, firewall, protection',
+  'Cyber Security Analyst; SOC Analyst; Information Security Assistant; Network Security Technician; Vulnerability Assessment Assistant; Junior Penetration Tester (with advanced practical training)',
+  'active'
+),
+(
+  'Cyber Security',
+  'ur',
+  'آپ کو سائبر سیکیورٹی کا کورس کیوں کرنا چاہیے؟',
+  'سائبر سیکیورٹی کیا ہے؟|سائبر سیکیورٹی میں کیا سکھایا جاتا ہے؟|ایتھیکل ہیکنگ اور نیٹ ورک سیکیورٹی',
+  'جیسے جیسے انٹرنیٹ کا استعمال بڑھ رہا ہے، ویسے ہی ڈیٹا اور سسٹمز کو محفوظ رکھنا بھی ضروری ہو گیا ہے۔ سائبر سیکیورٹی آپ کو آن لائن خطرات، نیٹ ورک سیکیورٹی، سسٹم پروٹیکشن اور سیکیورٹی کی کمزوریوں کی شناخت کرنا سکھاتی ہے۔ پروفیشنل رولز کے لیے پریکٹس اور سرٹیفیکیشنز کی ضرورت ہوتی ہے۔',
+  'سائبر سیکیورٹی, نیٹ ورک سیکیورٹی, ایتھیکل ہیکنگ, آن لائن خطرات, ڈیٹا پروٹیکشن',
+  'Cyber Security Analyst; SOC Analyst; Information Security Assistant; Network Security Technician; Vulnerability Assessment Assistant; Junior Penetration Tester',
+  'active'
+),
+(
+  'Cyber Security',
+  'roman_ur',
+  'Aap ko Cyber Security course kyun karna chahiye?',
+  'Cyber security kya hai?|Ethical hacking seekhna hai|Network security course|Cyber security ka scope',
+  'Internet ke barhte hue istemal ke saath data aur systems ko secure rakhna zaroori ho gaya hai. Cyber Security aapko online threats, network security aur systems ki vulnerabilities identify karna sikhati hai. Professional roles ke liye practical experience aur mazeed training ki zaroorat ho sakti hai.',
+  'cyber security, ethical hacking, network defense, system protection, security analyst',
+  'Cyber Security Analyst; SOC Analyst; Information Security Assistant; Network Security Technician; Vulnerability Assessment Assistant; Junior Penetration Tester (with advanced practical training)',
+  'active'
+),
+
+-- ===================================================================
+-- 11. DATA SCIENCE
+-- ===================================================================
+(
+  'Data Science',
+  'en',
+  'Why should I take the Data Science course?',
+  'What is data science?|Why study data science?|Data analysis and visualization training|Python for data science',
+  'Businesses collect large amounts of information, but data becomes valuable when it can be analysed and turned into useful insights. Data Science introduces you to data analysis, Python, statistics, data cleaning, visualization, and machine-learning concepts. It may suit you if you enjoy numbers, analysis, and logical problem-solving.',
+  'data science, data analysis, python, statistics, data visualization, machine learning, pandas, power bi, data cleaning',
+  'Data Analyst; Junior Data Scientist; Business Intelligence Analyst; Reporting Analyst; Data Visualization Specialist; Analytics Assistant',
+  'active'
+),
+(
+  'Data Science',
+  'ur',
+  'آپ کو ڈیٹا سائنس کا کورس کیوں کرنا چاہیے؟',
+  'ڈیٹا سائنس کیا ہے؟|ڈیٹا سائنس میں کیا سکھایا جاتا ہے؟|ڈیٹا اینالیسس اور مشین لرننگ',
+  'کاروبار بہت زیادہ ڈیٹا جمع کرتے ہیں، لیکن اصل فائدہ تب ہوتا ہے جب اس ڈیٹا کو سمجھ کر بہتر فیصلے کیے جائیں۔ ڈیٹا سائنس آپ کو ڈیٹا اینالیسس، Python، شماریات، ڈیٹا ویژولائزیشن اور مشین لرننگ کے بنیادی تصورات سکھاتی ہے۔ اگر آپ کو اعداد و شمار اور اینالیسس پسند ہیں تو یہ کورس بہترین ہے۔',
+  'ڈیٹا سائنس, ڈیٹا اینالیسس, پائتھن, شماریات, مشین لرننگ, ویژولائزیشن',
+  'Data Analyst; Junior Data Scientist; Business Intelligence Analyst; Reporting Analyst; Data Visualization Specialist; Analytics Assistant',
+  'active'
+),
+(
+  'Data Science',
+  'roman_ur',
+  'Aap ko Data Science course kyun karna chahiye?',
+  'Data science kya hai?|Data analysis seekhna hai|Python data science course|Data analyst kaise banein',
+  'Businesses bohat sara data collect karte hain, lekin asal value tab hoti hai jab us data ko analyse karke useful decisions liye jayein. Data Science aapko data analysis, Python, statistics, visualization aur machine learning ke concepts sikhati hai. Agar aapko numbers aur analysis pasand hai to ye field achhi ho sakti hai.',
+  'data science, data analysis, python, statistics, visualization, data analyst banna',
+  'Data Analyst; Junior Data Scientist; Business Intelligence Analyst; Reporting Analyst; Data Visualization Specialist; Analytics Assistant',
+  'active'
+),
+
+-- ===================================================================
+-- 12. PYTHON PROGRAMMING
+-- ===================================================================
+(
+  'Python Programming',
+  'en',
+  'Why should I take the Python Programming course?',
+  'What is Python programming?|Why learn Python?|Is Python easy for beginners?|Python development syllabus',
+  'Python is widely used in software development, automation, data analysis, and Artificial Intelligence. Learning Python can give you a programming foundation that you can build upon as you explore different technology careers.',
+  'python programming, python language, coding, automation, scripting, backend development, software engineering, beginner programming',
+  'Python Developer; Junior Software Developer; Automation Developer; Backend Developer (with framework knowledge); Data Analysis Assistant; AI Development Assistant',
+  'active'
+),
+(
+  'Python Programming',
+  'ur',
+  'آپ کو Python پروگرامنگ کا کورس کیوں کرنا چاہیے؟',
+  'پائتھن کیا ہے؟|پائتھن پروگرامنگ کیوں سیکھیں؟|کوڈنگ شروع کرنے کے لیے کونسی زبان بہترین ہے؟',
+  'Python ایک مقبول پروگرامنگ لینگویج ہے جو سافٹ ویئر ڈویلپمنٹ، آٹومیشن، ڈیٹا اینالیسس اور AI میں استعمال ہوتی ہے۔ یہ کورس آپ کو پروگرامنگ کی بنیاد فراہم کر سکتا ہے، جس کی مدد سے آپ مستقبل میں مختلف ٹیکنالوجی شعبوں میں آگے بڑھ سکتے ہیں۔',
+  'پائتھن, پروگرامنگ, کوڈنگ, سافٹ ویئر ڈویلپمنٹ, ڈیٹا اینالیسس, آٹومیشن',
+  'Python Developer; Junior Software Developer; Automation Developer; Backend Developer; Data Analysis Assistant; AI Development Assistant',
+  'active'
+),
+(
+  'Python Programming',
+  'roman_ur',
+  'Aap ko Python Programming course kyun karna chahiye?',
+  'Python programming kya hai?|Python seekhne ka faida?|Coding kahan se start karein?|Python beginner course',
+  'Python ek popular programming language hai jo software development, automation, data analysis aur AI mein use hoti hai. Ye course aapko programming ki foundation develop karne mein madad de sakta hai. Agar aapko coding aur technology mein interest hai to Python se apna programming journey start kar sakte hain.',
+  'python programming, python coding, software development, coding seekhna, backend coding',
+  'Python Developer; Junior Software Developer; Automation Developer; Backend Developer (with framework knowledge); Data Analysis Assistant; AI Development Assistant',
+  'active'
+),
+
+-- ===================================================================
+-- 13. E-COMMERCE
+-- ===================================================================
+(
+  'E-Commerce',
+  'en',
+  'Why should I take the E-Commerce course?',
+  'What is E-Commerce?|Why learn e-commerce?|Shopify and Daraz store management|How to start online business?',
+  'Online shopping has become an important part of modern business. E-Commerce teaches you how online stores operate, how products are listed, how orders are managed, and how customers are served. You can explore online store management or learn the basics of running your own online business. Running a business also involves costs, sourcing, and marketing risks.',
+  'e-commerce, ecommerce, shopify, daraz, online store, dropshipping, product hunting, product listing, order management, online selling',
+  'E-Commerce Executive; Online Store Manager; Shopify Store Assistant; Product Listing Specialist; Marketplace Account Manager; E-Commerce Business Owner',
+  'active'
+),
+(
+  'E-Commerce',
+  'ur',
+  'آپ کو ای کامرس (E-Commerce) کا کورس کیوں کرنا چاہیے؟',
+  'ای کامرس کیا ہے؟|آن لائن اسٹور کیسے کھولیں؟|شاپائفائی اور دراز کورس',
+  'آن لائن شاپنگ آج کاروبار کا ایک اہم حصہ بن چکی ہے۔ ای کامرس آپ کو آن لائن اسٹور چلانا، پراڈکٹس لسٹ کرنا، آرڈرز مینج کرنا، کسٹمرز کو ہینڈل کرنا اور آن لائن بزنس کے بنیادی اصول سکھاتی ہے۔ یاد رہے کہ اپنا بزنس چلانے میں لاگت، سورسنگ اور مارکیٹنگ کے خطرات بھی شامل ہوتے ہیں۔',
+  'ای کامرس, آن لائن بزنس, شاپائفائی, دراز, پروڈکٹ لسٹنگ, اسٹور مینجمنٹ',
+  'E-Commerce Executive; Online Store Manager; Shopify Store Assistant; Product Listing Specialist; Marketplace Account Manager; E-Commerce Business Owner',
+  'active'
+),
+(
+  'E-Commerce',
+  'roman_ur',
+  'Aap ko E-Commerce course kyun karna chahiye?',
+  'E-commerce kya hai?|Online store kaise chalayein?|Shopify aur Daraz seekhna|Online business start karna',
+  'Online shopping aaj business ka important hissa ban chuki hai. E-Commerce aapko online store manage karna, products list karna, orders handle karna aur customers ko serve karna sikhati hai. Agar aap online business ya store management mein interest rakhte hain to ye course useful ho sakta hai.',
+  'e-commerce, ecommerce, shopify, online store, daraz, product listing, online karobar',
+  'E-Commerce Executive; Online Store Manager; Shopify Store Assistant; Product Listing Specialist; Marketplace Account Manager; E-Commerce Business Owner',
+  'active'
+),
+
+-- ===================================================================
+-- 14. QUICKBOOKS
+-- ===================================================================
+(
+  'QuickBooks',
+  'en',
+  'Why should I take the QuickBooks course?',
+  'What is QuickBooks?|Why learn QuickBooks accounting?|Bookkeeping software training|Accounting software course',
+  'Every business needs to maintain financial records, track expenses, manage invoices, and understand its financial position. QuickBooks introduces you to digital bookkeeping and accounting software used by businesses to organise financial information.',
+  'quickbooks, bookkeeping, accounting, accounting software, invoices, accounts receivable, payable, financial records, ledger',
+  'Bookkeeping Assistant; QuickBooks Operator; Accounts Assistant; Junior Bookkeeper; Accounts Receivable/Payable Assistant; Freelance Bookkeeping Service Provider',
+  'active'
+),
+(
+  'QuickBooks',
+  'ur',
+  'آپ کو کوئیک بکس (QuickBooks) کا کورس کیوں کرنا چاہیے؟',
+  'کوئیک بکس کیا ہے؟|اکاؤنٹنگ سافٹ ویئر کیسے سیکھیں؟|بک کیپنگ کیا ہے؟',
+  'ہر کاروبار کو اپنی آمدنی، اخراجات، بلز اور مالی ریکارڈ کا حساب رکھنا پڑتا ہے۔ QuickBooks آپ کو اکاؤنٹنگ سافٹ ویئر کے ذریعے مالی ریکارڈ منظم کرنا، انوائس بنانا اور بک کیپنگ کے بنیادی کام سکھاتی ہے۔ اگر آپ کو اکاؤنٹس اور نمبرز کے ساتھ کام کرنا پسند ہے تو یہ کورس بہترین ہے۔',
+  'کوئیک بکس, بک کیپنگ, اکاؤنٹنگ, مالیاتی ریکارڈ, انوائس',
+  'Bookkeeping Assistant; QuickBooks Operator; Accounts Assistant; Junior Bookkeeper; Accounts Receivable/Payable Assistant; Freelance Bookkeeping Service Provider',
+  'active'
+),
+(
+  'QuickBooks',
+  'roman_ur',
+  'Aap ko QuickBooks course kyun karna chahiye?',
+  'QuickBooks kya hai?|Bookkeeping kaise seekhein?|Accounting software training|Invoices aur accounts management',
+  'Har business ko apni income, expenses, invoices aur financial records manage karne hote hain. QuickBooks aapko accounting software ke zariye financial records maintain karna aur bookkeeping ke basic tasks perform karna sikhata hai. Agar aapko accounts aur numbers ke saath kaam karna pasand hai to ye course useful ho sakta hai.',
+  'quickbooks, bookkeeping, accounts, invoices, financial records, accounting sikhna',
+  'Bookkeeping Assistant; QuickBooks Operator; Accounts Assistant; Junior Bookkeeper; Accounts Receivable/Payable Assistant; Freelance Bookkeeping Service Provider',
+  'active'
+),
+
+-- ===================================================================
+-- 15. ENGLISH LANGUAGE
+-- ===================================================================
+(
+  'English Language',
+  'en',
+  'Why should I take the English Language course?',
+  'Why improve English communication?|Spoken English course details|English for jobs and freelancing|How to improve fluency?',
+  'English communication can make it easier to interact with international clients, apply for jobs, attend interviews, and work in professional environments. This course can help you improve your speaking, listening, reading, writing, vocabulary, and confidence. English is a useful supporting skill across many careers.',
+  'english language, spoken english, communication skills, vocabulary, grammar, fluency, interview preparation, professional english',
+  'Customer Support; Virtual Assistance; International Client Communication; Professional Workplace Communication; Interview Communication; Freelancing Communication',
+  'active'
+),
+(
+  'English Language',
+  'ur',
+  'آپ کو انگلش لینگویج کا کورس کیوں کرنا چاہیے؟',
+  'انگلش لینگویج کورس کیا ہے؟|انگریزی بول چال کیسے بہتر کریں؟|سپوکن انگلش کورس',
+  'انگریزی زبان آج تعلیم، نوکری، کاروبار اور بین الاقوامی رابطوں میں اہم کردار ادا کرتی ہے۔ یہ کورس آپ کو بولنے، سننے، پڑھنے، لکھنے، الفاظ کے ذخیرے اور روزمرہ گفتگو میں بہتری لانے میں مدد دے سکتا ہے۔ اگر آپ اپنا کمیونیکیشن اور پروفیشنل اعتماد بڑھانا چاہتے ہیں تو یہ کورس فائدہ مند ہے۔',
+  'انگلش لینگویج, سپوکن انگلش, انگریزی بول چال, کمیونیکیشن, گرامر',
+  'Customer Support; Virtual Assistance; International Client Communication; Professional Workplace Communication; Interview Communication; Freelancing Communication',
+  'active'
+),
+(
+  'English Language',
+  'roman_ur',
+  'Aap ko English Language course kyun karna chahiye?',
+  'English language course kya hai?|Spoken english kaise seekhein?|English communication improve karna|Job interview english',
+  'English communication aaj education, jobs, business aur international clients ke saath kaam karne mein bohat important hai. Ye course aapki speaking, listening, reading, writing aur vocabulary improve karne mein madad de sakta hai. Agar aap apni communication aur professional confidence improve karna chahte hain to ye course valuable ho sakta hai.',
+  'english language, spoken english, communication, bolna sikhna, english bol chal, vocabulary',
+  'Customer Support; Virtual Assistance; International Client Communication; Professional Workplace Communication; Interview Communication; Freelancing Communication',
+  'active'
+),
+
+-- ===================================================================
+-- 16. IELTS PREPARATION
+-- ===================================================================
+(
+  'IELTS Preparation',
+  'en',
+  'Why should I take the IELTS Preparation course?',
+  'What is IELTS?|Why take IELTS preparation?|Study abroad English test preparation|How to prepare for IELTS band score?',
+  'If your goal is to study abroad, apply for certain international opportunities, or meet an English-language requirement, IELTS preparation can help you understand the test and prepare effectively. You practise Listening, Reading, Writing, Speaking, time management, and exam techniques. IELTS does not guarantee admission, a visa, or immigration approval; requirements depend on the relevant institution or authority.',
+  'ielts preparation, ielts, study abroad, international study, band score, academic ielts, general training, listening reading writing speaking, visa requirements',
+  'International University Applications; Study Abroad Planning; Certain Immigration Applications; Professional Registration Where IELTS Is Accepted; Academic English Development',
+  'active'
+),
+(
+  'IELTS Preparation',
+  'ur',
+  'آپ کو IELTS تیاری کا کورس کیوں کرنا چاہیے؟',
+  'آئلٹس کیا ہے؟|بیرون ملک تعلیم کے لیے IELTS کی تیاری|آئلٹس بینڈ اسکور کیسے بڑھائیں؟',
+  'اگر آپ بیرون ملک تعلیم حاصل کرنا چاہتے ہیں یا کسی ایسے پروگرام کے لیے اپلائی کرنا چاہتے ہیں جہاں IELTS ضروری ہو تو یہ کورس آپ کی تیاری میں مدد کر سکتا ہے۔ اس میں آپ Listening، Reading، Writing اور Speaking کی پریکٹس کے ساتھ امتحان کی تکنیک اور ٹائم مینجمنٹ سیکھتے ہیں۔ IELTS داخلے یا ویزا کی ضمانت نہیں دیتا۔',
+  'آئلٹس, بیرون ملک تعلیم, ویزا, بینڈ اسکور, لسننگ ریڈنگ رائٹنگ اسپیکنگ',
+  'International University Applications; Study Abroad Planning; Certain Immigration Applications; Professional Registration Where IELTS Is Accepted; Academic English Development',
+  'active'
+),
+(
+  'IELTS Preparation',
+  'roman_ur',
+  'Aap ko IELTS Preparation course kyun karna chahiye?',
+  'IELTS kya hai?|Bahar parhne ke liye IELTS course|IELTS ki tayari kaise karein?|IELTS band score requirements',
+  'Agar aap abroad study karna chahte hain ya kisi international opportunity ke liye IELTS required hai to ye course aapki preparation mein madad kar sakta hai. Is mein aap Listening, Reading, Writing aur Speaking ki practice karte hain aur exam techniques seekhte hain. IELTS admission ya visa ki guarantee nahi deta; requirements har institution aur authority ki apni hoti hain.',
+  'ielts, study abroad, bahar parhna, ielts band score, test preparation, listening reading writing speaking',
+  'International University Applications; Study Abroad Planning; Certain Immigration Applications; Professional Registration Where IELTS Is Accepted; Academic English Development',
+  'active'
+),
+
+-- ===================================================================
+-- 17. GENERAL INSTITUTION & COUNSELLING QUERIES
+-- ===================================================================
+(
+  'General Counselling',
+  'en',
+  'What courses are offered at PFTP?',
+  'List of courses|What can I learn?|Which courses do you have?|Show all courses|PFTP programs',
+  'PFTP offers 16 specialized, practical skill-building courses:\n\n1. Digital Marketing\n2. Freelancing\n3. Graphic Design\n4. Video Editing\n5. YouTube Automation\n6. Content Writing\n7. Search Engine Optimization (SEO)\n8. Full Stack Web Development\n9. Artificial Intelligence (AI)\n10. Cyber Security\n11. Data Science\n12. Python Programming\n13. E-Commerce\n14. QuickBooks\n15. English Language\n16. IELTS Preparation\n\nWhich field matches your background or interest? Tell me your education level, and I will guide you!',
+  'courses, list of courses, all courses, pftp courses, what courses, offerings',
+  'Available across tech, creative, business, and marketing domains',
+  'active'
+),
+(
+  'General Counselling',
+  'roman_ur',
+  'PFTP mein kon konse courses hain?',
+  'Courses ki list dikhayein|Konsa course available hai?|Tamam courses ke naam|PFTP programs list',
+  'PFTP 16 mukhtalif practical courses offer karta hai:\n\n1. Digital Marketing\n2. Freelancing\n3. Graphic Design\n4. Video Editing\n5. YouTube Automation\n6. Content Writing\n7. Search Engine Optimization (SEO)\n8. Full Stack Web Development\n9. Artificial Intelligence (AI)\n10. Cyber Security\n11. Data Science\n12. Python Programming\n13. E-Commerce\n14. QuickBooks\n15. English Language\n16. IELTS Preparation\n\nAap kis field mein interested hain? Aapki qualification kya hai taake main behtareen course suggest kar sakun!',
+  'courses list, konse courses hain, programs, pftp courses roman urdu',
+  'Various creative, tech and marketing paths',
+  'active'
+),
+(
+  'General Counselling',
+  'ur',
+  'پی ایف ٹی پی (PFTP) میں کون کون سے کورسز کروائے جاتے ہیں؟',
+  'کورسز کی لسٹ دکھائیں|تمام کورسز کے نام|کون سے پروگرامز موجود ہیں؟',
+  'پی ایف ٹی پی (PFTP) میں 16 اہم اور عملی کورسز کروائے جاتے ہیں:\n\n1. ڈیجیٹل مارکیٹنگ (Digital Marketing)\n2. فری لانسنگ (Freelancing)\n3. گرافک ڈیزائننگ (Graphic Design)\n4. ویڈیو ایڈیٹنگ (Video Editing)\n5. یوٹیوب آٹومیشن (YouTube Automation)\n6. کانٹینٹ رائٹنگ (Content Writing)\n7. ایس ای او (SEO)\n8. فل اسٹیک ویب ڈویلپمنٹ (Full Stack Web Development)\n9. آرٹیفیشل انٹیلیجنس (AI)\n10. سائبر سیکیورٹی (Cyber Security)\n11. ڈیٹا سائنس (Data Science)\n12. پائتھن پروگرامنگ (Python Programming)\n13. ای کامرس (E-Commerce)\n14. کوئیک بکس (QuickBooks)\n15. انگلش لینگویج (English Language)\n16. آئلٹس تیاری (IELTS Preparation)\n\nآپ کس شعبے میں دلچسپی رکھتے ہیں؟',
+  'کورسز, لسٹ, تمام کورسز, پروگرامز',
+  'Creative, Tech and Business fields',
+  'active'
+),
+
+-- Student Discovery / Education Level
+(
+  'Student Discovery',
+  'en',
+  'May I ask what is your current education level?',
+  'What is the qualification requirement?|Education needed for courses|Can matric or intermediate students join?|Eligibility criteria',
+  'I would like to understand your interests so I can recommend a course that matches your goals rather than suggesting something randomly. Most PFTP courses are beginner-friendly and designed to take you from foundational concepts to practical skills. Whether you have completed Matric, Intermediate, Graduation, or are a working professional, we have suitable tracks!',
+  'education, qualification, matric, intermediate, fsc, fa, bachelors, eligibility, beginner friendly',
+  'Skill-based career paths tailored to educational stage',
+  'active'
+),
+(
+  'Student Discovery',
+  'roman_ur',
+  'Aapki current education kya hai?',
+  'Qualification kya honi chahiye?|Kya matric ke baad course kar sakte hain?|Eligibility kya hai?|Beginner ke liye konsa course hai?',
+  'Main aapki interest aur education samajhna chahunga taake aapko aisa course recommend kar sakun jo aapke future goals ke mutabiq ho. PFTP ke zyadatar courses beginner-friendly hain aur Matric, Intermediate ya University students sab ke liye step-by-step design kiye gaye hain. Aap apni qualification batayein taake main guide kar sakun!',
+  'qualification, matric, inter, fa, fsc, education eligibility, konsa course karun',
+  'Tailored according to background',
+  'active'
+),
+(
+  'Student Discovery',
+  'ur',
+  'آپ کی موجودہ تعلیمی قابلیت کیا ہے؟',
+  'کورس کے لیے کیا قابلیت ضروری ہے؟|کیا میٹرک یا ایف اے والے کورس کر سکتے ہیں؟',
+  'میں آپ کی دلچسپی اور تعلیمی قابلیت سمجھنا چاہوں گا تاکہ آپ کو ایسا کورس تجویز کر سکوں جو آپ کے مستقبل کے مقاصد کے مطابق ہو۔ پی ایف ٹی پی کے زیادہ تر کورسز بنیادی سطح سے سکھائے جاتے ہیں تاکہ میٹرک، انٹرمیڈیٹ اور گریجویشن کرنے والے تمام طلبہ آسانی سے سیکھ سکیں۔',
+  'تعلیمی قابلیت, میٹرک, ایف اے, اہلیت, داخلہ',
+  'All education backgrounds',
+  'active'
+),
+
+-- Job & Income Disclaimer (Important Counseling Policy)
+(
+  'Policies & Disclaimers',
+  'en',
+  'Does PFTP guarantee jobs or earning?',
+  'Do you guarantee freelancing income?|Will I definitely get a job?|Job guarantee|Earning guarantee',
+  'Important Policy Note: PFTP provides structured, practical, skill-building education. Course outcomes, jobs, earnings, freelancing success, YouTube monetization, university admissions, and visas are not guaranteed. Success depends on individual dedication, practice, portfolio building, and market demand.',
+  'job guarantee, earning guarantee, income guarantee, 100% job, visa guarantee, earning promise',
+  'Independent Career Growth through Practical Marketable Skills',
+  'active'
+),
+(
+  'Policies & Disclaimers',
+  'roman_ur',
+  'Kya PFTP job ya earning ki guarantee deta hai?',
+  'Job guarantee hai?|Earning pakki hogi?|Kiya course ke baad paise milna shuru ho jayenge?',
+  'PFTP practical skills aur professional training provide karta hai. Course outcomes, jobs, earnings, freelancing success, YouTube monetization ya visa ki koi guarantee nahi hoti. Success aapki mehnat, practice aur marketable skills par depend karti hai.',
+  'job guarantee, earning guarantee, paise kamana, job milay gi',
+  'Skill-based real world career progress',
+  'active'
+),
+
+-- Fees & Schedule Confirmation
+(
+  'Admissions & Fees',
+  'en',
+  'What is the course fee, schedule, and duration?',
+  'How much is the fee?|Fee structure|Course duration|When do classes start?|Class timings',
+  'PFTP courses generally run for 1.5 to 2 months with live and interactive online sessions. As fee structures and batch schedules are updated periodically with discount promotions, please confirm the current batch fee and timetable directly with our official admissions desk or leave your phone number so our team can provide the latest fee voucher details.',
+  'fee, fees, charges, fee structure, duration, schedule, batch start, timing, class days',
+  'Admissions Support Desk',
+  'active'
+),
+(
+  'Admissions & Fees',
+  'roman_ur',
+  'Course ki fees, schedule aur duration kitni hai?',
+  'Fees kitni hai?|Course kitne mahine ka hai?|Classes kab hoti hain?|Batch kab shuru hoga?',
+  'PFTP ke courses aam tor par 1.5 se 2 months ke duration ke hote hain aur flexible evening schedules mein conduct kiye jate hain. Discount offers aur batch schedule update hote rehte hain, is liye exact current fee voucher aur timing confirm karne ke liye aap hamari admissions team se direct contact kar sakte hain.',
+  'fees, fee kitni hai, duration, kitne mahine ka course hai, class timing, batch date',
+  'Admissions and Enrollment Desk',
+  'active'
+),
+
+-- Certificates
+(
+  'Certification',
+  'en',
+  'Will I receive a certificate after completing the course?',
+  'Is certificate provided?|Are PFTP certificates verified?|Certificate value',
+  'Yes! Upon successful completion of the course, coursework, and assignments, students receive a verified Certificate of Completion from PFTP (Professional Freelancing Training Program) to showcase on their resumes and LinkedIn profiles.',
+  'certificate, certification, verified certificate, pftp certificate, completion certificate',
+  'Certified Skill Credential',
+  'active'
+),
+(
+  'Certification',
+  'roman_ur',
+  'Kya course complete karne ke baad certificate milega?',
+  'Certificate milta hai?|PFTP certificate verified hai?|Sanad milegi?',
+  'Jee haan! Course aur assignments kamyabi se mukammal karne par aapko PFTP (Professional Freelancing Training Program) ki janib se verified Certificate of Completion faraham kiya jata hai jise aap apne resume aur LinkedIn par share kar sakte hain.',
+  'certificate, verified sanad, certificate milega, degree certificate',
+  'Certified Skill Credential',
+  'active'
+),
+
+-- Contact & Human Support
+(
+  'Support & Contact',
+  'en',
+  'How can I speak to a human counsellor or support team?',
+  'Contact number|WhatsApp support|Office address|Speak to a real person|Admissions phone',
+  'You can reach our official student counselling and admissions desk directly:\n\n📞 Phone/WhatsApp: +92 300 1234567\n✉️ Email: counselling@pftp.com.pk\n🕒 Timings: Monday to Saturday, 9:00 AM - 6:00 PM (PKT)\n\nFeel free to call or WhatsApp us for instant admissions support!',
+  'contact, phone number, whatsapp, support, call, address, human counsellor, agent, office',
+  'Official PFTP Student Support Desk',
+  'active'
+),
+(
+  'Support & Contact',
+  'roman_ur',
+  'Main PFTP team ya counsellor se kaise rabta karoon?',
+  'Phone number kya hai?|WhatsApp helpline|Support se baat karni hai|Office contact',
+  'Aap hamari admissions aur student counselling team se rabta kar sakte hain:\n\n📞 Phone/WhatsApp: +92 300 1234567\n✉️ Email: counselling@pftp.com.pk\n🕒 Auqat: Peer ta Hafta (Mon-Sat), 9:00 AM se 6:00 PM\n\nCall ya WhatsApp par hamari team aapko complete guide karegi!',
+  'contact, phone, helpline number, whatsapp, rabta, support team, call number',
+  'PFTP Admissions Team',
+  'active'
+),
+
+-- ===================================================================
+-- 18. ADMISSION & REGISTRATION PROCESS (STEPS 1 - 9 & OFFICIAL LINKS)
+-- ===================================================================
+-- Step 1: Where to Apply
+(
+  'Admission Process',
+  'en',
+  'Where should I go to apply for admission?',
+  'How to apply for admission?|Where to apply?|PFTP admission website|How to register online?|Where do I apply for PFTP courses?',
+  'Open your browser (Chrome, for example) and type pftpedu.org in the address bar. Once the PFTP homepage opens, look for the Apply Now, Start Your Application, or Apply for Training button and click it. This will take you to the online registration form.\n\nDirect Registration Link: https://pftpedu.org/registration',
+  'apply for admission, where to apply, pftpedu.org, apply now button, start your application, apply for training, registration form, website',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'داخلے کے لیے مجھے ویب سائٹ پر کہاں جانا ہوگا؟',
+  'داخلہ کیسے لیں؟|آن لائن داخلہ کیسے بھیجیں؟|پی ایف ٹی پی ویب سائٹ داخلہ|داخلے کے لیے کہاں جائیں؟',
+  'سب سے پہلے اپنے موبائل یا کمپیوٹر میں Chrome کھولیں اور pftpedu.org لکھ کر ویب سائٹ کھولیں۔ ہوم پیج پر Apply Now، Start Your Application یا Apply for Training کا بٹن تلاش کریں اور اس پر کلک کریں۔ اس کے بعد آپ داخلہ فارم تک پہنچ جائیں گے۔\n\nبراہِ راست لنک: https://pftpedu.org/registration',
+  'داخلہ, ویب سائٹ, اپلائی, رجسٹریشن فارم, pftpedu.org, داخلے کے لیے کہاں جائیں',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Admission ke liye mujhe website par kahan jana hoga?',
+  'Admission kaise lein?|Online apply kaise karein?|PFTP website par admission kahan hai?|Website par kahan jana hoga?',
+  'Sab se pehle apne mobile ya computer mein Chrome open karein aur pftpedu.org type karke website kholein. Homepage par Apply Now, Start Your Application ya Apply for Training ka button dhoondein aur us par click karein. Is ke baad aap admission form par pohanch jayenge.\n\nDirect Link: https://pftpedu.org/registration',
+  'admission kahan jana hoga, apply now, registration form, online admission, pftpedu.org, website par kahan jayein',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- Step 2: Open Admission Form
+(
+  'Admission Process',
+  'en',
+  'Which page should I open for registration?',
+  'What is the direct registration link?|Where is the admission form?|Start Your Admission page|Registration URL',
+  'Click the admission or registration button. You should reach the page titled Start Your Admission. You can also open it directly by visiting:\nhttps://pftpedu.org/registration\n\nThe form is divided into sections, which you complete one by one.',
+  'registration page, admission form link, pftpedu.org/registration, start your admission, direct admission link',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'رجسٹریشن کے لیے کون سا صفحہ کھولنا ہے؟',
+  'داخلہ فارم کا صفحہ|رجسٹریشن لنک کیا ہے؟|آن لائن فارم کا لنک',
+  'Admission یا Registration کے بٹن پر کلک کریں۔ آپ کے سامنے Start Your Admission کے عنوان سے داخلہ فارم کھل جائے گا۔ آپ براہِ راست بھی اس لنک سے فارم کھول سکتے ہیں:\nhttps://pftpedu.org/registration\n\nفارم مختلف حصوں میں تقسیم ہے جنہیں آپ ایک ایک کر کے مکمل کرتے ہیں۔',
+  'رجسٹریشن صفحہ, داخلہ فارم لنک, pftpedu.org/registration, کون سا صفحہ کھولنا ہے',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Registration ke liye konsa page open karna hai?',
+  'Admission form ka link kya hai?|Direct registration link|Form kahan se open karein?|Konsa page open karein?',
+  'Admission ya Registration ke button par click karein. Aapke samne Start Your Admission ke naam se form open ho jayega. Aap direct is link se bhi form open kar sakte hain:\nhttps://pftpedu.org/registration\n\nForm mukhtalif sections mein divided hai jinhe aap step by step complete karte hain.',
+  'registration page, admission form link, direct link, pftpedu.org/registration, konsa page',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- Step 3: Personal Information
+(
+  'Admission Process',
+  'en',
+  'What information do I need to enter in the first section?',
+  'Personal information needed for admission|What documents or details are needed for registration?|CNIC B-form requirement in registration',
+  'In the Personal Information section, enter:\n• Full name\n• Father''s name\n• CNIC or B-Form number (13 digits without dashes)\n• Email address\n• Mobile number\n• Date of birth\n• Gender\n• Highest educational qualification\n\nMake sure your details are correct because your certificate and student records will use this information.\nApply Online: https://pftpedu.org/registration',
+  'personal information, first section, cnic, b-form, email, mobile number, qualification, student record details, registration requirements',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'پہلے حصے میں کون سی معلومات درج کرنی ہوں گی؟',
+  'ذاتی معلومات کیا درج کرنی ہیں؟|شناختی کارڈ اور تعلیمی تفصیلات فارم میں|رجسٹریشن میں کیا معلومات چاہیئں؟',
+  'Personal Information کے حصے میں درج ذیل معلومات درج کریں:\n• اپنا مکمل نام\n• والد کا نام\n• شناختی کارڈ یا ب فارم نمبر (بغیر ڈیش کے 13 ہندسے)\n• ای میل ایڈریس\n• موبائل نمبر\n• تاریخ پیدائش\n• جنس\n• آخری تعلیمی قابلیت\n\nتمام معلومات درست درج کریں کیونکہ یہی معلومات آپ کے اسٹوڈنٹ ریکارڈ اور سرٹیفکیٹ میں استعمال ہوں گی۔\nآن لائن اپلائی: https://pftpedu.org/registration',
+  'ذاتی معلومات, پہلا حصہ, شناختی کارڈ, ب فارم, موبائل نمبر, تعلیمی قابلیت',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Pehle section mein konsi information enter karni hogi?',
+  'Personal details mein kya likhna hai?|Registration form mein pehla step|CNIC aur details|Pehle hissay mein kya enter karein?',
+  'Personal Information ke section mein ye details enter karein:\n• Apna full name\n• Father ka name\n• CNIC ya B-Form number (13 digits, baghair dash ke)\n• Email address\n• Mobile number\n• Date of birth\n• Gender\n• Highest educational qualification\n\nApni tamam details sahi enter karein kyun ke ye aapke student record aur certificate mein use hongi.\nApply Online: https://pftpedu.org/registration',
+  'personal information, pehle section, cnic, b-form number, mobile number, qualification, pehli information',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- Step 4: Course Selection
+(
+  'Admission Process',
+  'en',
+  'Where do I select my desired course?',
+  'How to select course in form?|How many courses can I select?|Promo code field in registration|Course selection step|Can I choose multiple courses?',
+  'Scroll down to the Course Selection section. Click the Program dropdown and select the course you want to study.\n• Select your preferred course.\n• You can add more courses using Add Another Course.\n• The form allows you to select up to five programs.\n• If you have a valid promo code, enter it in the Promo Code field.\n• After selecting your courses, review the displayed fee details before proceeding.\nApply Online: https://pftpedu.org/registration',
+  'select course, desired course, program dropdown, add another course, five programs, promo code, course selection section',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'اپنی پسند کا کورس کہاں سے منتخب کرنا ہے؟',
+  'کورس کا انتخاب کیسے کریں؟|ایک وقت میں کتنے کورسز منتخب ہو سکتے ہیں؟|پرومو کوڈ کہاں درج کریں؟|کورس سلیکشن کہاں ہے؟',
+  'فارم میں نیچے جائیں اور Course Selection کا سیکشن تلاش کریں۔ Program کے ڈراپ ڈاؤن پر کلک کریں اور اپنی پسند کا کورس منتخب کریں۔\n• اپنا پسندیدہ کورس منتخب کریں۔\n• مزید کورسز کے لیے Add Another Course پر کلک کریں۔\n• ایک فارم میں زیادہ سے زیادہ پانچ کورسز منتخب کیے جا سکتے ہیں۔\n• اگر آپ کے پاس درست Promo Code ہے تو اسے متعلقہ خانے میں درج کریں۔\n• کورس منتخب کرنے کے بعد فیس کی تفصیلات ضرور چیک کریں۔',
+  'کورس منتخب, اپنی پسند کا کورس, پروگرام ڈراپ ڈاؤن, پانچ کورسز, پرومو کوڈ',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Apna pasandeeda course kahan se select karna hai?',
+  'Course selection kaise karein?|Kitne course select kar sakte hain?|Promo code kahan enter karein?|Course kahan se select hoga?',
+  'Form mein neeche ja kar Course Selection section dhoondein. Program dropdown par click karein aur apna pasandeeda course select karein.\n• Apna preferred course choose karein.\n• Mazeed courses ke liye Add Another Course par click karein.\n• Ek form mein maximum five programs select kar sakte hain.\n• Agar aapke paas valid Promo Code hai to usay enter karein.\n• Course selection ke baad fee details zaroor check karein.',
+  'pasandeeda course, course selection, program dropdown, add another course, 5 courses, promo code',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- Step 5: Location Details
+(
+  'Admission Process',
+  'en',
+  'What should I enter in the Location section?',
+  'Address in admission form|Location details required|City and province in registration|Where to add home address?',
+  'Click Next: Location and provide:\n• Province\n• City\n• Street address\n\nEnter your correct residential location and then click Next: Account.\nApply Online: https://pftpedu.org/registration',
+  'location section, province, city, street address, residential location, address details',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'Location والے حصے میں کیا درج کرنا ہے؟',
+  'رہائشی پتہ کیا لکھنا ہے؟|شہر اور صوبہ داخلہ فارم|پتہ کیسے درج کریں؟',
+  'Next: Location پر کلک کریں اور درج ذیل معلومات درج کریں:\n• صوبہ\n• شہر\n• گلی اور گھر کا مکمل پتہ\n\nاپنا درست رہائشی پتہ درج کرنے کے بعد Next: Account پر کلک کریں۔',
+  'لوکیشن, رہائشی پتہ, صوبہ, شہر, گھر کا پتہ',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Location wale section mein kya enter karna hai?',
+  'Address details kya likhein?|City province address form|Address kahan enter karna hai?',
+  'Next: Location par click karein aur ye information enter karein:\n• Province\n• City\n• Street address\n\nApna correct residential address enter karne ke baad Next: Account par click karein.',
+  'location section, province, city, street address, ghar ka pata, residential address',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- Step 6: Student Account Creation
+(
+  'Admission Process',
+  'en',
+  'How do I create my student account?',
+  'Account security section|Password requirement for student portal|Terms and refund policy agreement|Student account password setup',
+  'In the Account Security section:\n• Create a password of at least eight characters.\n• Enter the same password again in Confirm Password.\n• Read the declaration and program terms.\n• Tick the agreement checkbox to confirm that your information is correct and that you accept the terms, refund policy, and WhatsApp SOPs.\n• Keep your password safe because you will need it to access your student account.\nApply Online: https://pftpedu.org/registration',
+  'student account, account security, password 8 characters, confirm password, refund policy, terms agreement, whatsapp sops',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'اپنا اسٹوڈنٹ اکاؤنٹ کیسے بنانا ہے؟',
+  'اکاؤنٹ پاس ورڈ کیسے بنائیں؟|پاس ورڈ کتنا بڑا ہونا چاہیے؟|شرائط اور ریفنڈ پالیسی|اسٹوڈنٹ لاگ ان کیسے بنے گا؟',
+  'Account Security کے حصے میں:\n• کم از کم آٹھ حروف پر مشتمل پاس ورڈ بنائیں۔\n• وہی پاس ورڈ دوبارہ Confirm Password میں درج کریں۔\n• دی گئی شرائط اور اقرار نامہ پڑھیں۔\n• چیک باکس پر نشان لگائیں تاکہ آپ اپنی معلومات کی درستگی اور پروگرام کی شرائط، ریفنڈ پالیسی اور WhatsApp SOPs سے اتفاق کی تصدیق کر سکیں۔\n• اپنا پاس ورڈ محفوظ رکھیں کیونکہ آپ کو اسٹوڈنٹ اکاؤنٹ میں لاگ اِن کرنے کے لیے اس کی ضرورت ہوگی۔',
+  'اسٹوڈنٹ اکاؤنٹ, پاس ورڈ, کنفرم پاس ورڈ, ریفنڈ پالیسی, شرائط, اکاؤنٹ سیکیورٹی',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Apna student account kaise create karna hai?',
+  'Student account password kaise banayein?|Password kitne digits ka ho?|Terms agreement|Account kaise banega?',
+  'Account Security section mein:\n• Kam az kam 8 characters ka password create karein.\n• Wohi password Confirm Password mein dobara enter karein.\n• Declaration aur program terms ko parhein.\n• Agreement checkbox ko tick karein aur confirm karein ke aapki information correct hai aur aap program terms, refund policy aur WhatsApp SOPs se agree karte hain.\n• Apna password safe rakhein kyun ke student account login karne ke liye iski zaroorat hogi.',
+  'student account, password create, confirm password, 8 characters, terms agreement, refund policy, whatsapp sops',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- Step 7: Submit Application
+(
+  'Admission Process',
+  'en',
+  'How do I finally submit my admission form?',
+  'Submitting admission application|Submit button on form|What happens after clicking submit application?|Final application submission',
+  'Once you have completed all sections:\n• Review your personal information.\n• Check your selected course or courses.\n• Verify your location and account details.\n• Click Submit Application.\n\nAfter successful submission, you will be taken to your student portal, where your Documentation Processing Fee challan and PSID will be available.\nRegistration Link: https://pftpedu.org/registration',
+  'submit admission form, submit application button, final submission, review information, challan psid',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'آخر میں داخلہ فارم کیسے جمع کروانا ہے؟',
+  'فارم جمع کیسے کروائیں؟|سبمٹ ایپلیکیشن پر کلک کرنے کے بعد کیا ہوتا ہے؟|فارم فائنل کیسے ہوگا؟',
+  'تمام حصے مکمل کرنے کے بعد:\n• اپنی ذاتی معلومات دوبارہ چیک کریں۔\n• منتخب کردہ کورس یا کورسز کی تصدیق کریں۔\n• اپنا پتہ اور اکاؤنٹ کی تفصیلات چیک کریں۔\n• Submit Application پر کلک کریں۔\n\nدرخواست کامیابی سے جمع ہونے کے بعد آپ کو اسٹوڈنٹ پورٹل پر بھیج دیا جائے گا، جہاں Documentation Processing Fee کا چالان اور PSID دستیاب ہوگا۔',
+  'داخلہ فارم جمع, سبمٹ ایپلیکیشن, فائنل جمع, چالان, پی ایس آئی ڈی, اسٹوڈنٹ پورٹل',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Aakhir mein admission form kaise submit karna hai?',
+  'Form kaise submit karein?|Submit application button|Form submit karne ke baad kya hota hai?|Final form submission',
+  'Tamam sections complete karne ke baad:\n• Apni personal information dobara check karein.\n• Selected course ya courses verify karein.\n• Apna address aur account details check karein.\n• Submit Application par click karein.\n\nApplication successfully submit hone ke baad aap student portal par chale jayenge. Wahan Documentation Processing Fee ka challan aur PSID available hoga.',
+  'admission form submit, submit application, final submit, challan psid, student portal',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- Step 8: Pay Documentation Processing Fee
+(
+  'Fees & Payments',
+  'en',
+  'How do I pay the admission processing fee?',
+  'How to pay documentation fee?|PayPro PSID payment instructions|Is there a tuition fee?|How much is documentation fee?|Rs 2900 fee challan|Banking app payment steps',
+  'To pay the Documentation Processing Fee:\n1. Open your student portal.\n2. Find your Documentation Processing Fee challan.\n3. Note down your PSID.\n4. Open your banking or mobile wallet application (JazzCash, Easypaisa, Nayapay, SadaPay, or Bank App).\n5. Select Bills & Payments.\n6. Choose PayPro.\n7. Enter your PSID.\n8. Verify the displayed amount and confirm payment.\n9. Return to your PFTP portal and refresh it to check payment confirmation.\n\nFee Note: The currently displayed one-time Documentation Processing Fee is Rs. 2,900. There is no tuition fee for the listed free courses. The processing fee is non-refundable, subject to the published transfer or deferment policy.\nOfficial Payment Guide: https://pftpedu.org/how-to-pay',
+  'pay processing fee, documentation processing fee, 2900, paypro, psid, bills payments, jazzcash, easypaisa, banking app, tuition fee free',
+  'PFTP Accounts & Admissions',
+  'active'
+),
+(
+  'Fees & Payments',
+  'ur',
+  'داخلے کی پروسیسنگ فیس کیسے ادا کرنی ہے؟',
+  'پروسیسنگ فیس کیسے جمع کروائیں؟|PayPro اور PSID کے ذریعے ادائیگی|کیا کورسز کی ٹیوشن فیس ہے؟|2900 فیس کیسے ادا کریں؟|فیس ادائیگی کا طریقہ',
+  'داخلہ پروسیسنگ فیس کی ادائیگی کا طریقہ:\n1. اپنا اسٹوڈنٹ پورٹل کھولیں۔\n2. Documentation Processing Fee کا چالان تلاش کریں۔\n3. اپنا PSID نوٹ کریں۔\n4. اپنی بینکنگ یا موبائل والٹ ایپ (Easypaisa, JazzCash وغیرہ) کھولیں۔\n5. Bills & Payments منتخب کریں۔\n6. PayPro منتخب کریں۔\n7. اپنا PSID درج کریں۔\n8. ظاہر ہونے والی رقم چیک کریں اور ادائیگی کی تصدیق کریں۔\n9. دوبارہ PFTP پورٹل پر آئیں اور اسے Refresh کر کے ادائیگی کی تصدیق دیکھیں۔\n\nوضاحت: اس وقت ویب سائٹ پر ایک مرتبہ کی Documentation Processing Fee 2,900 روپے درج ہے۔ مفت کورسز کی ٹیوشن فیس نہیں ہے۔ یہ پروسیسنگ فیس ناقابلِ واپسی ہے، البتہ شائع شدہ پالیسی کے مطابق کورس تبدیل یا اگلے بیچ میں منتقل کرنے کی درخواست دی جا سکتی ہے۔\nادائیگی کی رہنمائی: https://pftpedu.org/how-to-pay',
+  'پروسیسنگ فیس, 2900, پے پرو, پی ایس آئی ڈی, ایزی پیسہ, جیز کیش, بلز اینڈ پیمنٹس, فیس ادائیگی',
+  'PFTP Accounts & Admissions',
+  'active'
+),
+(
+  'Fees & Payments',
+  'roman_ur',
+  'Admission processing fee kaise pay karni hai?',
+  'Processing fee kaise jama karein?|PayPro PSID se payment kaise karein?|Kya tuition fee hai?|2900 fee kaise pay karein?|Payment ka tareeqa kya hai?',
+  'Admission processing fee pay karne ka tareeqa:\n1. Apna student portal open karein.\n2. Documentation Processing Fee ka challan dhoondein.\n3. Apna PSID note karein.\n4. Apni banking ya mobile wallet app open karein.\n5. Bills & Payments select karein.\n6. PayPro choose karein.\n7. Apna PSID enter karein.\n8. Display hone wali amount verify karein aur payment confirm karein.\n9. PFTP portal par wapas aakar refresh karein aur payment confirmation check karein.\n\nNote: Website par currently one-time Documentation Processing Fee Rs. 2,900 show ho rahi hai. Free courses ki tuition fee nahi hai. Processing fee non-refundable hai, lekin published policy ke mutabiq course transfer ya next batch mein deferment ki request ki ja sakti hai.\nOfficial Payment Guide: https://pftpedu.org/how-to-pay',
+  'admission processing fee, 2900, paypro, psid, bills payments, jazzcash, easypaisa, tuition fee free, how to pay',
+  'PFTP Accounts & Admissions',
+  'active'
+),
+
+-- Step 9: Access Portal & Classes
+(
+  'Admission Process',
+  'en',
+  'What happens after my payment is confirmed?',
+  'After fee payment what next?|When will I get class access?|Student portal activation|What to do after payment?',
+  'Once your payment is confirmed and your portal access is activated, log in to your student portal and follow the instructions provided there for accessing your learning materials and classes.\n\nRegistration Link: https://pftpedu.org/registration\nFAQs: https://pftpedu.org/faqs',
+  'after payment confirmed, student portal access, learning materials, classes access, portal activation',
+  'PFTP Student Support',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'میری ادائیگی کی تصدیق کے بعد کیا ہوگا؟',
+  'فیس جمع کروانے کے بعد کیا کرنا ہے؟|کلاسز کب شروع ہوں گی؟|پورٹل ایکٹیویشن کے بعد کیا ہوگا؟',
+  'جب آپ کی ادائیگی کی تصدیق ہو جائے اور پورٹل فعال ہو جائے تو اپنے اسٹوڈنٹ پورٹل میں لاگ اِن کریں اور وہاں دی گئی ہدایات کے مطابق اپنی کلاسز اور تعلیمی مواد تک رسائی حاصل کریں۔\n\nرجسٹریشن لنک: https://pftpedu.org/registration\nاکثر پوچھے گئے سوالات (FAQs): https://pftpedu.org/faqs',
+  'ادائیگی کی تصدیق کے بعد, اسٹوڈنٹ پورٹل, کلاسز تک رسائی, تعلیمی مواد, پورٹل لاگ ان',
+  'PFTP Student Support',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Meri payment confirm hone ke baad kya hoga?',
+  'Fee pay karne ke baad kya karna hoga?|Classes access kab milega?|Portal activate hone ke baad kya karein?',
+  'Jab aapki payment confirm ho jaye aur portal activate ho jaye to apne student portal mein login karein aur wahan di gayi instructions ke mutabiq classes aur learning material access karein.\n\nRegistration Link: https://pftpedu.org/registration\nFAQs: https://pftpedu.org/faqs',
+  'payment confirm hone ke baad, student portal login, classes access, learning material, portal activate',
+  'PFTP Student Support',
+  'active'
+),
+
+-- Counsellor Next Step & Official Links
+(
+  'Admission Process',
+  'en',
+  'Would you like me to share the direct admission form link so you can start your registration?',
+  'Share admission link|Send registration link|Admission link please|How to register now?|Direct link for admission',
+  'Here is the direct link to start your admission:\n👉 https://pftpedu.org/registration\n\nYou can also explore:\n• How to Pay Guide: https://pftpedu.org/how-to-pay\n• Frequently Asked Questions (FAQs): https://pftpedu.org/faqs\n\nLet me know if you need any assistance while filling out the form!',
+  'direct admission form link, registration link, start registration, how to pay, faqs, pftpedu.org',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'کیا آپ چاہتے ہیں کہ میں آپ کو داخلہ فارم کا براہِ راست لنک بھیج دوں تاکہ آپ اپنی رجسٹریشن شروع کر سکیں؟',
+  'داخلہ فارم کا لنک بھیج دیں|رجسٹریشن لنک چاہیے|ابھی داخلہ لینا ہے|براہ راست لنک',
+  'داخلہ شروع کرنے کے لیے براہِ راست لنک درج ذیل ہے:\n👉 https://pftpedu.org/registration\n\nمزید معلومات کے لیے:\n• فیس ادائیگی کی رہنمائی: https://pftpedu.org/how-to-pay\n• اکثر پوچھے جانے والے سوالات (FAQs): https://pftpedu.org/faqs\n\nفارم بھرنے کے دوران اگر کسی رہنمائی کی ضرورت ہو تو ضرور پوچھیں!',
+  'براہ راست داخلہ لنک, رجسٹریشن لنک, داخلہ فارم, فیس ادائیگی رہنمائی, اکثر پوچھے گئے سوالات',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Kya aap chahte hain ke main aapko admission form ka direct link bhej doon taake aap apni registration start kar sakein?',
+  'Admission link bhej dein|Registration link chahiye|Direct admission link|Abhi apply karna hai|Form link please',
+  'Admission start karne ke liye ye raha direct link:\n👉 https://pftpedu.org/registration\n\nMazeed official links:\n• How to Pay Guide: https://pftpedu.org/how-to-pay\n• FAQs: https://pftpedu.org/faqs\n\nAgar form fill karte waqt koi bhi confusion ho to zaroor poochein!',
+  'direct admission link, registration start, form link, how to pay, faqs, pftpedu.org',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- ===================================================================
+-- 19. ABOUT COMPANY / PFTP OVERVIEW
+-- ===================================================================
+(
+  'About PFTP',
+  'en',
+  'Could you please tell me about your company?',
+  'Tell me about your company|What is PFTP?|Tell me about PFTP|What does PFTP stand for?|Company introduction|About PFTP organization',
+  'PFTP stands for Professional Freelancing Training Program. It is a training platform focused on helping students develop practical IT and freelancing skills.\n\nWe offer training in different fields, including Digital Marketing, Graphic Design, Video Editing, Web Development, Artificial Intelligence, Cyber Security, SEO, and other professional skills.\n\nOur aim is to help students build practical knowledge, work on projects, improve their professional skills, and understand different career opportunities in the digital industry.\n\nOur courses are conducted online and include live classes, practical projects, and assessments. Students who successfully complete the required assessments can receive a certificate according to the program requirements.',
+  'tell me about your company, about company, what is pftp, pftp stand for, company introduction, training platform, pftp overview, institute information',
+  'Official PFTP Student Counselling & Information Desk',
+  'active'
+),
+(
+  'About PFTP',
+  'ur',
+  'اپنی کمپنی کے بارے میں بتائیں؟',
+  'آپ کی کمپنی کے بارے میں بتائیں؟|پی ایف ٹی پی کیا ہے؟|PFTP کا تعارف|ادارے کے بارے میں بتائیں|پی ایف ٹی پی کا مقصد کیا ہے؟',
+  'PFTP کا مکمل نام Professional Freelancing Training Program ہے۔ یہ ایک تربیتی پلیٹ فارم ہے جس کا مقصد طلبہ کو عملی آئی ٹی اور فری لانسنگ کی مہارتیں سکھانا ہے۔\n\nہمارے یہاں مختلف شعبوں میں کورسز کروائے جاتے ہیں، جن میں ڈیجیٹل مارکیٹنگ، گرافک ڈیزائننگ، ویڈیو ایڈیٹنگ، ویب ڈویلپمنٹ، آرٹیفیشل انٹیلیجنس، سائبر سیکیورٹی، SEO اور دیگر پروفیشنل اسکلز شامل ہیں۔\n\nہمارا مقصد طلبہ کو عملی مہارتیں سکھانا، پراجیکٹس پر کام کرنے کا موقع دینا، ان کی پروفیشنل صلاحیتوں کو بہتر بنانا اور ڈیجیٹل انڈسٹری میں موجود مختلف کیریئر کے مواقع سے آگاہ کرنا ہے۔\n\nہمارے کورسز آن لائن کروائے جاتے ہیں، جن میں لائیو کلاسز، عملی پراجیکٹس اور اسیسمنٹس شامل ہیں۔ مطلوبہ اسیسمنٹس کامیابی سے مکمل کرنے والے طلبہ پروگرام کی شرائط کے مطابق سرٹیفکیٹ حاصل کر سکتے ہیں۔',
+  'اپنی کمپنی کے بارے میں بتائیں, آپ کی کمپنی کے بارے میں بتائیں, پی ایف ٹی پی کیا ہے, کمپنی کا تعارف, ادارے کا تعارف, PFTP تعارف',
+  'Official PFTP Student Counselling & Information Desk',
+  'active'
+),
+(
+  'About PFTP',
+  'roman_ur',
+  'Aap apni company ke baare mein batayein?',
+  'Apni company ke baare mein batayein?|PFTP kya hai?|PFTP ka intro|Company introduction|PFTP ka full name kya hai?|Company ki details',
+  'PFTP ka full name Professional Freelancing Training Program hai. Yeh aik training platform hai jiska maqsad students ko practical IT aur freelancing skills sikhana hai.\n\nHamare yahan mukhtalif fields mein courses offer kiye jate hain, jin mein Digital Marketing, Graphic Design, Video Editing, Web Development, Artificial Intelligence, Cyber Security, SEO aur doosri professional skills shamil hain.\n\nHamara maqsad students ko practical skills sikhana, projects par kaam karwana, unki professional abilities improve karna aur digital industry mein career opportunities ke baare mein guide karna hai.\n\nHamare courses online conduct kiye jate hain, jin mein live classes, practical projects aur assessments shamil hain. Jo students required assessments successfully complete karte hain, woh program requirements ke mutabiq certificate hasil kar sakte hain.',
+  'aap apni company ke baare mein batayein, apni company ke bare me bataye, pftp kya hai, pftp intro, company introduction, company details',
+  'Official PFTP Student Counselling & Information Desk',
+  'active'
+),
+
+-- ===================================================================
+-- 20. STUDENT EDUCATION STATUS & DISCOVERY SCENARIOS
+-- ===================================================================
+(
+  'Student Discovery',
+  'en',
+  'Are you currently studying, or have you completed your education?',
+  'Am I eligible while studying?|Can I join while in college?|Are you currently studying or finished education?|Education background check',
+  'PFTP welcomes both current students and graduates! Could you please share your current educational status:\n\n1. Currently studying (school, college, degree, or semester)\n2. Completed education (Matric, Inter, Graduation, Masters)\n3. Discontinued or taking a gap in studies\n4. Not currently studying (working or job hunting)\n\nTell me which one applies to you, and I will recommend the best course according to your background!',
+  'currently studying, completed education, education status, studying or finished, student discovery, qualification background',
+  'Tailored Career Consultation',
+  'active'
+),
+(
+  'Student Discovery',
+  'ur',
+  'کیا آپ اس وقت تعلیم حاصل کر رہے ہیں یا اپنی تعلیم مکمل کر چکے ہیں؟',
+  'کیا پڑھائی کے دوران داخلہ ہو سکتا ہے؟|تعلیمی قابلیت کیا ہے؟|کیا آپ پڑھ رہے ہیں یا تعلیم مکمل ہو گئی ہے؟',
+  'پی ایف ٹی پی میں زیرِ تعلیم طلبہ اور فارغ التحصیل تمام افراد کے لیے کورسز موجود ہیں! براہِ کرم اپنی تعلیمی صورتحال بتائیں:\n\n1. اس وقت زیرِ تعلیم ہیں (کلاس، ڈگری یا سمسٹر)\n2. تعلیم مکمل کر چکے ہیں (میٹرک، انٹر، گریجویشن وغیرہ)\n3. پڑھائی جاری نہیں رکھ سکے\n4. اس وقت نہیں پڑھ رہے (ملازمت کر رہے ہیں یا تلاش میں ہیں)\n\nاپنی موجودہ کیفیت بتائیں تاکہ آپ کے لیے موزوں ترین کورس تجویز کیا جا سکے!',
+  'تعلیم حاصل کر رہے ہیں, تعلیم مکمل کر چکے ہیں, زیر تعلیم, تعلیمی صورتحال, اہلیت, اسٹوڈنٹ تعارف',
+  'Tailored Career Consultation',
+  'active'
+),
+(
+  'Student Discovery',
+  'roman_ur',
+  'Kya aap abhi study kar rahe hain ya apni education complete kar chuke hain?',
+  'Kya parhai ke sath course kar sakte hain?|Kya aap student hain ya graduate?|Education complete hai ya parh rahe hain?|Abhi study kar rahe hain?',
+  'PFTP mein students aur graduates dono ke liye behtareen practical courses hain! Barah-e-karam apni current situation batayein:\n\n1. Currently study kar rahe hain (school, college ya university)\n2. Education complete kar chuke hain (Matric, Inter, Graduation)\n3. Parhai discontinue ho gayi hai\n4. Abhi parh nahi rahe (job kar rahe hain ya search kar rahe hain)\n\nAap batayein taake main aapke background ke mutabiq best course recommend kar sakun!',
+  'abhi study kar rahe hain, education complete kar chuke hain, student hain ya pass out, study status, qualification',
+  'Tailored Career Consultation',
+  'active'
+),
+(
+  'Student Discovery',
+  'en',
+  'I am currently studying',
+  'I am a student|I am currently enrolled|Still studying|I am in college|I am doing university|I am in school|Currently studying',
+  'That''s great! Which class, degree, or semester are you currently enrolled in?\n\nSharing this helps us recommend a course that comfortably fits alongside your study schedule (such as Graphic Design, Web Development, Python, or Digital Marketing).',
+  'currently studying, i am a student, still studying, college student, university student, semester, enrolled',
+  'Student Skill-Building Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'ur',
+  'میں اس وقت زیرِ تعلیم ہوں',
+  'میں ابھی پڑھ رہا ہوں|میں اسٹوڈنٹ ہوں|میری پڑھائی جاری ہے|میں کالج میں ہوں|میں یونیورسٹی کا طالب علم ہوں',
+  'یہ بہت اچھی بات ہے! آپ اس وقت کس کلاس، ڈگری یا سمسٹر میں زیرِ تعلیم ہیں؟\n\nیہ معلومات ہمیں آپ کے تعلیمی اوقات اور صلاحیت کے مطابق بہترین کورس منتخب کرنے میں مدد دے گی۔',
+  'میں اس وقت زیر تعلیم ہوں, میں ابھی پڑھ رہا ہوں, میں اسٹوڈنٹ ہوں, پڑھائی جاری ہے, کالج اسٹوڈنٹ, یونیورسٹی طالب علم',
+  'Student Skill-Building Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'roman_ur',
+  'Main currently study kar raha hoon',
+  'Main abhi parh raha hoon|Main student hoon|Meri study jari hai|Main college mein hoon|Main university student hoon|Still studying',
+  'Yeh bohat achi baat hai! Aap is waqt kis class, degree ya semester mein study kar rahe hain?\n\nYeh batane se hum aapke study schedule ke mutabiq behtareen flexible course recommend kar sakenge.',
+  'main currently study kar raha hoon, main abhi parh raha hoon, main student hoon, study jari hai, semester mein hoon',
+  'Student Skill-Building Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'en',
+  'I have completed my education',
+  'I finished my studies|I graduated|Education completed|Completed my degree|I am a graduate|Done with studies',
+  'That''s great! What is your highest completed qualification?\n\nWhether you have completed Matric, Intermediate, Graduation (BS/BA), or a Master''s degree, PFTP offers career-oriented courses to help you build practical, job-ready, and freelancing skills.',
+  'completed education, i have completed my education, finished studies, graduated, degree completed, highest qualification',
+  'Graduate & Professional Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'ur',
+  'میں اپنی تعلیم مکمل کر چکا ہوں',
+  'میری پڑھائی مکمل ہو چکی ہے|میں گریجویٹ ہوں|تعلیم مکمل ہے|ڈگری مکمل ہو گئی ہے|میں نے پڑھائی مکمل کر لی ہے',
+  'بہت خوب! آپ نے اپنی تعلیم میں سب سے آخری کون سی ڈگری یا کلاس مکمل کی ہے؟\n\nخواہ آپ نے میٹرک، انٹر، گریجویشن یا ماسٹرز کیا ہو، PFTP کے عملی کورسز آپ کو ڈیجیٹل انڈسٹری میں قدم رکھنے میں مدد فراہم کرتے ہیں۔',
+  'میں اپنی تعلیم مکمل کر چکا ہوں, پڑھائی مکمل ہو چکی ہے, میں گریجویٹ ہوں, ڈگری مکمل ہے, تعلیم مکمل ہے',
+  'Graduate & Professional Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'roman_ur',
+  'Maine apni education complete kar li hai',
+  'Main education complete kar chuka hoon|Meri study complete ho chuki hai|Main graduate hoon|Degree complete hai|Parhai mukammal hai',
+  'Bohat khoob! Aap ne apni education mein sab se aakhri konsi degree ya class complete ki hai?\n\nChahe aapne Matric, Inter, Graduation ya Masters kiya ho, PFTP ke career-focused courses aapko practical skills aur earning opportunities sikhate hain.',
+  'maine apni education complete kar li hai, education complete kar chuka hoon, study complete, graduate hoon, degree complete',
+  'Graduate & Professional Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'en',
+  'I discontinued my education',
+  'I dropped out|I left studies|Discontinued education|Studies discontinued|Could not continue education|Had to leave school',
+  'No problem. Could you please tell me the last class or qualification you completed?\n\nPFTP strongly believes in skill empowerment. Practical skills like Graphic Design, Video Editing, Freelancing, and Web Development do not require advanced academic degrees to get started!',
+  'discontinued education, i discontinued my education, dropped out, left studies, incomplete education, last qualification',
+  'Practical Skills Career Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'ur',
+  'میں نے اپنی تعلیم چھوڑ دی ہے',
+  'میں پڑھائی جاری نہیں رکھ سکا|پڑھائی چھوٹ گئی تھی|تعلیم ادھوری رہ گئی|میں نے اسکول چھوڑ دیا|ڈراپ آؤٹ',
+  'کوئی بات نہیں۔ کیا آپ بتا سکتے ہیں کہ آپ نے آخری کون سی کلاس یا تعلیمی قابلیت مکمل کی تھی؟\n\nپی ایف ٹی پی کا ماننا ہے کہ ہنر سب سے بڑی طاقت ہے۔ گرافک ڈیزائننگ، ویڈیو ایڈیٹنگ، فری لانسنگ اور ای کامرس جیسے کورسز میں کامیابی کے لیے بڑی ڈگریوں کے بجائے عملی محنت کی ضرورت ہوتی ہے۔',
+  'میں نے اپنی تعلیم چھوڑ دی ہے, پڑھائی جاری نہیں رکھ سکا, تعلیم ادھوری ہے, پڑھائی چھوٹ گئی, ڈراپ آؤٹ',
+  'Practical Skills Career Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'roman_ur',
+  'Maine study discontinue kar di hai',
+  'Maine parhai chor di hai|Study incomplete hai|Parhai jari nahi rakh saka|Drop out hoon|Studies left|Parhai discontinue ho gayi',
+  'Koi baat nahi. Kya aap bata sakte hain ke aap ne aakhri konsi class ya qualification complete ki thi?\n\nPFTP ka maqsad har fard ko practical skill sikhana hai. Graphic Design, Video Editing, Freelancing aur E-Commerce jaisi skills ke liye bari degree ki shart nahi hoti, balkeh mehnat aur practice ahem hai.',
+  'maine study discontinue kar di hai, parhai chor di, study incomplete, parhai jari nahi rakh saka, drop out, aakhri class',
+  'Practical Skills Career Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'en',
+  'I am not currently studying',
+  'Not studying right now|I am free currently|Not in any school or college|Currently free|Not studying|Unemployed looking for skills',
+  'I understand. Are you currently working, looking for a job, or planning to learn a new skill?\n\nKnowing your current goal allows us to recommend courses that help you upskill, switch fields, or start earning through freelancing.',
+  'not currently studying, not studying right now, currently free, looking for job, planning to learn skill, working',
+  'Career Upskilling Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'ur',
+  'میں اس وقت پڑھ نہیں رہا',
+  'میں اس وقت فارغ ہوں|ابھی پڑھائی نہیں کر رہا|کوئی پڑھائی نہیں ہو رہی|نوکری کی تلاش ہے|کوئی نیا ہنر سیکھنا ہے',
+  'میں سمجھ سکتا ہوں۔ کیا آپ اس وقت ملازمت کر رہے ہیں، نوکری تلاش کر رہے ہیں یا کوئی نئی مہارت سیکھنے کا ارادہ رکھتے ہیں؟\n\nاپنا مقصد بتائیں تاکہ ہم آپ کو ایسا کورس بتا سکیں جس سے آپ اپنی آمدنی اور کیریئر کو بہتر بنا سکیں۔',
+  'میں اس وقت پڑھ نہیں رہا, میں اس وقت فارغ ہوں, ابھی پڑھائی نہیں کر رہا, نوکری تلاش, نئی مہارت',
+  'Career Upskilling Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'roman_ur',
+  'Main abhi study nahi kar raha hoon',
+  'Main abhi parh nahi raha|Filhal free hoon|Study nahi kar raha|Job dhoond raha hoon|Nayi skill seekhni hai|Free time hai',
+  'Main samajh sakta hoon. Kya aap is waqt job kar rahe hain, job talash kar rahe hain ya koi nayi skill seekhne ka irada rakhte hain?\n\nApna goal share karein taake hum aapko freelancing ya job-oriented best skill recommend kar sakein.',
+  'main abhi study nahi kar raha hoon, parh nahi raha, free hoon, job dhoond raha hoon, nayi skill seekhni hai, job kar rahe hain',
+  'Career Upskilling Track',
+  'active'
+),
+
+-- ===================================================================
+-- 18. ADMISSION & REGISTRATION PROCESS (STEPS 1 - 9 & OFFICIAL LINKS)
+-- ===================================================================
+-- Step 1: Where to Apply
+(
+  'Admission Process',
+  'en',
+  'Where should I go to apply for admission?',
+  'How to apply for admission?|Where to apply?|PFTP admission website|How to register online?|Where do I apply for PFTP courses?',
+  'Open your browser (Chrome, for example) and type pftpedu.org in the address bar. Once the PFTP homepage opens, look for the Apply Now, Start Your Application, or Apply for Training button and click it. This will take you to the online registration form.\n\nDirect Registration Link: https://pftpedu.org/registration',
+  'apply for admission, where to apply, pftpedu.org, apply now button, start your application, apply for training, registration form, website',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'داخلے کے لیے مجھے ویب سائٹ پر کہاں جانا ہوگا؟',
+  'داخلہ کیسے لیں؟|آن لائن داخلہ کیسے بھیجیں؟|پی ایف ٹی پی ویب سائٹ داخلہ|داخلے کے لیے کہاں جائیں؟',
+  'سب سے پہلے اپنے موبائل یا کمپیوٹر میں Chrome کھولیں اور pftpedu.org لکھ کر ویب سائٹ کھولیں۔ ہوم پیج پر Apply Now، Start Your Application یا Apply for Training کا بٹن تلاش کریں اور اس پر کلک کریں۔ اس کے بعد آپ داخلہ فارم تک پہنچ جائیں گے۔\n\nبراہِ راست لنک: https://pftpedu.org/registration',
+  'داخلہ, ویب سائٹ, اپلائی, رجسٹریشن فارم, pftpedu.org, داخلے کے لیے کہاں جائیں',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Admission ke liye mujhe website par kahan jana hoga?',
+  'Admission kaise lein?|Online apply kaise karein?|PFTP website par admission kahan hai?|Website par kahan jana hoga?',
+  'Sab se pehle apne mobile ya computer mein Chrome open karein aur pftpedu.org type karke website kholein. Homepage par Apply Now, Start Your Application ya Apply for Training ka button dhoondein aur us par click karein. Is ke baad aap admission form par pohanch jayenge.\n\nDirect Link: https://pftpedu.org/registration',
+  'admission kahan jana hoga, apply now, registration form, online admission, pftpedu.org, website par kahan jayein',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- Step 2: Open Admission Form
+(
+  'Admission Process',
+  'en',
+  'Which page should I open for registration?',
+  'What is the direct registration link?|Where is the admission form?|Start Your Admission page|Registration URL',
+  'Click the admission or registration button. You should reach the page titled Start Your Admission. You can also open it directly by visiting:\nhttps://pftpedu.org/registration\n\nThe form is divided into sections, which you complete one by one.',
+  'registration page, admission form link, pftpedu.org/registration, start your admission, direct admission link',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'رجسٹریشن کے لیے کون سا صفحہ کھولنا ہے؟',
+  'داخلہ فارم کا صفحہ|رجسٹریشن لنک کیا ہے؟|آن لائن فارم کا لنک',
+  'Admission یا Registration کے بٹن پر کلک کریں۔ آپ کے سامنے Start Your Admission کے عنوان سے داخلہ فارم کھل جائے گا۔ آپ براہِ راست بھی اس لنک سے فارم کھول سکتے ہیں:\nhttps://pftpedu.org/registration\n\nفارم مختلف حصوں میں تقسیم ہے جنہیں آپ ایک ایک کر کے مکمل کرتے ہیں۔',
+  'رجسٹریشن صفحہ, داخلہ فارم لنک, pftpedu.org/registration, کون سا صفحہ کھولنا ہے',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Registration ke liye konsa page open karna hai?',
+  'Admission form ka link kya hai?|Direct registration link|Form kahan se open karein?|Konsa page open karein?',
+  'Admission ya Registration ke button par click karein. Aapke samne Start Your Admission ke naam se form open ho jayega. Aap direct is link se bhi form open kar sakte hain:\nhttps://pftpedu.org/registration\n\nForm mukhtalif sections mein divided hai jinhe aap step by step complete karte hain.',
+  'registration page, admission form link, direct link, pftpedu.org/registration, konsa page',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- Step 3: Personal Information
+(
+  'Admission Process',
+  'en',
+  'What information do I need to enter in the first section?',
+  'Personal information needed for admission|What documents or details are needed for registration?|CNIC B-form requirement in registration',
+  'In the Personal Information section, enter:\n• Full name\n• Father''s name\n• CNIC or B-Form number (13 digits without dashes)\n• Email address\n• Mobile number\n• Date of birth\n• Gender\n• Highest educational qualification\n\nMake sure your details are correct because your certificate and student records will use this information.\nApply Online: https://pftpedu.org/registration',
+  'personal information, first section, cnic, b-form, email, mobile number, qualification, student record details, registration requirements',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'پہلے حصے میں کون سی معلومات درج کرنی ہوں گی؟',
+  'ذاتی معلومات کیا درج کرنی ہیں؟|شناختی کارڈ اور تعلیمی تفصیلات فارم میں|رجسٹریشن میں کیا معلومات چاہیئں؟',
+  'Personal Information کے حصے میں درج ذیل معلومات درج کریں:\n• اپنا مکمل نام\n• والد کا نام\n• شناختی کارڈ یا ب فارم نمبر (بغیر ڈیش کے 13 ہندسے)\n• ای میل ایڈریس\n• موبائل نمبر\n• تاریخ پیدائش\n• جنس\n• آخری تعلیمی قابلیت\n\nتمام معلومات درست درج کریں کیونکہ یہی معلومات آپ کے اسٹوڈنٹ ریکارڈ اور سرٹیفکیٹ میں استعمال ہوں گی۔\nآن لائن اپلائی: https://pftpedu.org/registration',
+  'ذاتی معلومات, پہلا حصہ, شناختی کارڈ, ب فارم, موبائل نمبر, تعلیمی قابلیت',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Pehle section mein konsi information enter karni hogi?',
+  'Personal details mein kya likhna hai?|Registration form mein pehla step|CNIC aur details|Pehle hissay mein kya enter karein?',
+  'Personal Information ke section mein ye details enter karein:\n• Apna full name\n• Father ka name\n• CNIC ya B-Form number (13 digits, baghair dash ke)\n• Email address\n• Mobile number\n• Date of birth\n• Gender\n• Highest educational qualification\n\nApni tamam details sahi enter karein kyun ke ye aapke student record aur certificate mein use hongi.\nApply Online: https://pftpedu.org/registration',
+  'personal information, pehle section, cnic, b-form number, mobile number, qualification, pehli information',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- Step 4: Course Selection
+(
+  'Admission Process',
+  'en',
+  'Where do I select my desired course?',
+  'How to select course in form?|How many courses can I select?|Promo code field in registration|Course selection step|Can I choose multiple courses?',
+  'Scroll down to the Course Selection section. Click the Program dropdown and select the course you want to study.\n• Select your preferred course.\n• You can add more courses using Add Another Course.\n• The form allows you to select up to five programs.\n• If you have a valid promo code, enter it in the Promo Code field.\n• After selecting your courses, review the displayed fee details before proceeding.\nApply Online: https://pftpedu.org/registration',
+  'select course, desired course, program dropdown, add another course, five programs, promo code, course selection section',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'اپنی پسند کا کورس کہاں سے منتخب کرنا ہے؟',
+  'کورس کا انتخاب کیسے کریں؟|ایک وقت میں کتنے کورسز منتخب ہو سکتے ہیں؟|پرومو کوڈ کہاں درج کریں؟|کورس سلیکشن کہاں ہے؟',
+  'فارم میں نیچے جائیں اور Course Selection کا سیکشن تلاش کریں۔ Program کے ڈراپ ڈاؤن پر کلک کریں اور اپنی پسند کا کورس منتخب کریں۔\n• اپنا پسندیدہ کورس منتخب کریں۔\n• مزید کورسز کے لیے Add Another Course پر کلک کریں۔\n• ایک فارم میں زیادہ سے زیادہ پانچ کورسز منتخب کیے جا سکتے ہیں۔\n• اگر آپ کے پاس درست Promo Code ہے تو اسے متعلقہ خانے میں درج کریں۔\n• کورس منتخب کرنے کے بعد فیس کی تفصیلات ضرور چیک کریں۔',
+  'کورس منتخب, اپنی پسند کا کورس, پروگرام ڈراپ ڈاؤن, پانچ کورسز, پرومو کوڈ',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Apna pasandeeda course kahan se select karna hai?',
+  'Course selection kaise karein?|Kitne course select kar sakte hain?|Promo code kahan enter karein?|Course kahan se select hoga?',
+  'Form mein neeche ja kar Course Selection section dhoondein. Program dropdown par click karein aur apna pasandeeda course select karein.\n• Apna preferred course choose karein.\n• Mazeed courses ke liye Add Another Course par click karein.\n• Ek form mein maximum five programs select kar sakte hain.\n• Agar aapke paas valid Promo Code hai to usay enter karein.\n• Course selection ke baad fee details zaroor check karein.',
+  'pasandeeda course, course selection, program dropdown, add another course, 5 courses, promo code',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- Step 5: Location Details
+(
+  'Admission Process',
+  'en',
+  'What should I enter in the Location section?',
+  'Address in admission form|Location details required|City and province in registration|Where to add home address?',
+  'Click Next: Location and provide:\n• Province\n• City\n• Street address\n\nEnter your correct residential location and then click Next: Account.\nApply Online: https://pftpedu.org/registration',
+  'location section, province, city, street address, residential location, address details',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'Location والے حصے میں کیا درج کرنا ہے؟',
+  'رہائشی پتہ کیا لکھنا ہے؟|شہر اور صوبہ داخلہ فارم|پتہ کیسے درج کریں؟',
+  'Next: Location پر کلک کریں اور درج ذیل معلومات درج کریں:\n• صوبہ\n• شہر\n• گلی اور گھر کا مکمل پتہ\n\nاپنا درست رہائشی پتہ درج کرنے کے بعد Next: Account پر کلک کریں۔',
+  'لوکیشن, رہائشی پتہ, صوبہ, شہر, گھر کا پتہ',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Location wale section mein kya enter karna hai?',
+  'Address details kya likhein?|City province address form|Address kahan enter karna hai?',
+  'Next: Location par click karein aur ye information enter karein:\n• Province\n• City\n• Street address\n\nApna correct residential address enter karne ke baad Next: Account par click karein.',
+  'location section, province, city, street address, ghar ka pata, residential address',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- Step 6: Student Account Creation
+(
+  'Admission Process',
+  'en',
+  'How do I create my student account?',
+  'Account security section|Password requirement for student portal|Terms and refund policy agreement|Student account password setup',
+  'In the Account Security section:\n• Create a password of at least eight characters.\n• Enter the same password again in Confirm Password.\n• Read the declaration and program terms.\n• Tick the agreement checkbox to confirm that your information is correct and that you accept the terms, refund policy, and WhatsApp SOPs.\n• Keep your password safe because you will need it to access your student account.\nApply Online: https://pftpedu.org/registration',
+  'student account, account security, password 8 characters, confirm password, refund policy, terms agreement, whatsapp sops',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'اپنا اسٹوڈنٹ اکاؤنٹ کیسے بنانا ہے؟',
+  'اکاؤنٹ پاس ورڈ کیسے بنائیں؟|پاس ورڈ کتنا بڑا ہونا چاہیے؟|شرائط اور ریفنڈ پالیسی|اسٹوڈنٹ لاگ ان کیسے بنے گا؟',
+  'Account Security کے حصے میں:\n• کم از کم آٹھ حروف پر مشتمل پاس ورڈ بنائیں۔\n• وہی پاس ورڈ دوبارہ Confirm Password میں درج کریں۔\n• دی گئی شرائط اور اقرار نامہ پڑھیں۔\n• چیک باکس پر نشان لگائیں تاکہ آپ اپنی معلومات کی درستگی اور پروگرام کی شرائط، ریفنڈ پالیسی اور WhatsApp SOPs سے اتفاق کی تصدیق کر سکیں۔\n• اپنا پاس ورڈ محفوظ رکھیں کیونکہ آپ کو اسٹوڈنٹ اکاؤنٹ میں لاگ اِن کرنے کے لیے اس کی ضرورت ہوگی۔',
+  'اسٹوڈنٹ اکاؤنٹ, پاس ورڈ, کنفرم پاس ورڈ, ریفنڈ پالیسی, شرائط, اکاؤنٹ سیکیورٹی',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Apna student account kaise create karna hai?',
+  'Student account password kaise banayein?|Password kitne digits ka ho?|Terms agreement|Account kaise banega?',
+  'Account Security section mein:\n• Kam az kam 8 characters ka password create karein.\n• Wohi password Confirm Password mein dobara enter karein.\n• Declaration aur program terms ko parhein.\n• Agreement checkbox ko tick karein aur confirm karein ke aapki information correct hai aur aap program terms, refund policy aur WhatsApp SOPs se agree karte hain.\n• Apna password safe rakhein kyun ke student account login karne ke liye iski zaroorat hogi.',
+  'student account, password create, confirm password, 8 characters, terms agreement, refund policy, whatsapp sops',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- Step 7: Submit Application
+(
+  'Admission Process',
+  'en',
+  'How do I finally submit my admission form?',
+  'Submitting admission application|Submit button on form|What happens after clicking submit application?|Final application submission',
+  'Once you have completed all sections:\n• Review your personal information.\n• Check your selected course or courses.\n• Verify your location and account details.\n• Click Submit Application.\n\nAfter successful submission, you will be taken to your student portal, where your Documentation Processing Fee challan and PSID will be available.\nRegistration Link: https://pftpedu.org/registration',
+  'submit admission form, submit application button, final submission, review information, challan psid',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'آخر میں داخلہ فارم کیسے جمع کروانا ہے؟',
+  'فارم جمع کیسے کروائیں؟|سبمٹ ایپلیکیشن پر کلک کرنے کے بعد کیا ہوتا ہے؟|فارم فائنل کیسے ہوگا؟',
+  'تمام حصے مکمل کرنے کے بعد:\n• اپنی ذاتی معلومات دوبارہ چیک کریں۔\n• منتخب کردہ کورس یا کورسز کی تصدیق کریں۔\n• اپنا پتہ اور اکاؤنٹ کی تفصیلات چیک کریں۔\n• Submit Application پر کلک کریں۔\n\nدرخواست کامیابی سے جمع ہونے کے بعد آپ کو اسٹوڈنٹ پورٹل پر بھیج دیا جائے گا، جہاں Documentation Processing Fee کا چالان اور PSID دستیاب ہوگا۔',
+  'داخلہ فارم جمع, سبمٹ ایپلیکیشن, فائنل جمع, چالان, پی ایس آئی ڈی, اسٹوڈنٹ پورٹل',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Aakhir mein admission form kaise submit karna hai?',
+  'Form kaise submit karein?|Submit application button|Form submit karne ke baad kya hota hai?|Final form submission',
+  'Tamam sections complete karne ke baad:\n• Apni personal information dobara check karein.\n• Selected course ya courses verify karein.\n• Apna address aur account details check karein.\n• Submit Application par click karein.\n\nApplication successfully submit hone ke baad aap student portal par chale jayenge. Wahan Documentation Processing Fee ka challan aur PSID available hoga.',
+  'admission form submit, submit application, final submit, challan psid, student portal',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- Step 8: Pay Documentation Processing Fee
+(
+  'Fees & Payments',
+  'en',
+  'How do I pay the admission processing fee?',
+  'How to pay documentation fee?|PayPro PSID payment instructions|Is there a tuition fee?|How much is documentation fee?|Rs 2900 fee challan|Banking app payment steps',
+  'To pay the Documentation Processing Fee:\n1. Open your student portal.\n2. Find your Documentation Processing Fee challan.\n3. Note down your PSID.\n4. Open your banking or mobile wallet application (JazzCash, Easypaisa, Nayapay, SadaPay, or Bank App).\n5. Select Bills & Payments.\n6. Choose PayPro.\n7. Enter your PSID.\n8. Verify the displayed amount and confirm payment.\n9. Return to your PFTP portal and refresh it to check payment confirmation.\n\nFee Note: The currently displayed one-time Documentation Processing Fee is Rs. 2,900. There is no tuition fee for the listed free courses. The processing fee is non-refundable, subject to the published transfer or deferment policy.\nOfficial Payment Guide: https://pftpedu.org/how-to-pay',
+  'pay processing fee, documentation processing fee, 2900, paypro, psid, bills payments, jazzcash, easypaisa, banking app, tuition fee free',
+  'PFTP Accounts & Admissions',
+  'active'
+),
+(
+  'Fees & Payments',
+  'ur',
+  'داخلے کی پروسیسنگ فیس کیسے ادا کرنی ہے؟',
+  'پروسیسنگ فیس کیسے جمع کروائیں؟|PayPro اور PSID کے ذریعے ادائیگی|کیا کورسز کی ٹیوشن فیس ہے؟|2900 فیس کیسے ادا کریں؟|فیس ادائیگی کا طریقہ',
+  'داخلہ پروسیسنگ فیس کی ادائیگی کا طریقہ:\n1. اپنا اسٹوڈنٹ پورٹل کھولیں۔\n2. Documentation Processing Fee کا چالان تلاش کریں۔\n3. اپنا PSID نوٹ کریں۔\n4. اپنی بینکنگ یا موبائل والٹ ایپ (Easypaisa, JazzCash وغیرہ) کھولیں۔\n5. Bills & Payments منتخب کریں۔\n6. PayPro منتخب کریں۔\n7. اپنا PSID درج کریں۔\n8. ظاہر ہونے والی رقم چیک کریں اور ادائیگی کی تصدیق کریں۔\n9. دوبارہ PFTP پورٹل پر آئیں اور اسے Refresh کر کے ادائیگی کی تصدیق دیکھیں۔\n\nوضاحت: اس وقت ویب سائٹ پر ایک مرتبہ کی Documentation Processing Fee 2,900 روپے درج ہے۔ مفت کورسز کی ٹیوشن فیس نہیں ہے۔ یہ پروسیسنگ فیس ناقابلِ واپسی ہے، البتہ شائع شدہ پالیسی کے مطابق کورس تبدیل یا اگلے بیچ میں منتقل کرنے کی درخواست دی جا سکتی ہے۔\nادائیگی کی رہنمائی: https://pftpedu.org/how-to-pay',
+  'پروسیسنگ فیس, 2900, پے پرو, پی ایس آئی ڈی, ایزی پیسہ, جیز کیش, بلز اینڈ پیمنٹس, فیس ادائیگی',
+  'PFTP Accounts & Admissions',
+  'active'
+),
+(
+  'Fees & Payments',
+  'roman_ur',
+  'Admission processing fee kaise pay karni hai?',
+  'Processing fee kaise jama karein?|PayPro PSID se payment kaise karein?|Kya tuition fee hai?|2900 fee kaise pay karein?|Payment ka tareeqa kya hai?',
+  'Admission processing fee pay karne ka tareeqa:\n1. Apna student portal open karein.\n2. Documentation Processing Fee ka challan dhoondein.\n3. Apna PSID note karein.\n4. Apni banking ya mobile wallet app open karein.\n5. Bills & Payments select karein.\n6. PayPro choose karein.\n7. Apna PSID enter karein.\n8. Display hone wali amount verify karein aur payment confirm karein.\n9. PFTP portal par wapas aakar refresh karein aur payment confirmation check karein.\n\nNote: Website par currently one-time Documentation Processing Fee Rs. 2,900 show ho rahi hai. Free courses ki tuition fee nahi hai. Processing fee non-refundable hai, lekin published policy ke mutabiq course transfer ya next batch mein deferment ki request ki ja sakti hai.\nOfficial Payment Guide: https://pftpedu.org/how-to-pay',
+  'admission processing fee, 2900, paypro, psid, bills payments, jazzcash, easypaisa, tuition fee free, how to pay',
+  'PFTP Accounts & Admissions',
+  'active'
+),
+
+-- Step 9: Access Portal & Classes
+(
+  'Admission Process',
+  'en',
+  'What happens after my payment is confirmed?',
+  'After fee payment what next?|When will I get class access?|Student portal activation|What to do after payment?',
+  'Once your payment is confirmed and your portal access is activated, log in to your student portal and follow the instructions provided there for accessing your learning materials and classes.\n\nRegistration Link: https://pftpedu.org/registration\nFAQs: https://pftpedu.org/faqs',
+  'after payment confirmed, student portal access, learning materials, classes access, portal activation',
+  'PFTP Student Support',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'میری ادائیگی کی تصدیق کے بعد کیا ہوگا؟',
+  'فیس جمع کروانے کے بعد کیا کرنا ہے؟|کلاسز کب شروع ہوں گی؟|پورٹل ایکٹیویشن کے بعد کیا ہوگا؟',
+  'جب آپ کی ادائیگی کی تصدیق ہو جائے اور پورٹل فعال ہو جائے تو اپنے اسٹوڈنٹ پورٹل میں لاگ اِن کریں اور وہاں دی گئی ہدایات کے مطابق اپنی کلاسز اور تعلیمی مواد تک رسائی حاصل کریں۔\n\nرجسٹریشن لنک: https://pftpedu.org/registration\nاکثر پوچھے گئے سوالات (FAQs): https://pftpedu.org/faqs',
+  'ادائیگی کی تصدیق کے بعد, اسٹوڈنٹ پورٹل, کلاسز تک رسائی, تعلیمی مواد, پورٹل لاگ ان',
+  'PFTP Student Support',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Meri payment confirm hone ke baad kya hoga?',
+  'Fee pay karne ke baad kya karna hoga?|Classes access kab milega?|Portal activate hone ke baad kya karein?',
+  'Jab aapki payment confirm ho jaye aur portal activate ho jaye to apne student portal mein login karein aur wahan di gayi instructions ke mutabiq classes aur learning material access karein.\n\nRegistration Link: https://pftpedu.org/registration\nFAQs: https://pftpedu.org/faqs',
+  'payment confirm hone ke baad, student portal login, classes access, learning material, portal activate',
+  'PFTP Student Support',
+  'active'
+),
+
+-- Counsellor Next Step & Official Links
+(
+  'Admission Process',
+  'en',
+  'Would you like me to share the direct admission form link so you can start your registration?',
+  'Share admission link|Send registration link|Admission link please|How to register now?|Direct link for admission',
+  'Here is the direct link to start your admission:\n👉 https://pftpedu.org/registration\n\nYou can also explore:\n• How to Pay Guide: https://pftpedu.org/how-to-pay\n• Frequently Asked Questions (FAQs): https://pftpedu.org/faqs\n\nLet me know if you need any assistance while filling out the form!',
+  'direct admission form link, registration link, start registration, how to pay, faqs, pftpedu.org',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'ur',
+  'کیا آپ چاہتے ہیں کہ میں آپ کو داخلہ فارم کا براہِ راست لنک بھیج دوں تاکہ آپ اپنی رجسٹریشن شروع کر سکیں؟',
+  'داخلہ فارم کا لنک بھیج دیں|رجسٹریشن لنک چاہیے|ابھی داخلہ لینا ہے|براہ راست لنک',
+  'داخلہ شروع کرنے کے لیے براہِ راست لنک درج ذیل ہے:\n👉 https://pftpedu.org/registration\n\nمزید معلومات کے لیے:\n• فیس ادائیگی کی رہنمائی: https://pftpedu.org/how-to-pay\n• اکثر پوچھے جانے والے سوالات (FAQs): https://pftpedu.org/faqs\n\nفارم بھرنے کے دوران اگر کسی رہنمائی کی ضرورت ہو تو ضرور پوچھیں!',
+  'براہ راست داخلہ لنک, رجسٹریشن لنک, داخلہ فارم, فیس ادائیگی رہنمائی, اکثر پوچھے گئے سوالات',
+  'PFTP Admissions Desk',
+  'active'
+),
+(
+  'Admission Process',
+  'roman_ur',
+  'Kya aap chahte hain ke main aapko admission form ka direct link bhej doon taake aap apni registration start kar sakein?',
+  'Admission link bhej dein|Registration link chahiye|Direct admission link|Abhi apply karna hai|Form link please',
+  'Admission start karne ke liye ye raha direct link:\n👉 https://pftpedu.org/registration\n\nMazeed official links:\n• How to Pay Guide: https://pftpedu.org/how-to-pay\n• FAQs: https://pftpedu.org/faqs\n\nAgar form fill karte waqt koi bhi confusion ho to zaroor poochein!',
+  'direct admission link, registration start, form link, how to pay, faqs, pftpedu.org',
+  'PFTP Admissions Desk',
+  'active'
+),
+
+-- ===================================================================
+-- 19. ABOUT COMPANY / PFTP OVERVIEW
+-- ===================================================================
+(
+  'About PFTP',
+  'en',
+  'Could you please tell me about your company?',
+  'Tell me about your company|What is PFTP?|Tell me about PFTP|What does PFTP stand for?|Company introduction|About PFTP organization',
+  'PFTP stands for Professional Freelancing Training Program. It is a training platform focused on helping students develop practical IT and freelancing skills.\n\nWe offer training in different fields, including Digital Marketing, Graphic Design, Video Editing, Web Development, Artificial Intelligence, Cyber Security, SEO, and other professional skills.\n\nOur aim is to help students build practical knowledge, work on projects, improve their professional skills, and understand different career opportunities in the digital industry.\n\nOur courses are conducted online and include live classes, practical projects, and assessments. Students who successfully complete the required assessments can receive a certificate according to the program requirements.',
+  'tell me about your company, about company, what is pftp, pftp stand for, company introduction, training platform, pftp overview, institute information',
+  'Official PFTP Student Counselling & Information Desk',
+  'active'
+),
+(
+  'About PFTP',
+  'ur',
+  'اپنی کمپنی کے بارے میں بتائیں؟',
+  'آپ کی کمپنی کے بارے میں بتائیں؟|پی ایف ٹی پی کیا ہے؟|PFTP کا تعارف|ادارے کے بارے میں بتائیں|پی ایف ٹی پی کا مقصد کیا ہے؟',
+  'PFTP کا مکمل نام Professional Freelancing Training Program ہے۔ یہ ایک تربیتی پلیٹ فارم ہے جس کا مقصد طلبہ کو عملی آئی ٹی اور فری لانسنگ کی مہارتیں سکھانا ہے۔\n\nہمارے یہاں مختلف شعبوں میں کورسز کروائے جاتے ہیں، جن میں ڈیجیٹل مارکیٹنگ، گرافک ڈیزائننگ، ویڈیو ایڈیٹنگ، ویب ڈویلپمنٹ، آرٹیفیشل انٹیلیجنس، سائبر سیکیورٹی، SEO اور دیگر پروفیشنل اسکلز شامل ہیں۔\n\nہمارا مقصد طلبہ کو عملی مہارتیں سکھانا، پراجیکٹس پر کام کرنے کا موقع دینا، ان کی پروفیشنل صلاحیتوں کو بہتر بنانا اور ڈیجیٹل انڈسٹری میں موجود مختلف کیریئر کے مواقع سے آگاہ کرنا ہے۔\n\nہمارے کورسز آن لائن کروائے جاتے ہیں، جن میں لائیو کلاسز، عملی پراجیکٹس اور اسیسمنٹس شامل ہیں۔ مطلوبہ اسیسمنٹس کامیابی سے مکمل کرنے والے طلبہ پروگرام کی شرائط کے مطابق سرٹیفکیٹ حاصل کر سکتے ہیں۔',
+  'اپنی کمپنی کے بارے میں بتائیں, آپ کی کمپنی کے بارے میں بتائیں, پی ایف ٹی پی کیا ہے, کمپنی کا تعارف, ادارے کا تعارف, PFTP تعارف',
+  'Official PFTP Student Counselling & Information Desk',
+  'active'
+),
+(
+  'About PFTP',
+  'roman_ur',
+  'Aap apni company ke baare mein batayein?',
+  'Apni company ke baare mein batayein?|PFTP kya hai?|PFTP ka intro|Company introduction|PFTP ka full name kya hai?|Company ki details',
+  'PFTP ka full name Professional Freelancing Training Program hai. Yeh aik training platform hai jiska maqsad students ko practical IT aur freelancing skills sikhana hai.\n\nHamare yahan mukhtalif fields mein courses offer kiye jate hain, jin mein Digital Marketing, Graphic Design, Video Editing, Web Development, Artificial Intelligence, Cyber Security, SEO aur doosri professional skills shamil hain.\n\nHamara maqsad students ko practical skills sikhana, projects par kaam karwana, unki professional abilities improve karna aur digital industry mein career opportunities ke baare mein guide karna hai.\n\nHamare courses online conduct kiye jate hain, jin mein live classes, practical projects aur assessments shamil hain. Jo students required assessments successfully complete karte hain, woh program requirements ke mutabiq certificate hasil kar sakte hain.',
+  'aap apni company ke baare mein batayein, apni company ke bare me bataye, pftp kya hai, pftp intro, company introduction, company details',
+  'Official PFTP Student Counselling & Information Desk',
+  'active'
+),
+
+-- ===================================================================
+-- 20. STUDENT EDUCATION STATUS & DISCOVERY SCENARIOS
+-- ===================================================================
+(
+  'Student Discovery',
+  'en',
+  'Are you currently studying, or have you completed your education?',
+  'Am I eligible while studying?|Can I join while in college?|Are you currently studying or finished education?|Education background check',
+  'PFTP welcomes both current students and graduates! Could you please share your current educational status:\n\n1. Currently studying (school, college, degree, or semester)\n2. Completed education (Matric, Inter, Graduation, Masters)\n3. Discontinued or taking a gap in studies\n4. Not currently studying (working or job hunting)\n\nTell me which one applies to you, and I will recommend the best course according to your background!',
+  'currently studying, completed education, education status, studying or finished, student discovery, qualification background',
+  'Tailored Career Consultation',
+  'active'
+),
+(
+  'Student Discovery',
+  'ur',
+  'کیا آپ اس وقت تعلیم حاصل کر رہے ہیں یا اپنی تعلیم مکمل کر چکے ہیں؟',
+  'کیا پڑھائی کے دوران داخلہ ہو سکتا ہے؟|تعلیمی قابلیت کیا ہے؟|کیا آپ پڑھ رہے ہیں یا تعلیم مکمل ہو گئی ہے؟',
+  'پی ایف ٹی پی میں زیرِ تعلیم طلبہ اور فارغ التحصیل تمام افراد کے لیے کورسز موجود ہیں! براہِ کرم اپنی تعلیمی صورتحال بتائیں:\n\n1. اس وقت زیرِ تعلیم ہیں (کلاس، ڈگری یا سمسٹر)\n2. تعلیم مکمل کر چکے ہیں (میٹرک، انٹر، گریجویشن وغیرہ)\n3. پڑھائی جاری نہیں رکھ سکے\n4. اس وقت نہیں پڑھ رہے (ملازمت کر رہے ہیں یا تلاش میں ہیں)\n\nاپنی موجودہ کیفیت بتائیں تاکہ آپ کے لیے موزوں ترین کورس تجویز کیا جا سکے!',
+  'تعلیم حاصل کر رہے ہیں, تعلیم مکمل کر چکے ہیں, زیر تعلیم, تعلیمی صورتحال, اہلیت, اسٹوڈنٹ تعارف',
+  'Tailored Career Consultation',
+  'active'
+),
+(
+  'Student Discovery',
+  'roman_ur',
+  'Kya aap abhi study kar rahe hain ya apni education complete kar chuke hain?',
+  'Kya parhai ke sath course kar sakte hain?|Kya aap student hain ya graduate?|Education complete hai ya parh rahe hain?|Abhi study kar rahe hain?',
+  'PFTP mein students aur graduates dono ke liye behtareen practical courses hain! Barah-e-karam apni current situation batayein:\n\n1. Currently study kar rahe hain (school, college ya university)\n2. Education complete kar chuke hain (Matric, Inter, Graduation)\n3. Parhai discontinue ho gayi hai\n4. Abhi parh nahi rahe (job kar rahe hain ya search kar rahe hain)\n\nAap batayein taake main aapke background ke mutabiq best course recommend kar sakun!',
+  'abhi study kar rahe hain, education complete kar chuke hain, student hain ya pass out, study status, qualification',
+  'Tailored Career Consultation',
+  'active'
+),
+(
+  'Student Discovery',
+  'en',
+  'I am currently studying',
+  'I am a student|I am currently enrolled|Still studying|I am in college|I am doing university|I am in school|Currently studying',
+  'That''s great! Which class, degree, or semester are you currently enrolled in?\n\nSharing this helps us recommend a course that comfortably fits alongside your study schedule (such as Graphic Design, Web Development, Python, or Digital Marketing).',
+  'currently studying, i am a student, still studying, college student, university student, semester, enrolled',
+  'Student Skill-Building Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'ur',
+  'میں اس وقت زیرِ تعلیم ہوں',
+  'میں ابھی پڑھ رہا ہوں|میں اسٹوڈنٹ ہوں|میری پڑھائی جاری ہے|میں کالج میں ہوں|میں یونیورسٹی کا طالب علم ہوں',
+  'یہ بہت اچھی بات ہے! آپ اس وقت کس کلاس، ڈگری یا سمسٹر میں زیرِ تعلیم ہیں؟\n\nیہ معلومات ہمیں آپ کے تعلیمی اوقات اور صلاحیت کے مطابق بہترین کورس منتخب کرنے میں مدد دے گی۔',
+  'میں اس وقت زیر تعلیم ہوں, میں ابھی پڑھ رہا ہوں, میں اسٹوڈنٹ ہوں, پڑھائی جاری ہے, کالج اسٹوڈنٹ, یونیورسٹی طالب علم',
+  'Student Skill-Building Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'roman_ur',
+  'Main currently study kar raha hoon',
+  'Main abhi parh raha hoon|Main student hoon|Meri study jari hai|Main college mein hoon|Main university student hoon|Still studying',
+  'Yeh bohat achi baat hai! Aap is waqt kis class, degree ya semester mein study kar rahe hain?\n\nYeh batane se hum aapke study schedule ke mutabiq behtareen flexible course recommend kar sakenge.',
+  'main currently study kar raha hoon, main abhi parh raha hoon, main student hoon, study jari hai, semester mein hoon',
+  'Student Skill-Building Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'en',
+  'I have completed my education',
+  'I finished my studies|I graduated|Education completed|Completed my degree|I am a graduate|Done with studies',
+  'That''s great! What is your highest completed qualification?\n\nWhether you have completed Matric, Intermediate, Graduation (BS/BA), or a Master''s degree, PFTP offers career-oriented courses to help you build practical, job-ready, and freelancing skills.',
+  'completed education, i have completed my education, finished studies, graduated, degree completed, highest qualification',
+  'Graduate & Professional Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'ur',
+  'میں اپنی تعلیم مکمل کر چکا ہوں',
+  'میری پڑھائی مکمل ہو چکی ہے|میں گریجویٹ ہوں|تعلیم مکمل ہے|ڈگری مکمل ہو گئی ہے|میں نے پڑھائی مکمل کر لی ہے',
+  'بہت خوب! آپ نے اپنی تعلیم میں سب سے آخری کون سی ڈگری یا کلاس مکمل کی ہے؟\n\nخواہ آپ نے میٹرک، انٹر، گریجویشن یا ماسٹرز کیا ہو، PFTP کے عملی کورسز آپ کو ڈیجیٹل انڈسٹری میں قدم رکھنے میں مدد فراہم کرتے ہیں۔',
+  'میں اپنی تعلیم مکمل کر چکا ہوں, پڑھائی مکمل ہو چکی ہے, میں گریجویٹ ہوں, ڈگری مکمل ہے, تعلیم مکمل ہے',
+  'Graduate & Professional Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'roman_ur',
+  'Maine apni education complete kar li hai',
+  'Main education complete kar chuka hoon|Meri study complete ho chuki hai|Main graduate hoon|Degree complete hai|Parhai mukammal hai',
+  'Bohat khoob! Aap ne apni education mein sab se aakhri konsi degree ya class complete ki hai?\n\nChahe aapne Matric, Inter, Graduation ya Masters kiya ho, PFTP ke career-focused courses aapko practical skills aur earning opportunities sikhate hain.',
+  'maine apni education complete kar li hai, education complete kar chuka hoon, study complete, graduate hoon, degree complete',
+  'Graduate & Professional Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'en',
+  'I discontinued my education',
+  'I dropped out|I left studies|Discontinued education|Studies discontinued|Could not continue education|Had to leave school',
+  'No problem. Could you please tell me the last class or qualification you completed?\n\nPFTP strongly believes in skill empowerment. Practical skills like Graphic Design, Video Editing, Freelancing, and Web Development do not require advanced academic degrees to get started!',
+  'discontinued education, i discontinued my education, dropped out, left studies, incomplete education, last qualification',
+  'Practical Skills Career Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'ur',
+  'میں نے اپنی تعلیم چھوڑ دی ہے',
+  'میں پڑھائی جاری نہیں رکھ سکا|پڑھائی چھوٹ گئی تھی|تعلیم ادھوری رہ گئی|میں نے اسکول چھوڑ دیا|ڈراپ آؤٹ',
+  'کوئی بات نہیں۔ کیا آپ بتا سکتے ہیں کہ آپ نے آخری کون سی کلاس یا تعلیمی قابلیت مکمل کی تھی؟\n\nپی ایف ٹی پی کا ماننا ہے کہ ہنر سب سے بڑی طاقت ہے۔ گرافک ڈیزائننگ، ویڈیو ایڈیٹنگ، فری لانسنگ اور ای کامرس جیسے کورسز میں کامیابی کے لیے بڑی ڈگریوں کے بجائے عملی محنت کی ضرورت ہوتی ہے۔',
+  'میں نے اپنی تعلیم چھوڑ دی ہے, پڑھائی جاری نہیں رکھ سکا, تعلیم ادھوری ہے, پڑھائی چھوٹ گئی, ڈراپ آؤٹ',
+  'Practical Skills Career Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'roman_ur',
+  'Maine study discontinue kar di hai',
+  'Maine parhai chor di hai|Study incomplete hai|Parhai jari nahi rakh saka|Drop out hoon|Studies left|Parhai discontinue ho gayi',
+  'Koi baat nahi. Kya aap bata sakte hain ke aap ne aakhri konsi class ya qualification complete ki thi?\n\nPFTP ka maqsad har fard ko practical skill sikhana hai. Graphic Design, Video Editing, Freelancing aur E-Commerce jaisi skills ke liye bari degree ki shart nahi hoti, balkeh mehnat aur practice ahem hai.',
+  'maine study discontinue kar di hai, parhai chor di, study incomplete, parhai jari nahi rakh saka, drop out, aakhri class',
+  'Practical Skills Career Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'en',
+  'I am not currently studying',
+  'Not studying right now|I am free currently|Not in any school or college|Currently free|Not studying|Unemployed looking for skills',
+  'I understand. Are you currently working, looking for a job, or planning to learn a new skill?\n\nKnowing your current goal allows us to recommend courses that help you upskill, switch fields, or start earning through freelancing.',
+  'not currently studying, not studying right now, currently free, looking for job, planning to learn skill, working',
+  'Career Upskilling Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'ur',
+  'میں اس وقت پڑھ نہیں رہا',
+  'میں اس وقت فارغ ہوں|ابھی پڑھائی نہیں کر رہا|کوئی پڑھائی نہیں ہو رہی|نوکری کی تلاش ہے|کوئی نیا ہنر سیکھنا ہے',
+  'میں سمجھ سکتا ہوں۔ کیا آپ اس وقت ملازمت کر رہے ہیں، نوکری تلاش کر رہے ہیں یا کوئی نئی مہارت سیکھنے کا ارادہ رکھتے ہیں؟\n\nاپنا مقصد بتائیں تاکہ ہم آپ کو ایسا کورس بتا سکیں جس سے آپ اپنی آمدنی اور کیریئر کو بہتر بنا سکیں۔',
+  'میں اس وقت پڑھ نہیں رہا, میں اس وقت فارغ ہوں, ابھی پڑھائی نہیں کر رہا, نوکری تلاش, نئی مہارت',
+  'Career Upskilling Track',
+  'active'
+),
+(
+  'Student Discovery',
+  'roman_ur',
+  'Main abhi study nahi kar raha hoon',
+  'Main abhi parh nahi raha|Filhal free hoon|Study nahi kar raha|Job dhoond raha hoon|Nayi skill seekhni hai|Free time hai',
+  'Main samajh sakta hoon. Kya aap is waqt job kar rahe hain, job talash kar rahe hain ya koi nayi skill seekhne ka irada rakhte hain?\n\nApna goal share karein taake hum aapko freelancing ya job-oriented best skill recommend kar sakein.',
+  'main abhi study nahi kar raha hoon, parh nahi raha, free hoon, job dhoond raha hoon, nayi skill seekhni hai, job kar rahe hain',
+  'Career Upskilling Track',
+  'active'
+),
+
+-- ===================================================================
+-- 21. COURSES INQUIRY & COMPLETE DIRECTORY (ROMAN URDU, EN, UR)
+-- ===================================================================
+(
+  'Courses Overview',
+  'roman_ur',
+  'Mujhy ap k courses k bary my janna hy?',
+  'Mujhe aap ke courses ke baare mein janna hai?|Aap kon sy courses karwaty hy?|Kon sy courses karwaty hy?|Courses k baray me batayein|Mujhy courses ki detail chahiye|PFTP k courses kon kon say hain?|Aapke paas konse courses hain?|Courses list Roman Urdu',
+  'PFTP 16 mukhtalif specialized practical skill-building courses offer karta hai:\n\n1. Digital Marketing\n2. Freelancing\n3. Graphic Design\n4. Video Editing\n5. YouTube Automation\n6. Content Writing\n7. Search Engine Optimization (SEO)\n8. Full Stack Web Development\n9. Artificial Intelligence (AI)\n10. Cyber Security\n11. Data Science\n12. Python Programming\n13. E-Commerce\n14. QuickBooks\n15. English Language\n16. IELTS Preparation\n\nAap kis field mein interest rakhte hain? Aap apni education level batayein, aur main aapko behtareen course guide karunga!',
+  'mujhy ap k courses k bary my janna hy, kon sy courses karwaty hy, courses k baray me batayein, courses list, courses details, konse courses',
+  'Tech, Creative, Marketing & Business Programs',
+  'active'
+),
+(
+  'Courses Overview',
+  'en',
+  'I need to know about your courses?',
+  'Which courses do you offer?|What courses do you offer?|Whatcourses?|I want to know about your courses|Tell me about your courses|Show me the courses list|What can I study at PFTP?|Available courses list',
+  'PFTP offers 16 specialized, practical skill-building courses:\n\n1. Digital Marketing\n2. Freelancing\n3. Graphic Design\n4. Video Editing\n5. YouTube Automation\n6. Content Writing\n7. Search Engine Optimization (SEO)\n8. Full Stack Web Development\n9. Artificial Intelligence (AI)\n10. Cyber Security\n11. Data Science\n12. Python Programming\n13. E-Commerce\n14. QuickBooks\n15. English Language\n16. IELTS Preparation\n\nWhich field matches your background or interest? Tell me your education level, and I will guide you!',
+  'i need you know about your courses, i need to know about your courses, which courses do you offer, what courses, whatcourses, course offerings, all courses',
+  'Tech, Creative, Marketing & Business Programs',
+  'active'
+),
+(
+  'Courses Overview',
+  'ur',
+  'مجھے آپ کے کورسز کے بارے میں جاننا ہے؟',
+  'آپ کون سے کورسز کرواتے ہیں؟|پی ایف ٹی پی میں کون سے کورسز ہوتے ہیں؟|تمام کورسز کی تفصیلات|کورسز کی فہرست دکھائیں|کون کون سے کورسز کرواتے ہیں؟',
+  'پی ایف ٹی پی (PFTP) 16 اہم اور عملی اسکل بلڈنگ کورسز کرواتا ہے:\n\n1. ڈیجیٹل مارکیٹنگ (Digital Marketing)\n2. فری لانسنگ (Freelancing)\n3. گرافک ڈیزائننگ (Graphic Design)\n4. ویڈیو ایڈیٹنگ (Video Editing)\n5. یوٹیوب آٹومیشن (YouTube Automation)\n6. کانٹینٹ رائٹنگ (Content Writing)\n7. سرچ انجن آپٹیمائزیشن (SEO)\n8. فل اسٹیک ویب ڈویلپمنٹ (Full Stack Web Development)\n9. آرٹیفیشل انٹیلیجنس (AI)\n10. سائبر سیکیورٹی (Cyber Security)\n11. ڈیٹا سائنس (Data Science)\n12. پائتھن پروگرامنگ (Python Programming)\n13. ای کامرس (E-Commerce)\n14. کوئیک بکس (QuickBooks)\n15. انگلش لینگویج (English Language)\n16. آئلٹس تیاری (IELTS Preparation)\n\nکون سا شعبہ آپ کی دلچسپی اور تعلیمی قابلیت سے میل کھاتا ہے؟ مجھے اپنی تعلیمی قابلیت بتائیں، اور میں آپ کی مکمل رہنمائی کروں گا!',
+  'مجھے آپ کے کورسز کے بارے میں جاننا ہے, آپ کون سے کورسز کرواتے ہیں, تمام کورسز, کورسز لسٹ, پروگرامز',
+  'Tech, Creative, Marketing & Business Programs',
+  'active'
+),
+
+-- ===================================================================
+-- 23. PHYSICAL CLASSES / ON-CAMPUS TRAINING
+-- ===================================================================
+(
+  'Physical Classes / On-Campus Training',
+  'en',
+  'Do you offer physical classes too?',
+  'Do you offer physical classes too?|Are physical courses or classes also offered?|Do you offer in-person classes?|Are there on-campus classes?|Can I attend physical classes?|Is PFTP training physical or online?|Do you have physical campus training?|Physical classes|On-campus training|Physical courses',
+  'Currently, PFTP offers its training programs 100% online. Physical or on-campus classes are not offered as part of the current training programs. Students can attend live online sessions and access their learning materials through the online learning system from anywhere.',
+  'physical classes, on campus training, physical courses, do you offer physical classes too, are physical courses or classes also offered, campus classes, in-person training, physical training, attend physically, 100% online, live online sessions, online learning system',
+  '100% Online Live Training with Learning Management System',
+  'active'
+),
+(
+  'Physical Classes / On-Campus Training',
+  'ur',
+  'کیا فزیکل کلاسز بھی کروائی جاتی ہیں؟',
+  'کیا فزیکل کلاسز بھی کروائی جاتی ہیں؟|کیا کیمپس میں کلاسز ہوتی ہیں؟|کیا آپ فزیکل کورسز بھی کرواتے ہیں؟|مجھے فزیکل کورسز کے بارے میں پوچھنا ہے|کیا کلاسز آن لائن ہیں یا فزیکل؟|کیا آن کیمپس ٹریننگ دستیاب ہے؟|فزیکل کلاسز|آن کیمپس کورسز',
+  'فی الحال پی ایف ٹی پی اپنے تربیتی پروگرامز مکمل طور پر آن لائن فراہم کرتا ہے۔ موجودہ تربیتی پروگرامز میں فزیکل یا کیمپس میں کلاسز کی سہولت دستیاب نہیں ہے۔ طلبہ کہیں سے بھی لائیو آن لائن سیشنز میں شرکت کر سکتے ہیں اور آن لائن لرننگ سسٹم کے ذریعے اپنا تعلیمی مواد حاصل کر سکتے ہیں۔',
+  'کیا فزیکل کلاسز بھی کروائی جاتی ہیں, فزیکل کورسز, کیمپس کلاسز, آن کیمپس ٹریننگ, آن لائن یا فزیکل, لائیو سیشنز, آن لائن لرننگ',
+  '100% Online Live Training with Learning Management System',
+  'active'
+),
+(
+  'Physical Classes / On-Campus Training',
+  'roman_ur',
+  'Kya physical classes bhi karwai jati hain?',
+  'Kya physical classes bhi karwai jati hain?|Do you offer physical classes too?|Are physical courses or classes also offered?|Mujhe physical courses ke baare mein poochna hai.|Physical classes hoti hain?|Kya physical courses karwate hain?|Campus par classes hoti hain ya online?|Kya on campus training hoti hai?|Mujhy physical class leni hai|Physical classes available hain?|Physical classes',
+  'Filhal PFTP apne training programs mukammal tor par online provide karta hai. Mojooda training programs mein physical ya campus par classes ki sahulat dastiyab nahi hai. Students kahin se bhi live online sessions attend kar sakte hain aur online learning system ke zariye apna learning material hasil kar sakte hain.',
+  'kya physical classes bhi karwai jati hain, do you offer physical classes too, are physical courses or classes also offered, mujhe physical courses ke baare mein poochna hai, physical classes, on campus training, campus par classes, physical courses, physical ya online, 100% online, live online sessions',
+  '100% Online Live Training with Learning Management System',
+  'active'
+);
+
+
+
+-- ===================================================================
+-- 24. QUALIFICATION-SPECIFIC COUNSELLING & POLICY FAQs
+-- ===================================================================
+INSERT INTO `knowledge_base` (`category`, `language`, `question`, `question_variations`, `answer`, `keywords`, `possible_careers`, `status`) VALUES
+(
+  'Counselling - Course Selection & Opening',
+  'en',
+  'What courses does PFTP offer?',
+  'What courses does PFTP offer?|Which course should I take?|I want to know about your courses and admission|Courses list and guidance|PFTP course selection',
+  'Welcome to the Pakistan Freelancing Training Program (PFTP) Admission Counselling! We currently offer 16 professional training courses ranging from Web Development and AI to Digital Marketing and Freelancing. To help you choose the best path, could you please share your current educational background (e.g., Matric, FSc, BSCS)?',
+  'what courses does pftp offer, which course should i choose, admission counselling, educational background, 16 professional training courses, course recommendation',
+  '16 Skill Development & Freelancing Career Tracks',
+  'active'
+),
+(
+  'Counselling - Course Selection & Opening',
+  'roman_ur',
+  'Mujhe kis course mein admission lena chahiye? Courses ki list bata dein.',
+  'Mujhe kis course mein admission lena chahiye? Courses ki list bata dein.|Kis course mein admission lena chahiye?|Courses ki list bata dein|Kaun sa course best hai?|Mere liye konsa course acha rahega?|Admission lene ke liye courses list',
+  'PFTP admission counselling mein khush amdeed! Humare paas 16 professional courses available hain. Sahi course chunne ke liye, kya aap bata sakte hain ke aapki current educational qualification kya hai?',
+  'mujhe kis course mein admission lena chahiye, courses ki list bata dein, sahi course chunne ke liye, current educational qualification, 16 professional courses',
+  '16 Skill Development & Freelancing Career Tracks',
+  'active'
+),
+(
+  'Counselling - Course Selection & Opening',
+  'ur',
+  'PFTP میں کون سے کورسز دستیاب ہیں؟',
+  'PFTP میں کون سے کورسز دستیاب ہیں؟|مجھے کس کورس میں داخلہ لینا چاہیے؟|کورسز کی فہرست بتائیں|میرے لیے کون سا کورس بہتر رہے گا؟|پی ایف ٹی پی کورسز',
+  'پی ایف ٹی پی ایڈمیشن کونسلنگ میں خوش آمدید! ہمارے پاس ۱۶ پیشہ ورانہ کورسز دستیاب ہیں۔ آپ کی تعلیمی قابلیت (مثلاً میٹرک، ایف ایس سی، یا بی ایس) کیا ہے؟',
+  'پی ایف ٹی پی میں کون سے کورسز دستیاب ہیں, مجھے کس کورس میں داخلہ لینا چاہیے, کورسز کی فہرست بتائیں, تعلیمی قابلیت',
+  '16 Skill Development & Freelancing Career Tracks',
+  'active'
+),
+(
+  'Counselling - Class 8 and 9 Underage Inquiry',
+  'en',
+  'I am currently studying in Class 8. Can I get admission in PFTP?',
+  'I am currently studying in Class 8. Can I get admission in PFTP?|Can an 8th class student join PFTP?|Class 9 student admission|I am in 8th grade|Minimum age or class for PFTP admission|Is Class 8 eligible?|Class 8th admission',
+  'According to PFTP admission criteria, the minimum educational eligibility is Matric or above. Since you are in Class 8, you are not eligible for formal program enrollment right now. However, you can build basic computer literacy and typing skills to prepare for the future!
+
+Focus on your school studies while exploring basic logic and computer concepts.',
+  'class 8, class 9, 8th class, 9th class, minimum educational eligibility, matric or above, not eligible for formal program enrollment, basic computer literacy',
+  'Foundation Computer Literacy (Matric Required for Formal Admission)',
+  'active'
+),
+(
+  'Counselling - Class 8 and 9 Underage Inquiry',
+  'roman_ur',
+  'Main Class 8 mein hoon, kya admission mil sakta hai?',
+  'I am currently studying in Class 8. Can I get admission in PFTP?|Main Class 8 mein hoon, kya admission mil sakta hai?|Kya 8th class ke student admission le sakte hain?|Class 9 student admission|Class 8 eligibility',
+  'PFTP admission criteria ke mutabiq, minimum educational eligibility Matric ya us se upar hai. Kyunki aap Class 8 mein hain, is liye aap filhal formal program mein admission ke ahal nahi hain. Albatta, aap future ki tayari ke liye basic computer skills seekh sakte hain!',
+  'class 8, 8th class, class 9, admission criteria, matric ya us se upar, formal program mein admission, basic computer skills',
+  'Foundation Computer Literacy (Matric Required for Formal Admission)',
+  'active'
+),
+(
+  'Counselling - Class 8 and 9 Underage Inquiry',
+  'ur',
+  'میں آٹھویں جماعت میں ہوں، کیا داخلہ مل سکتا ہے؟',
+  'میں آٹھویں جماعت میں ہوں، کیا داخلہ مل سکتا ہے؟|کیا 8ویں کلاس کے طلباء داخلہ لے سکتے ہیں؟|کلاس 8 داخلہ اہلیت|نویں کلاس کے لیے کورسز|آٹھویں کلاس داخلہ',
+  'پی ایف ٹی پی کے داخلہ معیار کے مطابق، کم از کم تعلیمی قابلیت میٹرک یا اس سے اوپر ہے۔ چونکہ آپ آٹھویں جماعت میں ہیں، اس لیے آپ فی الحال باضابطہ پروگرام میں داخلے کے اہل نہیں ہیں۔ تاہم، آپ مستقبل کی تیاری کے لیے بنیادی کمپیوٹر کی مہارتیں سیکھ سکتے ہیں!',
+  'آٹھویں جماعت, 8ویں کلاس, داخلہ معیار, کم از کم تعلیمی قابلیت میٹرک, بنیادی کمپیوٹر کی مہارتیں',
+  'Foundation Computer Literacy (Matric Required for Formal Admission)',
+  'active'
+),
+(
+  'Counselling - Matric Science',
+  'en',
+  'I have completed Matric Science. What should I study next?',
+  'I have completed Matric Science. What should I study next?|Matric science student course recommendation|I did matric science|Best course after matric science|Which course is good after 10th science?|Matric with science subjects',
+  'Educational Background: Matric Science
+Identified Interests: Technical & analytical foundation
+Primary Recommendation: Python or Full Stack Web Development
+Alternative Options: Artificial Intelligence, Graphic Design
+Why: Having a science background provides a great analytical baseline to start coding and technical problem-solving.
+Next Step: Do you have any prior programming exposure, or are you a complete beginner?',
+  'matric science, completed matric science, what should i study next, python, full stack web development, artificial intelligence, science background',
+  'Junior Web Developer; Python Programmer; Technical Problem Solver',
+  'active'
+),
+(
+  'Counselling - Matric Science',
+  'roman_ur',
+  'Main ne Matric Science kiya hai, mere liye konsa course best hai?',
+  'I have completed Matric Science. What should I study next?|Main ne Matric Science kiya hai, mere liye konsa course best hai?|Matric science ke baad kya karna chahiye?|Matric science student courses|Matric science k baad IT course',
+  'Matric Science ke background ke sath aapki analytical foundation mazboot hai. Hum primary course ke tor par Python ya Full Stack Web Development recommend karte hain, jabkay Artificial Intelligence ek alternative hai. Kya aap basic programming se shuru karna chahenge?',
+  'matric science, matric science ke baad, python, full stack web development, artificial intelligence, analytical foundation, basic programming',
+  'Junior Web Developer; Python Programmer; Technical Problem Solver',
+  'active'
+),
+(
+  'Counselling - Matric Science',
+  'ur',
+  'میٹرک سائنس کے بعد کون سا کورس بہتر ہے؟',
+  'میٹرک سائنس کے بعد کون سا کورس بہتر ہے؟|میں نے میٹرک سائنس کیا ہے آگے کیا سیکھوں؟|میٹرک سائنس طلباء کے لیے کورسز|میٹرک کے بعد آئی ٹی کورس',
+  'میٹرک سائنس کے پس منظر کے ساتھ آپ کی تجزیاتی بنیاد مضبوط ہے۔ ہم بنیادی کورس کے طور پر پائتھن یا فُل اسٹیک ویب ڈویلپمنٹ تجویز کرتے ہیں، جبکہ آرٹیفیشل انٹیلی جنس ایک متبادل ہے۔ کیا آپ بنیادی پروگرامنگ سے شروعات کرنا چاہیں گے؟',
+  'میٹرک سائنس, میٹرک سائنس کے بعد, پائتھن, فُل اسٹیک ویب ڈویلپمنٹ, آرٹیفیشل انٹیلی جنس, پروگرامنگ',
+  'Junior Web Developer; Python Programmer; Technical Problem Solver',
+  'active'
+),
+(
+  'Counselling - Matric Arts',
+  'en',
+  'I have completed Matric Arts. What should I study?',
+  'I have completed Matric Arts. What should I study?|Best course for matric arts student|Matric arts career options|I did matric arts|Matric with arts subjects',
+  'Matric Arts backgrounds focus well on expression and visual creativity. We recommend Graphic Design or Content Writing as your primary starting points, with Video Editing as an alternative. Do you prefer visual design or writing?',
+  'matric arts, completed matric arts, graphic design, content writing, video editing, visual creativity, design or writing',
+  'Graphic Designer; Content Creator; Freelance Copywriter',
+  'active'
+),
+(
+  'Counselling - Matric Arts',
+  'roman_ur',
+  'Main ne Matric Arts kiya hai, mere liye konsa course best hai?',
+  'Main ne Matric Arts kiya hai, mere liye konsa course best hai?|Matric Arts ke baad kya karna chahiye?|Matric arts student course guidance|Matric arts IT courses',
+  'Matric Arts ka background expression aur visual creativity par focus karta hai. Hum aapke liye Graphic Design ya Content Writing primary starting points recommend karte hain. Kya aapko visual design pasand hai ya writing?',
+  'matric arts, matric arts ke baad, graphic design, content writing, visual creativity, design ya writing',
+  'Graphic Designer; Content Creator; Freelance Copywriter',
+  'active'
+),
+(
+  'Counselling - Matric Arts',
+  'ur',
+  'میٹرک آرٹس کے بعد کون سا کورس کروں؟',
+  'میٹرک آرٹس کے بعد کون سا کورس کروں؟|میں نے میٹرک آرٹس کیا ہے|میٹرک آرٹس کے طلباء کے لیے بہترین کورسز|میٹرک آرٹس کریئر',
+  'میٹرک آرٹس کا پس منظر اظہار اور بصری تخلیق پر زور دیتا ہے۔ ہم آپ کے لیے گرافک ڈیزائن یا کانٹینٹ رائٹنگ کو بنیادی کورس کے طور پر تجویز کرتے ہیں۔ کیا آپ کو ویژول ڈیزائن پسند ہے یا لکھنا؟',
+  'میٹرک آرٹس, میٹرک آرٹس کے بعد, گرافک ڈیزائن, کانٹینٹ رائٹنگ, ویڈیو ایڈیٹنگ, بصری تخلیق',
+  'Graphic Designer; Content Creator; Freelance Copywriter',
+  'active'
+),
+(
+  'Counselling - FSc Pre-Medical',
+  'en',
+  'I did FSc Pre-Medical, which course is best for me?',
+  'I did FSc Pre-Medical, which course is best for me?|Pre-medical student transitioning to IT|Best course after FSc Pre-Medical|Can pre-medical students do AI or data science?|FSc pre medical career options',
+  'FSc Pre-Medical students possess strong analytical and research skills. We recommend Data Science or Artificial Intelligence as primary courses to transition into tech, with Content Writing as an alternative. Are you interested in coding?',
+  'fsc pre-medical, fsc pre medical, pre-medical student, data science, artificial intelligence, content writing, tech transition',
+  'Junior Data Analyst; AI Prompt Specialist; Medical & Health Content Writer',
+  'active'
+),
+(
+  'Counselling - FSc Pre-Medical',
+  'roman_ur',
+  'Main ne FSc Pre-Medical kiya hai, mere liye kaun sa course best hai?',
+  'Main ne FSc Pre-Medical kiya hai, mere liye kaun sa course best hai?|FSc pre-medical ke baad konsa course karun?|Pre medical student IT career|FSc pre medical course recommendation|FSc medical k baad',
+  'Educational Background: FSc Pre-Medical
+Identified Interests: Data analysis, research, or modern tech transition
+Primary Recommendation: Data Science or Artificial Intelligence
+Alternative Options: Content Writing, Digital Marketing
+Why: Pre-medical students possess strong statistical and analytical thinking, which makes them ideal for understanding data patterns and AI tools.
+Next Step: Kya aapka interest programming mein hai ya aap non-coding digital fields (jaise Digital Marketing) explore karna chahte hain?',
+  'fsc pre-medical, fsc pre medical kiya hai, mere liye kaun sa course best hai, data science, artificial intelligence, content writing, digital marketing',
+  'Junior Data Analyst; AI Prompt Specialist; Medical & Health Content Writer',
+  'active'
+),
+(
+  'Counselling - FSc Pre-Medical',
+  'ur',
+  'میں نے ایف ایس سی پری میڈیکل کیا ہے میرے لیے کون سا کورس بہترین ہے؟',
+  'میں نے ایف ایس سی پری میڈیکل کیا ہے میرے لیے کون سا کورس بہترین ہے؟|پری میڈیکل کے بعد آئی ٹی کورسز|ایف ایس سی پری میڈیکل طلباء کی رہنمائی|پری میڈیکل طلباء',
+  'ایف ایس سی پری میڈیکل کے طلباء میں بہترین تجزیاتی صلاحیتیں ہوتی ہیں۔ ہم ٹیک انڈسٹری میں جانے کے لیے ڈیٹا سائنس یا آرٹیفیشل انٹیلی جنس تجویز کرتے ہیں۔ کیا آپ کو کوڈنگ میں دلچسپی ہے؟',
+  'ایف ایس سی پری میڈیکل, پری میڈیکل کے بعد, ڈیٹا سائنس, آرٹیفیشل انٹیلی جنس, کانٹینٹ رائٹنگ, کوڈنگ',
+  'Junior Data Analyst; AI Prompt Specialist; Medical & Health Content Writer',
+  'active'
+),
+(
+  'Counselling - FSc Pre-Engineering',
+  'en',
+  'I did FSc Pre-Engineering, which course should I take?',
+  'I did FSc Pre-Engineering, which course should I take?|Best course for pre-engineering student|Pre-engineering career path|FSc pre engineering IT courses|Pre-engineering programming',
+  'FSc Pre-Engineering provides an excellent mathematical and logic foundation. We recommend Python, Artificial Intelligence, or Full Stack Web Development as your primary tracks. Do you want to build web applications or learn backend scripting?',
+  'fsc pre-engineering, pre-engineering student, python, artificial intelligence, full stack web development, backend scripting',
+  'Full Stack Developer; Software Engineer; Machine Learning Engineer',
+  'active'
+),
+(
+  'Counselling - FSc Pre-Engineering',
+  'roman_ur',
+  'Main ne FSc Pre-Engineering kiya hai, mere liye konsa course best hai?',
+  'Main ne FSc Pre-Engineering kiya hai, mere liye konsa course best hai?|FSc pre engineering ke baad kya karoon?|Pre engineering IT options|FSc pre engineering students',
+  'FSc Pre-Engineering ek excellent mathematical aur logic foundation deti hai. Hum Python, Artificial Intelligence, ya Full Stack Web Development primary tracks recommend karte hain. Kya aap web applications banana chahte hain ya backend scripting?',
+  'fsc pre-engineering, pre engineering, python, artificial intelligence, full stack web development, mathematical foundation',
+  'Full Stack Developer; Software Engineer; Machine Learning Engineer',
+  'active'
+),
+(
+  'Counselling - FSc Pre-Engineering',
+  'ur',
+  'میں نے ایف ایس سی پری انجینئرنگ کی ہے میرے لیے کون سا کورس اچھا ہے؟',
+  'میں نے ایف ایس سی پری انجینئرنگ کی ہے میرے لیے کون سا کورس اچھا ہے؟|پری انجینئرنگ کے بعد سافٹ ویئر کورس|ایف ایس سی پری انجینئرنگ رہنمائی|پری انجینئرنگ طلباء',
+  'ایف ایس سی پری انجینئرنگ ریاضی اور منطق کی بہترین بنیاد فراہم کرتی ہے۔ ہم آپ کے لیے پائتھن، آرٹیفیشل انٹیلی جنس یا فُل اسٹیک ویب ڈویلپمنٹ تجویز کرتے ہیں۔ کیا آپ ویب ایپلی کیشنز بنانا چاہتے ہیں یا پائتھن سیکھنا چاہتے ہیں؟',
+  'ایف ایس سی پری انجینئرنگ, پری انجینئرنگ کے بعد, پائتھن, آرٹیفیشل انٹیلی جنس, فُل اسٹیک ویب ڈویلپمنٹ, ریاضی اور منطق',
+  'Full Stack Developer; Software Engineer; Machine Learning Engineer',
+  'active'
+),
+(
+  'Counselling - FA Arts',
+  'en',
+  'I have an FA Arts background, what course should I choose?',
+  'I have an FA Arts background, what course should I choose?|Best courses after FA|FA students IT options|FA arts creative fields|I did FA in arts',
+  'An FA background is great for communication and creative fields. We recommend Content Writing, English Language, or Graphic Design as your starting options. Would you prefer improving your communication skills or learning design?',
+  'fa arts, fa background, content writing, english language, graphic design, communication skills, creative fields',
+  'Content Writer; Graphic Designer; Communications Specialist',
+  'active'
+),
+(
+  'Counselling - FA Arts',
+  'roman_ur',
+  'Main ne FA kiya hai, mujhe designing ya writing ka shauq hai.',
+  'Main ne FA kiya hai, mujhe designing ya writing ka shauq hai.|FA ke baad konsa course karna chahiye?|FA arts student career guidance|FA background courses|Main ne FA kiya hai',
+  'Educational Background: FA (Arts)
+Identified Interests: Creative design, visual storytelling, content creation
+Primary Recommendation: Graphic Design or Content Writing
+Alternative Options: Video Editing, Digital Marketing
+Why: FA backgrounds emphasize expression and creativity, which align perfectly with visual arts, branding, and content creation fields.
+Next Step: Kya aapko visually designing pasand hai ya words aur writing ke sath kaam karna?',
+  'main ne fa kiya hai, mujhe designing ya writing ka shauq hai, graphic design, content writing, video editing, digital marketing, visual storytelling',
+  'Content Writer; Graphic Designer; Communications Specialist',
+  'active'
+),
+(
+  'Counselling - FA Arts',
+  'ur',
+  'میں نے ایف اے کیا ہے، مجھے ڈیزائننگ یا رائٹنگ کا شوق ہے',
+  'میں نے ایف اے کیا ہے، مجھے ڈیزائننگ یا رائٹنگ کا شوق ہے|ایف اے کے بعد کورسز|ایف اے طلباء کے لیے فری لانسنگ کورسز|ایف اے پس منظر',
+  'ایف اے کا پس منظر مواصلت اور تخلیقی شعبوں کے لیے بہترین ہے۔ ہم کانٹینٹ رائٹنگ، انگلش لینگویج یا گرافک ڈیزائن تجویز کرتے ہیں۔ کیا آپ اپنی مواصلات کی مہارت بہتر کرنا چاہتے ہیں یا ڈیزائن سیکھنا؟',
+  'ایف اے کیا ہے, ڈیزائننگ یا رائٹنگ کا شوق, کانٹینٹ رائٹنگ, انگلش لینگویج, گرافک ڈیزائن, مواصلت اور تخلیق',
+  'Content Writer; Graphic Designer; Communications Specialist',
+  'active'
+),
+(
+  'Counselling - ICS Computer Science',
+  'en',
+  'I am an ICS student looking for an advanced IT course.',
+  'I am an ICS student looking for an advanced IT course.|ICS student course options|Best course after ICS|What should I do after ICS?|Intermediate in computer science',
+  'Educational Background: ICS (Intermediate Computer Science)
+Identified Interests: Software engineering, development, security
+Primary Recommendation: Full Stack Web Development or Python
+Alternative Options: Cyber Security, Data Science
+Why: Your intermediate computer science background gives you core programming concepts, making advanced web tech or software development a natural progression.
+Next Step: Would you prefer building web applications or learning backend automation with Python?',
+  'ics student, intermediate computer science, advanced it course, full stack web development, python, cyber security, data science',
+  'Full Stack Developer; Python Automation Specialist; Cyber Security Analyst',
+  'active'
+),
+(
+  'Counselling - ICS Computer Science',
+  'roman_ur',
+  'Main ICS ka student hoon, mujhe IT course karna hai',
+  'I am an ICS student looking for an advanced IT course.|Main ICS ka student hoon, mujhe IT course karna hai|ICS ke baad konsa course best hai?|ICS student next steps|ICS background programming',
+  'Aapka ICS background aapko programming mein head start deta hai. Hum Full Stack Web Development ya Python primary courses recommend karte hain, jabkay Cyber Security aur Data Science advanced options hain. Konsa shoba aapko pasand hai?',
+  'ics student, ics background, programming head start, full stack web development, python, cyber security, data science',
+  'Full Stack Developer; Python Automation Specialist; Cyber Security Analyst',
+  'active'
+),
+(
+  'Counselling - ICS Computer Science',
+  'ur',
+  'میں آئی سی ایس کا طالب علم ہوں، مجھے ایڈوانس آئی ٹی کورس چاہیے',
+  'میں آئی سی ایس کا طالب علم ہوں، مجھے ایڈوانس آئی ٹی کورس چاہیے|آئی سی ایس کے بعد بہترین کورسز|آئی سی ایس طلباء کے لیے پروگرامنگ|آئی سی ایس کمپیوٹر سائنس',
+  'آئی سی ایس کا پس منظر آپ کو پروگرامنگ میں برتری دیتا ہے۔ ہم فُل اسٹیک ویب ڈویلپمنٹ یا پائتھن تجویز کرتے ہیں، جبکہ سائبر سیکیورٹی بھی ایک بہترین آپشن ہے۔ کون سا شعبہ آپ کو سب سے زیادہ پرجوش کرتا ہے؟',
+  'آئی سی ایس کا طالب علم, ایڈوانس آئی ٹی کورس, فُل اسٹیک ویب ڈویلپمنٹ, پائتھن, سائبر سیکیورٹی, پروگرامنگ',
+  'Full Stack Developer; Python Automation Specialist; Cyber Security Analyst',
+  'active'
+),
+(
+  'Counselling - I.Com Commerce',
+  'en',
+  'I have a background in commerce (I.Com / B.Com). What are my options?',
+  'I have a background in commerce (I.Com / B.Com). What are my options?|Best courses for I.Com students|Commerce background career options|I.Com IT courses|Accounting and commerce courses',
+  'Educational Background: Commerce Stream (I.Com / B.Com)
+Identified Interests: Business, accounting, online commerce
+Primary Recommendation: QuickBooks or E-commerce
+Alternative Options: Digital Marketing, Freelancing
+Why: Commerce studies provide core business and accounting fundamentals, making financial software training and online retail highly compatible.
+Next Step: Are you looking to master bookkeeping tools like QuickBooks or start your own e-commerce storefront?',
+  'commerce, i.com, b.com, quickbooks, e-commerce, digital marketing, bookkeeping tools, online retail',
+  'QuickBooks Bookkeeper; E-Commerce Store Manager; Financial Freelancer',
+  'active'
+),
+(
+  'Counselling - I.Com Commerce',
+  'roman_ur',
+  'Main ne I.Com kiya hai, mere liye konsa course behtar hai?',
+  'I have a background in commerce (I.Com / B.Com). What are my options?|Main ne I.Com kiya hai, mere liye konsa course behtar hai?|I.Com commerce courses|Commerce student freelancing',
+  'Commerce studies core business understanding deti hain. Hum QuickBooks ya E-commerce primary courses recommend karte hain, jabkay Digital Marketing alternative hai. Kya aap financial accounts manage karna chahte hain ya online store launch karna?',
+  'i.com, commerce studies, quickbooks, e-commerce, digital marketing, financial accounts, online store',
+  'QuickBooks Bookkeeper; E-Commerce Store Manager; Financial Freelancer',
+  'active'
+),
+(
+  'Counselling - I.Com Commerce',
+  'ur',
+  'کامرس یا آئی کام کے طلباء کے لیے کون سے کورسز ہیں؟',
+  'کامرس یا آئی کام کے طلباء کے لیے کون سے کورسز ہیں؟|میں نے آئی کام کیا ہے کون سا کورس کروں؟|کامرس طلباء کے لیے آن لائن کورسز|آئی کام کریئر',
+  'کامرس کی تعلیم کاروبار کی بنیادی سمجھ فراہم کرتی ہے۔ ہم کوئیک بکس (QuickBooks) یا ای کامرس کو بنیادی کورس کے طور پر تجویز کرتے ہیں۔ کیا آپ مالیاتی اکاؤنٹس کا انتظام کرنا چاہتے ہیں یا آن لائن اسٹور شروع کرنا؟',
+  'کامرس یا آئی کام, کوئیک بکس, ای کامرس, ڈیجیٹل مارکیٹنگ, مالیاتی اکاؤنٹس, آن لائن اسٹور',
+  'QuickBooks Bookkeeper; E-Commerce Store Manager; Financial Freelancer',
+  'active'
+),
+(
+  'Counselling - BCom Graduate',
+  'en',
+  'I am a BCom graduate, which course will help my career?',
+  'I am a BCom graduate, which course will help my career?|BCom degree career options|Best IT courses for BCom graduates|BCom accounting software',
+  'With a BCom degree, you have strong business and accounting fundamentals. We recommend QuickBooks or Data Science / E-commerce to scale your professional career into digital markets. Do you want to focus on financial software or online business?',
+  'bcom graduate, bcom degree, quickbooks, data science, e-commerce, accounting fundamentals, digital markets',
+  'Professional Bookkeeper; Accounting Tech Specialist; E-Commerce Consultant',
+  'active'
+),
+(
+  'Counselling - BCom Graduate',
+  'roman_ur',
+  'Main BCom graduate hoon, kaun sa course meri field se match karta hai?',
+  'Main BCom graduate hoon, kaun sa course meri field se match karta hai?|BCom ke baad konsa course best hai?|BCom career options|BCom degree freelancing',
+  'BCom degree ke sath aapke paas strong business aur accounting fundamentals hain. Hum QuickBooks ya Data Science / E-commerce recommend karte hain taake aapka professional career digital markets mein scale ho sake.',
+  'bcom graduate, bcom degree, quickbooks, data science, e-commerce, professional career, digital markets',
+  'Professional Bookkeeper; Accounting Tech Specialist; E-Commerce Consultant',
+  'active'
+),
+(
+  'Counselling - BCom Graduate',
+  'ur',
+  'بی کام گریجویٹس کے لیے کون سے کورسز اچھے ہیں؟',
+  'بی کام گریجویٹس کے لیے کون سے کورسز اچھے ہیں؟|میں نے بی کام کیا ہے|بی کام کے بعد سافٹ ویئر کورسز|بی کام اکاونٹنگ',
+  'بی کام کی ڈگری کے ساتھ آپ کے پاس مضبوط کاروباری اور اکاؤنٹنگ کی بنیادی باتیں ہیں۔ ہم آپ کے کیریئر کو ڈیجیٹل مارکیٹس میں لے جانے کے لیے کوئیک بکس یا ای کامرس تجویز کرتے ہیں۔',
+  'بی کام گریجویٹس, بی کام کی ڈگری, کوئیک بکس, ای کامرس, ڈیٹا سائنس, کاروباری اور اکاؤنٹنگ',
+  'Professional Bookkeeper; Accounting Tech Specialist; E-Commerce Consultant',
+  'active'
+),
+(
+  'Counselling - BBA Graduate',
+  'en',
+  'I have completed BBA. Which course should I take?',
+  'I have completed BBA. Which course should I take?|Best courses for BBA graduates|BBA digital marketing or ecommerce|BBA student career roadmap|BBA in marketing/management',
+  'A BBA background blends management, marketing, and business strategy. We recommend Digital Marketing, E-commerce, or Freelancing as your top courses to leverage your marketing knowledge. Would you like to specialize in performance marketing?',
+  'bba graduate, completed bba, digital marketing, e-commerce, freelancing, management, business strategy',
+  'Digital Marketing Strategist; E-Commerce Growth Manager; Agency Lead',
+  'active'
+),
+(
+  'Counselling - BBA Graduate',
+  'roman_ur',
+  'Main ne BBA kiya hai, kaun sa course meri marketing skills ko boost karega?',
+  'Main ne BBA kiya hai, kaun sa course meri marketing skills ko boost karega?|BBA ke baad konsa course karna chahiye?|BBA graduate freelancing courses|BBA student roadmap',
+  'BBA background management, marketing, aur business strategy ko blend karta hai. Hum Digital Marketing, E-commerce, ya Freelancing top courses recommend karte hain taake aap apni marketing knowledge ko leverage kar sakein.',
+  'bba background, bba kiya hai, digital marketing, e-commerce, freelancing, marketing knowledge, business strategy',
+  'Digital Marketing Strategist; E-Commerce Growth Manager; Agency Lead',
+  'active'
+),
+(
+  'Counselling - BBA Graduate',
+  'ur',
+  'بی بی اے کے بعد کون سے کورسز فائدہ مند ہیں؟',
+  'بی بی اے کے بعد کون سے کورسز فائدہ مند ہیں؟|میں نے بی بی اے کیا ہے آگے کیا سیکھوں؟|بی بی اے طلباء کی رہنمائی|بی بی اے مارکیٹنگ',
+  'بی بی اے کا پس منظر مینجمنٹ اور مارکیٹنگ کی حکمت عملی کو جوڑتا ہے۔ ہم ڈیجیٹل مارکیٹنگ، ای کامرس یا فری لانسنگ کو سرفہرست کورسز کے طور پر تجویز کرتے ہیں۔ کیا آپ مارکیٹنگ میں مہارت حاصل کرنا چاہتے ہیں؟',
+  'بی بی اے, بی بی اے کے بعد, ڈیجیٹل مارکیٹنگ, ای کامرس, فری لانسنگ, مینجمنٹ اور مارکیٹنگ',
+  'Digital Marketing Strategist; E-Commerce Growth Manager; Agency Lead',
+  'active'
+),
+(
+  'Counselling - BS Computer Science',
+  'en',
+  'I am a BSCS student. Which PFTP course will boost my CV?',
+  'I am a BSCS student. Which PFTP course will boost my CV?|Best course for software engineering student|BSCS student advanced courses|BS computer science portfolio boost|BS software engineering courses',
+  'Educational Background: BS Computer Science
+Identified Interests: Advanced software engineering, AI, security
+Primary Recommendation: Artificial Intelligence or Cyber Security
+Alternative Options: Python, Full Stack Web Development
+Why: As a CS undergraduate, specialized tracks like AI or Cyber Security complement your degree curriculum with high-demand industry skills.
+Next Step: Do you want to focus on machine learning algorithms or network security?',
+  'bscs student, bs computer science, boost my cv, software engineering, artificial intelligence, cyber security, python, full stack web development',
+  'AI Engineer; Cyber Security Specialist; Senior Full Stack Architect',
+  'active'
+),
+(
+  'Counselling - BS Computer Science',
+  'roman_ur',
+  'Main BSCS ka student hoon, konsa course meri profile mazboot karega?',
+  'I am a BSCS student. Which PFTP course will boost my CV?|Main BSCS ka student hoon, konsa course meri profile mazboot karega?|BSCS student best course|BSCS portfolio boost',
+  'As a BSCS undergraduate, specialized technical tracks aapke portfolio ko elevate karenge. Hum Artificial Intelligence, Cyber Security, ya Python primary advanced courses recommend karte hain. Aap kaun sa field focus karna chahte hain?',
+  'bscs student, bs computer science, portfolio elevate, artificial intelligence, cyber security, python',
+  'AI Engineer; Cyber Security Specialist; Senior Full Stack Architect',
+  'active'
+),
+(
+  'Counselling - BS Computer Science',
+  'ur',
+  'میں بی ایس سی ایس کا طالب علم ہوں، کون سا کورس میری سی وی کو بہتر بنائے گا؟',
+  'میں بی ایس سی ایس کا طالب علم ہوں، کون سا کورس میری سی وی کو بہتر بنائے گا؟|سافٹ ویئر انجینئرنگ کے طلباء کے لیے ایڈوانس کورسز|بی ایس سی ایس کریئر',
+  'بطور بی ایس سی ایس طالب علم، خصوصی تکنیکی ٹریک آپ کے پورٹ فولیو کو بہتر بنائیں گے۔ ہم آرٹیفیشل انٹیلی جنس، سائبر سیکیورٹی یا پائتھن تجویز کرتے ہیں۔ آپ کون سا تکنیکی شعبہ ہدف بنا رہے ہیں؟',
+  'بی ایس سی ایس, طالب علم, سی وی کو بہتر بنائے گا, آرٹیفیشل انٹیلی جنس, سائبر سیکیورٹی, پائتھن',
+  'AI Engineer; Cyber Security Specialist; Senior Full Stack Architect',
+  'active'
+),
+(
+  'Counselling - BS English Linguistics',
+  'en',
+  'I have a BS in English / Linguistics, where is scope in freelancing?',
+  'I have a BS in English / Linguistics, where is scope in freelancing?|Best freelancing courses for English graduates|BS English career options|Linguistics graduate freelancing scope',
+  'Educational Background: BS English
+Identified Interests: Writing, communication, global reach
+Primary Recommendation: Content Writing or SEO
+Alternative Options: English Language, Digital Marketing
+Why: Your command of vocabulary, grammar, and communication makes you exceptionally suited for global freelance writing, copywriting, and search engine optimization.
+Next Step: Would you like to focus on web copywriting or technical SEO content creation?',
+  'bs english, linguistics graduate, scope in freelancing, content writing, seo, english language, digital marketing, global freelance writing',
+  'Professional SEO Copywriter; Global Content Strategist; Technical Writer',
+  'active'
+),
+(
+  'Counselling - BS English Linguistics',
+  'roman_ur',
+  'BS English kiya hai, freelancing mein kahan scope hai?',
+  'BS English kiya hai, freelancing mein kahan scope hai?|BS English ke baad freelancing mein kya karoon?|English graduate content writing or SEO|BS English freelancing scope',
+  'BS English aapko exceptional written aur verbal communication skills deta hai. Hum Content Writing, SEO, ya English Language best training pathways recommend karte hain. Kya aap copywriting mein specialize karna chahte hain ya search engine optimization mein?',
+  'bs english kiya hai, freelancing mein kahan scope hai, content writing, seo, english language, communication skills',
+  'Professional SEO Copywriter; Global Content Strategist; Technical Writer',
+  'active'
+),
+(
+  'Counselling - BS English Linguistics',
+  'ur',
+  'بی ایس انگلش کیا ہے، فری لانسنگ میں کہاں اسکوپ ہے؟',
+  'بی ایس انگلش کیا ہے، فری لانسنگ میں کہاں اسکوپ ہے؟|انگلش لنگوئسٹکس کے بعد کیریئر|بی ایس انگلش طلباء کے لیے کورسز|انگلش گریجویٹس',
+  'بی ایس انگلش آپ کو تحریری اور زبانی مواصلات کی بہترین مہارتوں سے لیس کرتا ہے۔ ہم کانٹینٹ رائٹنگ، ایس ای او (SEO) یا انگلش لینگویج تجویز کرتے ہیں۔ کیا آپ کاپی رائٹنگ میں مہارت حاصل کرنا چاہتے ہیں؟',
+  'بی ایس انگلش, فری لانسنگ میں اسکوپ, کانٹینٹ رائٹنگ, ایس ای او, انگلش لینگویج, تحریری اور زبانی مواصلات',
+  'Professional SEO Copywriter; Global Content Strategist; Technical Writer',
+  'active'
+),
+(
+  'Counselling - BS Psychology Sociology',
+  'en',
+  'I am a BS Psychology / Sociology graduate, what courses fit me?',
+  'I am a BS Psychology / Sociology graduate, what courses fit me?|Can psychology students do data science?|Sociology graduate digital career|Psychology in IT',
+  'Psychology and sociology backgrounds offer deep insights into human behavior and data trends. We recommend Data Science or Content Writing as great options to combine consumer psychology with digital analytics. Would you like to explore data-driven research?',
+  'bs psychology, bs sociology, human behavior, data science, content writing, consumer psychology, digital analytics',
+  'Behavioral Data Analyst; UX/Consumer Researcher; Content Strategist',
+  'active'
+),
+(
+  'Counselling - BS Psychology Sociology',
+  'roman_ur',
+  'Main ne BS Psychology / Sociology kiya hai, mere liye konsa course behtar hai?',
+  'Main ne BS Psychology / Sociology kiya hai, mere liye konsa course behtar hai?|Psychology graduate freelancing options|Sociology career in tech|Psychology student IT',
+  'Psychology aur sociology backgrounds human behavior aur data trends mein deep insights dete hain. Hum Data Science ya Content Writing great options recommend karte hain. Kya aap data-driven research explore karna chahenge?',
+  'bs psychology, bs sociology, human behavior, data science, content writing, data trends',
+  'Behavioral Data Analyst; UX/Consumer Researcher; Content Strategist',
+  'active'
+),
+(
+  'Counselling - BS Psychology Sociology',
+  'ur',
+  'نفسیات اور سوشیالوجی کے طلباء کے لیے کون سے کورسز ہیں؟',
+  'نفسیات اور سوشیالوجی کے طلباء کے لیے کون سے کورسز ہیں؟|بی ایس سائیکالوجی کے بعد آئی ٹی کورسز|سوشیالوجی گریجویٹ کریئر',
+  'نفسیات اور سوشیالوجی کا پس منظر انسانی رویے اور ڈیٹا کے رجحانات کے بارے میں گہری بصیرت فراہم کرتا ہے۔ ہم ڈیٹا سائنس یا کانٹینٹ رائٹنگ تجویز کرتے ہیں۔ کیا آپ ڈیٹا پر مبنی تحقیق تلاش کرنا چاہتے ہیں؟',
+  'نفسیات اور سوشیالوجی, بی ایس سائیکالوجی, انسانی رویے, ڈیٹا سائنس, کانٹینٹ رائٹنگ, ڈیجیٹل اینالیٹکس',
+  'Behavioral Data Analyst; UX/Consumer Researcher; Content Strategist',
+  'active'
+),
+(
+  'Counselling - BS Mathematics Statistics',
+  'en',
+  'I have a BS in Mathematics or Statistics, what should I study?',
+  'I have a BS in Mathematics or Statistics, what should I study?|Best tech courses for math graduates|Can statistics students do machine learning or AI?|Maths stats graduate IT courses',
+  'Mathematics and statistics degrees provide exceptional numerical and analytical proficiency. We recommend Python, Data Science, or Artificial Intelligence as your ideal courses to apply statistical models. Are you ready to explore machine learning?',
+  'bs mathematics, bs statistics, numerical proficiency, python, data science, artificial intelligence, machine learning, statistical models',
+  'Data Scientist; Machine Learning Modeler; Quantitative Analyst',
+  'active'
+),
+(
+  'Counselling - BS Mathematics Statistics',
+  'roman_ur',
+  'Main ne BS Mathematics / Statistics kiya hai, konsa course suitable hai?',
+  'Main ne BS Mathematics / Statistics kiya hai, konsa course suitable hai?|Maths student Data Science ya Python|Statistics graduate AI career|BS mathematics career',
+  'Mathematics aur statistics degrees exceptional numerical aur analytical proficiency deti hain. Hum Python, Data Science, ya Artificial Intelligence ideal courses recommend karte hain. Kya aap machine learning explore karne ke liye ready hain?',
+  'bs mathematics, bs statistics, python, data science, artificial intelligence, numerical proficiency, machine learning',
+  'Data Scientist; Machine Learning Modeler; Quantitative Analyst',
+  'active'
+),
+(
+  'Counselling - BS Mathematics Statistics',
+  'ur',
+  'ریاضی اور شماریات کے طلباء کے لیے کون سے کورسز اچھے ہیں؟',
+  'ریاضی اور شماریات کے طلباء کے لیے کون سے کورسز اچھے ہیں؟|بی ایس میتھمیٹکس کے بعد ڈیٹا سائنس یا اے آئی|شماریات گریجویٹ کریئر',
+  'ریاضی اور شماریات کی ڈگری عددی اور تجزیاتی مہارت فراہم کرتی ہے۔ ہم پائتھن، ڈیٹا سائنس یا آرٹیفیشل انٹیلی جنس کو آپ کے مثالی کورسز کے طور پر تجویز کرتے ہیں۔ کیا آپ مشین لرننگ تلاش کرنے کے لیے تیار ہیں؟',
+  'ریاضی اور شماریات, عددی اور تجزیاتی مہارت, پائتھن, ڈیٹا سائنس, آرٹیفیشل انٹیلی جنس, مشین لرننگ',
+  'Data Scientist; Machine Learning Modeler; Quantitative Analyst',
+  'active'
+),
+(
+  'Counselling - BS Media Studies',
+  'en',
+  'I have a BS in Media Studies / Mass Communication, what are my options?',
+  'I have a BS in Media Studies / Mass Communication, what are my options?|Best courses for media students|Media studies video editing or youtube automation|Mass comm career options',
+  'Media studies and mass communication degrees focus on media production and public messaging. We recommend Video Editing, Graphic Design, or YouTube Automation as your primary professional courses. Do you want to focus on video production?',
+  'bs media studies, mass communication, media production, video editing, graphic design, youtube automation, public messaging',
+  'Professional Video Editor; YouTube Automation Producer; Media Director',
+  'active'
+),
+(
+  'Counselling - BS Media Studies',
+  'roman_ur',
+  'Main ne Media Studies / Mass Communication kiya hai, mere liye konsa course best hai?',
+  'Main ne Media Studies / Mass Communication kiya hai, mere liye konsa course best hai?|Mass comm student video editing ya youtube|Media studies freelancing scope',
+  'Media studies aur mass communication degrees media production aur public messaging par focus karti hain. Hum Video Editing, Graphic Design, ya YouTube Automation primary professional courses recommend karte hain. Kya aap video production par focus karna chahte hain?',
+  'media studies, mass communication, video editing, graphic design, youtube automation, media production',
+  'Professional Video Editor; YouTube Automation Producer; Media Director',
+  'active'
+),
+(
+  'Counselling - BS Media Studies',
+  'ur',
+  'میڈیا اسٹڈیز اور ماس کمیونیکیشن کے بعد کون سے کورسز ہیں؟',
+  'میڈیا اسٹڈیز اور ماس کمیونیکیشن کے بعد کون سے کورسز ہیں؟|ماس کام کے طلباء کے لیے ویڈیو ایڈیٹنگ اور یوٹیوب|میڈیا اسٹڈیز کریئر',
+  'میڈیا اسٹڈیز اور ماس کمیونیکیشن میڈیا پروڈکشن پر فوکس کرتے ہیں۔ ہم ویڈیو ایڈیٹنگ، گرافک ڈیزائن یا یوٹیوب آٹومیشن تجویز کرتے ہیں۔ کیا آپ ویڈیو پروڈکشن پر توجہ دینا چاہتے ہیں؟',
+  'میڈیا اسٹڈیز, ماس کمیونیکیشن, میڈیا پروڈکشن, ویڈیو ایڈیٹنگ, گرافک ڈیزائن, یوٹیوب آٹومیشن',
+  'Professional Video Editor; YouTube Automation Producer; Media Director',
+  'active'
+),
+(
+  'Counselling - Postgraduate & General Degrees',
+  'en',
+  'I have completed a Master degree (MSc/MA/MCom). What course should I take?',
+  'I have completed a Master degree (MSc/MA/MCom). What course should I take?|Postgraduate career transition to tech|General degree career options|MSc graduate professional courses|Masters degree student career',
+  'For postgraduate and general degrees, we evaluate your core research discipline and career goals to map you to specialized tracks like Data Science, Digital Marketing, or advanced technical certifications. What is your ultimate career objective?',
+  'msc graduate, master degree, postgraduate career transition, data science, digital marketing, advanced technical certifications',
+  'Senior Research Analyst; Business Consultant; Tech Project Manager',
+  'active'
+),
+(
+  'Counselling - Postgraduate & General Degrees',
+  'roman_ur',
+  'Main ne Master degree / MSc ki hai, mujhe kaun sa advanced course karna chahiye?',
+  'Main ne Master degree / MSc ki hai, mujhe kaun sa advanced course karna chahiye?|Postgraduate career transition|MSc ke baad konsa course best hai?|Masters degree career roadmap',
+  'Postgraduate aur general degrees ke liye, hum aapke core research discipline aur career goals ko evaluate karke specialized tracks jaise Data Science ya Digital Marketing map karte hain. Aapka ultimate career objective kya hai?',
+  'master degree, msc ki hai, postgraduate career transition, data science, digital marketing, career objective',
+  'Senior Research Analyst; Business Consultant; Tech Project Manager',
+  'active'
+),
+(
+  'Counselling - Postgraduate & General Degrees',
+  'ur',
+  'پوسٹ گریجویٹ یا ایم ایس سی کے بعد کون سا کورس کروں؟',
+  'پوسٹ گریجویٹ یا ایم ایس سی کے بعد کون سا کورس کروں؟|ماسٹرز ڈگری کے بعد آئی ٹی اسکلز|پوسٹ گریجویٹ طلباء کی رہنمائی|ایم ایس سی کریئر',
+  'پوسٹ گریجویٹ اور عام ڈگریوں کے لیے، ہم آپ کے کیریئر کے مقاصد کا جائزہ لیتے ہیں تاکہ آپ کو ڈیٹا سائنس یا ڈیجیٹل مارکیٹنگ جیسے خصوصی ٹریکس پر رہنمائی دی جا سکے۔ آپ کا حتمی کیریئر کا مقصد کیا ہے؟',
+  'پوسٹ گریجویٹ, ایم ایس سی, ماسٹرز ڈگری, ڈیٹا سائنس, ڈیجیٹل مارکیٹنگ, کیریئر کے مقاصد',
+  'Senior Research Analyst; Business Consultant; Tech Project Manager',
+  'active'
+),
+(
+  'Unavailable Courses - Special Inquiries',
+  'en',
+  'Do you offer a course in Mobile App Development (Flutter/React Native)?',
+  'Do you offer a course in Mobile App Development (Flutter/React Native)?|Is Flutter course available?|Do you have React Native course?|Mobile app development course|iOS Android development course|Flutter React Native classes',
+  'Status: Mobile App Development is currently not part of the official 16-course PFTP catalogue.
+Alternative Recommendation: We recommend Full Stack Web Development or Python, which provide core programming foundations that easily transition into mobile development later.
+Human Support Offer: If you need further clarification regarding specialized tech stacks, our admissions desk can assist you.',
+  'mobile app development, flutter, react native, not part of official 16-course catalogue, full stack web development, python, specialized tech stacks',
+  'Full Stack Web Developer (Foundation for Mobile Development)',
+  'active'
+),
+(
+  'Unavailable Courses - Special Inquiries',
+  'roman_ur',
+  'Kya mobile app development ya Flutter course available hai?',
+  'Do you offer a course in Mobile App Development (Flutter/React Native)?|Kya mobile app development ya Flutter course available hai?|React Native course karwate hain?|Mobile app course|Flutter classes',
+  'Mobile App Development filhal PFTP ke official 16 courses catalogue ka hissa nahi hai. Hum Full Stack Web Development ya Python recommend karte hain jo core programming foundation banate hain aur baad mein mobile development mein transition aasan karte hain. Agar aapko specialized tech stacks ke baare mein mazeed janna hai to humare admissions desk se rabta kar sakte hain.',
+  'mobile app development, flutter, react native, official 16 courses, full stack web development, python, programming foundation',
+  'Full Stack Web Developer (Foundation for Mobile Development)',
+  'active'
+),
+(
+  'Unavailable Courses - Special Inquiries',
+  'ur',
+  'کیا آپ کے پاس موبائل ایپ ڈویلپمنٹ (Flutter/React Native) کا کورس ہے؟',
+  'کیا آپ کے پاس موبائل ایپ ڈویلپمنٹ (Flutter/React Native) کا کورس ہے؟|کیا فلٹر کا کورس دستیاب ہے؟|موبائل ایپلیکیشن ڈویلپمنٹ|ری ایکٹ نیٹو کورس',
+  'موبائل ایپ ڈویلپمنٹ فی الحال پی ایف ٹی پی کے ۱۶ باضابطہ کورسز کا حصہ نہیں ہے۔ ہم فل اسٹیک ویب ڈویلپمنٹ یا پائتھن کی سفارش کرتے ہیں، جو بنیادی پروگرامنگ سکھاتے ہیں جنہیں بعد میں موبائل ایپ میں باآسانی استعمال کیا جا سکتا ہے۔ مزید رہنمائی کے لیے ہمارے ایڈمیشن کونسلر سے رابطہ کریں۔',
+  'موبائل ایپ ڈویلپمنٹ, فلٹر, ری ایکٹ نیٹو, فل اسٹیک ویب ڈویلپمنٹ, پائتھن, ایڈمیشن کونسلر',
+  'Full Stack Web Developer (Foundation for Mobile Development)',
+  'active'
+),
+(
+  'Policies & Disclaimers',
+  'en',
+  'Will I get a guaranteed job or 100k salary after completing the Python course?',
+  'Will I get a guaranteed job or 100k salary after completing the Python course?|Is there a job guarantee after course completion?|Do you guarantee 100k salary?|Job guarantee policy|Income guarantee after python course',
+  'PFTP provides high quality, practical digital skill training and freelancing preparation. We do not offer or guarantee fixed jobs, specific salaries (such as 100k), or guaranteed monthly income. Career outcomes depend entirely on individual dedication, practice, portfolio building, and market effort.',
+  '100k salary, guaranteed job, python course, job guarantee, earning guarantee, salary guarantee, policies and disclaimers',
+  'Skill Training & Freelance Career Preparation (No Guaranteed Earnings)',
+  'active'
+),
+(
+  'Policies & Disclaimers',
+  'roman_ur',
+  'Kya Python course ke baad 100k salary ya guaranteed job milegi?',
+  'Kya Python course ke baad 100k salary ya guaranteed job milegi?|Kya job ki koi guarantee hai?|100k salary guarantee|Python course ke baad job guarantee|Fixed income guarantee',
+  'PFTP practical digital skill training aur freelancing preparation provide karta hai. Hum kisi bhi fixed job, 100k salary ya guaranteed monthly income ka dawa ya guarantee nahi dete. Earning aur career outcomes student ki mehnat, skills aur portfolio par depend karte hain.',
+  '100k salary, guaranteed job, python course, job guarantee, salary guarantee, monthly income',
+  'Skill Training & Freelance Career Preparation (No Guaranteed Earnings)',
+  'active'
+),
+(
+  'Policies & Disclaimers',
+  'ur',
+  'کیا پائتھن کورس کے بعد مجھے 100k تنخواہ یا گارنٹی شدہ نوکری ملے گی؟',
+  'کیا پائتھن کورس کے بعد مجھے 100k تنخواہ یا گارنٹی شدہ نوکری ملے گی؟|کیا نوکری کی کوئی گارنٹی ہے؟|100 ہزار تنخواہ کی گارنٹی|پائتھن کے بعد جاب گارنٹی',
+  'پی ایف ٹی پی پیشہ ورانہ تربیت، مہارت اور عملی فری لانسنگ رہنمائی فراہم کرتا ہے۔ ہم کسی مقررہ ملازمت، تنخواہ، یا ماہانہ آمدنی کی ضمانت نہیں دیتے، کیونکہ کامیابی کا انحصار آپ کی لگن، پورٹ فولیو اور عملی محنت پر ہوتا ہے۔',
+  '100k تنخواہ, گارنٹی شدہ نوکری, پائتھن کورس, ملازمت کی ضمانت, ماہانہ آمدنی',
+  'Skill Training & Freelance Career Preparation (No Guaranteed Earnings)',
+  'active'
+);
+
+-- ===================================================================
+-- 25. LEARNING FREELANCING AND ONLINE EARNING
+-- ===================================================================
+INSERT INTO `knowledge_base` (`category`, `language`, `question`, `question_variations`, `answer`, `keywords`, `possible_careers`, `status`) VALUES
+(
+  'Learning Freelancing and Online Earning',
+  'en',
+  'How can I learn freelancing and start earning online?',
+  'I need to learn freelancing.|I need to learn online earning.|How can I learn online earning?|How can I learn online?|How to learn freelancing and start earning online?|Online earning guidance|Learning freelancing at PFTP|How to start earning online?|How can I start freelancing?|Learn freelancing and online earning',
+  'If you want to learn freelancing and start earning online, PFTP can help you develop practical digital skills that you can use to work with clients online.\n\nFreelancing means offering your skills and services to clients independently rather than working as a regular employee for one company. You can provide services such as graphic design, website development, digital marketing, SEO, content writing, video editing, and other professional services.\n\nTo get started, you should:\n1. Choose a skill that matches your interests and abilities.\n2. Enroll in a relevant PFTP training course.\n3. Learn the fundamentals and practice regularly.\n4. Complete practical projects and build a portfolio to demonstrate your skills.\n5. Learn how to communicate with clients, understand their requirements, and present your services.\n6. Explore freelancing platforms and other ways to find potential clients.\n\nPFTP offers courses including Freelancing, Graphic Design, Digital Marketing, SEO, Video Editing, Content Writing, Full Stack Web Development, and other IT-related fields.\n\nRemember that freelancing is not an instant earning method. It takes time, consistent practice, professional skills, and patience to find clients and start earning. Completing a course does not guarantee income, but it can help you build a foundation.\n\nTo guide you toward the right course, could you tell me your current educational qualification and which type of work interests you most?',
+  'i need to learn freelancing, i need to learn online earning, how can i learn online earning, how can i learn online, learning freelancing, start earning online, work with clients online, freelancing platforms, earn money online, work from home',
+  'Freelance Service Provider; Remote Specialist; Independent Contractor; Digital Freelancer',
+  'active'
+),
+(
+  'Learning Freelancing and Online Earning',
+  'ur',
+  'میں آن لائن کمائی اور فری لانسنگ کیسے سیکھ سکتا ہوں؟',
+  'آن لائن کمائی کیسے سیکھ سکتا ہوں؟|فری لانسنگ سیکھنے کا طریقہ کیا ہے؟|میں گھر بیٹھے آن لائن کام کیسے کر سکتا ہوں؟|فری لانسنگ شروع کرنے کا طریقہ کیا ہے؟|آن لائن ارننگ کیسے سیکھیں؟|مجھے فری لانسنگ اور آن لائن کمائی سیکھنی ہے|فری لانسنگ اور آن لائن کمائی',
+  'اگر آپ فری لانسنگ سیکھنا اور آن لائن کمائی شروع کرنا چاہتے ہیں تو پی ایف ٹی پی آپ کو ایسی عملی ڈیجیٹل مہارتیں سیکھنے میں مدد دے سکتا ہے جنہیں استعمال کرتے ہوئے آپ آن لائن کلائنٹس کے ساتھ کام کر سکتے ہیں۔\n\nفری لانسنگ کا مطلب ہے کہ آپ کسی ایک کمپنی کے مستقل ملازم بننے کے بجائے اپنی مہارت اور خدمات مختلف کلائنٹس کو فراہم کرتے ہیں۔ آپ گرافک ڈیزائننگ، ویب سائٹ ڈویلپمنٹ، ڈیجیٹل مارکیٹنگ، ایس ای او، کانٹینٹ رائٹنگ، ویڈیو ایڈیٹنگ اور دیگر پیشہ ورانہ شعبوں میں کام کر سکتے ہیں۔\n\nشروع کرنے کے لیے آپ کو:\n1. اپنی دلچسپی اور صلاحیت کے مطابق کسی ایک مہارت کا انتخاب کرنا چاہیے۔\n2. پی ایف ٹی پی کے متعلقہ تربیتی کورس میں داخلہ لینا چاہیے۔\n3. بنیادی چیزیں سیکھ کر باقاعدگی سے پریکٹس کرنی چاہیے۔\n4. عملی پراجیکٹس مکمل کرکے اپنا پورٹ فولیو تیار کرنا چاہیے تاکہ آپ اپنی مہارت دکھا سکیں۔\n5. کلائنٹس سے بات چیت، ان کی ضروریات سمجھنے اور اپنی خدمات پیش کرنے کا طریقہ سیکھنا چاہیے۔\n6. فری لانسنگ پلیٹ فارمز اور دیگر ذرائع سے کلائنٹس تلاش کرنے کی کوشش کرنی چاہیے۔\n\nپی ایف ٹی پی میں فری لانسنگ، گرافک ڈیزائننگ، ڈیجیٹل مارکیٹنگ، ایس ای او، ویڈیو ایڈیٹنگ، کانٹینٹ رائٹنگ، فل اسٹیک ویب ڈویلپمنٹ اور دیگر آئی ٹی سے متعلق کورسز دستیاب ہیں۔\n\nیاد رکھیں کہ فری لانسنگ فوری کمائی کا ذریعہ نہیں ہے۔ کلائنٹس حاصل کرنے اور آمدنی شروع کرنے کے لیے وقت، مسلسل مشق، پیشہ ورانہ مہارت اور صبر کی ضرورت ہوتی ہے۔ صرف کورس مکمل کرنے سے آمدنی کی ضمانت نہیں ہوتی، لیکن یہ آپ کی بنیاد مضبوط بنانے میں مدد دے سکتا ہے۔\n\nآپ کو مناسب کورس تجویز کرنے کے لیے بتائیں کہ آپ کی موجودہ تعلیمی قابلیت کیا ہے اور آپ کس قسم کے کام میں دلچسپی رکھتے ہیں؟',
+  'آن لائن کمائی, فری لانسنگ سیکھنا, آن لائن کام, گھر بیٹھے کام, فری لانسنگ شروع کرنے کا طریقہ, آن لائن ارننگ, پی ایف ٹی پی کورسز, پورٹ فولیو',
+  'Freelance Service Provider; Remote Specialist; Independent Contractor; Digital Freelancer',
+  'active'
+),
+(
+  'Learning Freelancing and Online Earning',
+  'roman_ur',
+  'Mujhy freelancing sikhni hy.',
+  'Mujhy freelancing sikhni hy.|Mujhe freelancing seekhni hai.|Online earning kaisay seekh sakta hoon?|Online earning kaisay seekh sakti hoon?|Online earning kaise seekhein?|Freelancing start karnay ka tareeqa kya hai?|Main ghar bethay online kaam kaisay kar sakta hoon?|Main ghar bethay online kaam kaisay kar sakti hoon?|Ghar bethay online earning|Freelancing aur online earning guidance|Online kaam kaise shuru karein?',
+  'Agar aap freelancing seekhna aur online earning shuru karna chahte hain to PFTP aapko aisi practical digital skills seekhne mein madad de sakta hai jinhein use karke aap online clients ke saath kaam kar sakte hain.\n\nFreelancing ka matlab hai ke aap kisi ek company ke permanent employee banne ke bajaye apni skills aur services mukhtalif clients ko provide karte hain. Aap graphic designing, website development, digital marketing, SEO, content writing, video editing aur doosre professional fields mein kaam kar sakte hain.\n\nShuru karne ke liye aapko:\n1. Apni dilchaspi aur salahiyat ke mutabiq kisi ek skill ka intikhab karna chahiye.\n2. PFTP ke relevant training course mein admission lena chahiye.\n3. Basic cheezein seekh kar regular practice karni chahiye.\n4. Practical projects complete karke apna portfolio tayyar karna chahiye taake aap apni skills dikha sakein.\n5. Clients se communication, unki requirements samajhne aur apni services offer karne ka tareeqa seekhna chahiye.\n6. Freelancing platforms aur doosre zariye istemal karke clients talash karne chahiye.\n\nPFTP mein Freelancing, Graphic Design, Digital Marketing, SEO, Video Editing, Content Writing, Full Stack Web Development aur doosre IT-related courses available hain.\n\nYaad rakhein ke freelancing foran earning shuru karne ka tareeqa nahi hai. Clients hasil karne aur earning shuru karne ke liye waqt, regular practice, professional skills aur sabr ki zaroorat hoti hai. Sirf course complete karne se earning ki guarantee nahi hoti, lekin yeh aapki foundation mazboot banane mein madad de sakta hai.\n\nAapko suitable course suggest karne ke liye batayein ke aapki current educational qualification kya hai aur aap kis tarah ke kaam mein interest rakhte hain?',
+  'mujhy freelancing sikhni hy, mujhe freelancing seekhni hai, online earning kaisay seekh sakta hoon, online earning kaisay seekh sakti hoon, freelancing start karnay ka tareeqa kya hai, main ghar bethay online kaam kaisay kar sakta hoon, online earning, freelancing seekhna, ghar bethay online kaam',
+  'Freelance Service Provider; Remote Specialist; Independent Contractor; Digital Freelancer',
+  'active'
+);
+
+-- ===================================================================
+-- 26. COURSE EXECUTION, TRAINING & COMPLETION PROCESS
+-- ===================================================================
+INSERT INTO `knowledge_base` (`category`, `language`, `question`, `question_variations`, `answer`, `keywords`, `possible_careers`, `status`) VALUES
+(
+  'Course Execution, Training & Completion Process',
+  'en',
+  'How is the course executed, and what is the training and completion process?',
+  'How is the course executed?|How do you train students?|What is the course roadmap?|What is the course completion process?|What happens after admission?|How are classes conducted?|How do students complete their courses?|Course training roadmap and process|What is the training journey at PFTP?|After admission what is the process?|Course ka complete process kya hai?',
+  'At PFTP, the training process follows a structured sequence, starting from course selection and admission and continuing through training, practical assessments, examinations, certification, and potential post-course opportunities.\n\nHere is the complete course journey:\n\n1. Course Selection\n\nThe student explores the available PFTP courses and selects a course according to their educational background, interests, and career goals.\n\n2. Admission\n\nAfter selecting a course, the student completes the admission registration process through the PFTP website and provides the required information.\n\n3. Payment Through the Website\n\nThe student completes the applicable payment process through the website by following the provided payment instructions.\n\n4. Class Orientation\n\nAfter admission processing, students are guided through the class orientation process. They receive information about the course structure, class schedule, learning process, and how to participate in training.\n\n5. Live Classes and Training\n\nThe training begins with instructor-led online classes. Students learn the course topics step by step, understand the concepts, and develop practical skills.\n\n6. Class Recordings\n\nClass recordings are uploaded so students can revisit the lessons, revise important topics, and review the material when needed.\n\n7. Course Completion Modules\n\nStudents progress through the course modules according to the training roadmap. Each module covers specific topics and learning objectives that contribute to completing the course.\n\n8. Projects and Assignments\n\nStudents work on practical assignments and projects to apply what they have learned. These activities help them develop practical experience and demonstrate their understanding of the course.\n\n9. Examinations and Result Finalization\n\nStudents complete the required examinations and assessments. Their performance is evaluated, and the results are finalized according to the applicable assessment process.\n\n10. Certification\n\nStudents who successfully fulfill the course completion, project, and assessment requirements become eligible for the PFTP certificate, subject to the applicable certification criteria.\n\n11. Further Events and Opportunities\n\nAfter course completion, students may have opportunities to participate in relevant events and explore available job and internship opportunities. These opportunities may depend on availability, selection criteria, and the requirements of the relevant organizations. They are not guaranteed.\n\nThe complete training journey follows this sequence:\n\nCourse Selection → Admission → Website Payment → Class Orientation → Live Training → Class Recordings → Course Modules → Projects and Assignments → Examinations → Result Finalization → Certification → Further Events and Career Opportunities.',
+  'how is the course executed, how do you train students, what is the course roadmap, what is the course completion process, what happens after admission, how are classes conducted, how do students complete their courses, training roadmap, class orientation, live classes, course completion modules, certification, student journey',
+  '11-Stage Structured Training, Practical Projects, Assessments, Certification & Career Opportunities',
+  'active'
+),
+(
+  'Course Execution, Training & Completion Process',
+  'ur',
+  'کورس کا مکمل طریقہ کار اور تربیت کا عمل کیا ہے؟',
+  'کورس کا مکمل طریقہ کار کیا ہے؟|پی ایف ٹی پی میں تربیت کس طرح دی جاتی ہے؟|داخلے کے بعد کیا پروسیس ہوتا ہے؟|کلاسز کیسے کروائی جاتی ہیں؟|کورس کا روڈ میپ کیا ہے؟|کورس مکمل کرنے کا طریقہ کیا ہے؟|طلباء کی تربیت کا طریقہ|داخلہ کے بعد کیا پروسیس ہوتا ہے',
+  'پی ایف ٹی پی میں تربیت کا عمل ایک منظم ترتیب کے تحت مکمل ہوتا ہے، جس کا آغاز کورس کے انتخاب اور داخلے سے ہوتا ہے اور پھر کلاسز، عملی اسائنمنٹس، پراجیکٹس، امتحانات، سرٹیفکیشن اور کورس کے بعد ممکنہ مواقع تک جاری رہتا ہے۔\n\nکورس کا مکمل طریقہ کار درج ذیل ہے:\n\n1. کورس کا انتخاب\n\nطالب علم پی ایف ٹی پی کے دستیاب کورسز کا جائزہ لیتا ہے اور اپنی تعلیمی قابلیت، دلچسپی اور مستقبل کے اہداف کے مطابق کورس منتخب کرتا ہے۔\n\n2. داخلہ\n\nکورس منتخب کرنے کے بعد طالب علم پی ایف ٹی پی کی ویب سائٹ کے ذریعے داخلے کا رجسٹریشن عمل مکمل کرتا ہے اور مطلوبہ معلومات فراہم کرتا ہے۔\n\n3. ویب سائٹ کے ذریعے ادائیگی\n\nطالب علم ویب سائٹ پر فراہم کردہ ادائیگی کی ہدایات کے مطابق متعلقہ فیس یا چارجز کی ادائیگی مکمل کرتا ہے۔\n\n4. کلاس اورینٹیشن\n\nداخلے کی کارروائی مکمل ہونے کے بعد طلبہ کو کلاس اورینٹیشن کے عمل سے گزارا جاتا ہے۔ اس میں کورس کے ڈھانچے، کلاس شیڈول، سیکھنے کے طریقہ کار اور تربیت میں شرکت کے بارے میں رہنمائی فراہم کی جاتی ہے۔\n\n5. لائیو کلاسز اور تربیت\n\nاس کے بعد انسٹرکٹر کی رہنمائی میں آن لائن لائیو کلاسز شروع ہوتی ہیں۔ طلبہ کو کورس کے موضوعات مرحلہ وار سمجھائے جاتے ہیں اور عملی مہارتیں سکھائی جاتی ہیں۔\n\n6. کلاس ریکارڈنگز\n\nکلاسز کی ریکارڈنگز اپ لوڈ کی جاتی ہیں تاکہ طلبہ ضرورت کے مطابق دوبارہ لیکچرز دیکھ سکیں، اہم موضوعات کی دہرائی کر سکیں اور سیکھے گئے مواد کا جائزہ لے سکیں۔\n\n7. کورس مکمل کرنے کے ماڈیولز\n\nطلبہ تربیتی روڈ میپ کے مطابق کورس کے مختلف ماڈیولز مکمل کرتے ہیں۔ ہر ماڈیول میں مخصوص موضوعات اور سیکھنے کے مقاصد شامل ہوتے ہیں جو کورس کی تکمیل میں مدد دیتے ہیں۔\n\n8. پراجیکٹس اور اسائنمنٹس\n\nطلبہ سیکھی گئی مہارتوں کو عملی طور پر استعمال کرنے کے لیے مختلف اسائنمنٹس اور پراجیکٹس مکمل کرتے ہیں۔ ان سرگرمیوں سے ان کا عملی تجربہ بڑھتا ہے اور کورس کے بارے میں ان کی سمجھ کا جائزہ لیا جاتا ہے۔\n\n9. امتحانات اور نتائج کی تکمیل\n\nطلبہ مطلوبہ امتحانات اور اسیسمنٹس میں حصہ لیتے ہیں۔ ان کی کارکردگی کا جائزہ لیا جاتا ہے اور متعلقہ جانچ کے طریقہ کار کے مطابق نتائج کو حتمی شکل دی جاتی ہے۔\n\n10. سرٹیفکیشن\n\nجو طلبہ کورس کی تکمیل، پراجیکٹس اور اسیسمنٹس کے مطلوبہ تقاضے کامیابی سے پورے کرتے ہیں، وہ متعلقہ سرٹیفکیشن کے معیار کے مطابق پی ایف ٹی پی سرٹیفکیٹ حاصل کرنے کے اہل ہوتے ہیں۔\n\n11. مزید ایونٹس اور مواقع\n\nکورس مکمل کرنے کے بعد طلبہ کو متعلقہ ایونٹس میں شرکت اور دستیاب ملازمتوں یا انٹرن شپ کے مواقع تلاش کرنے کا موقع مل سکتا ہے۔ یہ مواقع دستیابی، انتخاب کے معیار اور متعلقہ اداروں کی ضروریات سے مشروط ہوتے ہیں، اس لیے ان کی ضمانت نہیں ہوتی۔\n\nکورس کا مکمل سفر اس ترتیب سے ہوتا ہے:\n\nکورس کا انتخاب → داخلہ → ویب سائٹ کے ذریعے ادائیگی → کلاس اورینٹیشن → لائیو ٹریننگ → کلاس ریکارڈنگز → کورس ماڈیولز → پراجیکٹس اور اسائنمنٹس → امتحانات → نتائج کی تکمیل → سرٹیفکیشن → مزید ایونٹس اور کیریئر کے مواقع۔',
+  'کورس کا طریقہ کار, تربیت کا عمل, داخلے کے بعد, لائیو کلاسز, کلاس ریکارڈنگز, پراجیکٹس اور اسائنمنٹس, امتحانات, سرٹیفکیشن, روڈ میپ, کیریئر کے مواقع',
+  '11-Stage Structured Training, Practical Projects, Assessments, Certification & Career Opportunities',
+  'active'
+),
+(
+  'Course Execution, Training & Completion Process',
+  'roman_ur',
+  'Course ka complete process kya hai?',
+  'Course ka complete process kya hai?|How is the course executed?|How do you train students?|What is the course roadmap?|What is the course completion process?|What happens after admission?|How are classes conducted?|How do students complete their courses?|PFTP mein training kis tarah di jati hai?|Admission ke baad kya process hota hai?|Classes kaise conduct hoti hain?|Course completion process kya hai?|Training ka procedure kya hai?|Classes kaisay hoti hain?|Admission k baad kya hota hai?',
+  'PFTP mein training ka process aik munazzam sequence ke tehat complete hota hai. Iska aaghaz course selection aur admission se hota hai aur phir classes, practical assignments, projects, examinations, certification aur course ke baad mumkin opportunities tak jari rehta hai.\n\nCourse ka complete process darj-e-zail hai:\n\n1. Course Selection\n\nStudent PFTP ke available courses ka jaiza leta hai aur apni educational qualification, interest aur future goals ke mutabiq course select karta hai.\n\n2. Admission\n\nCourse select karne ke baad student PFTP ki website ke zariye admission registration process complete karta hai aur required information provide karta hai.\n\n3. Website Ke Zariye Payment\n\nStudent website par di gayi payment instructions ke mutabiq applicable fee ya charges ki payment complete karta hai.\n\n4. Class Orientation\n\nAdmission processing complete hone ke baad students ko class orientation ke process se guzara jata hai. Is mein course structure, class schedule, learning process aur training mein participate karne ke tareeqe ke bare mein guidance di jati hai.\n\n5. Live Classes Aur Training\n\nIske baad instructor-led online live classes shuru hoti hain. Students course ke topics step by step seekhte hain, concepts samajhte hain aur practical skills develop karte hain.\n\n6. Class Recordings\n\nClasses ki recordings upload ki jati hain taake students zaroorat ke mutabiq lectures dobara dekh sakein, important topics revise kar sakein aur learning material ka review kar sakein.\n\n7. Course Completion Modules\n\nStudents training roadmap ke mutabiq course ke mukhtalif modules complete karte hain. Har module mein specific topics aur learning objectives shamil hote hain jo course complete karne mein madad dete hain.\n\n8. Projects Aur Assignments\n\nStudents seekhi hui skills ko practically apply karne ke liye mukhtalif assignments aur projects complete karte hain. In activities se unka practical experience barhta hai aur course ke bare mein unki understanding evaluate hoti hai.\n\n9. Examinations Aur Result Finalization\n\nStudents required examinations aur assessments complete karte hain. Unki performance evaluate ki jati hai aur applicable assessment process ke mutabiq results finalize kiye jate hain.\n\n10. Certification\n\nJo students course completion, projects aur assessments ke required criteria successfully fulfill karte hain, woh applicable certification requirements ke mutabiq PFTP certificate hasil karne ke eligible hote hain.\n\n11. Further Events Aur Opportunities\n\nCourse complete karne ke baad students ko relevant events mein participate karne aur available job ya internship opportunities explore karne ka mauqa mil sakta hai. Yeh opportunities availability, selection criteria aur relevant organizations ki requirements par depend karti hain. Inki guarantee nahi hoti.\n\nCourse ka complete journey is sequence ke mutabiq hota hai:\n\nCourse Selection → Admission → Website Payment → Class Orientation → Live Training → Class Recordings → Course Modules → Projects Aur Assignments → Examinations → Result Finalization → Certification → Further Events Aur Career Opportunities.',
+  'course ka complete process kya hai, pftp mein training kis tarah di jati hai, admission ke baad kya process hota hai, how is the course executed, how do you train students, what is the course roadmap, how are classes conducted, live classes, class recordings, orientation, certification, complete training journey',
+  '11-Stage Structured Training, Practical Projects, Assessments, Certification & Career Opportunities',
+  'active'
+);
+
+-- ===================================================================
+-- 27. ALTERNATIVE COURSE RECOMMENDATIONS
+-- ===================================================================
+INSERT INTO `knowledge_base` (`category`, `language`, `question`, `question_variations`, `answer`, `keywords`, `possible_careers`, `status`) VALUES
+(
+  'Alternative Course Recommendations',
+  'en',
+  'Can you suggest another or alternative course?',
+  'No, I need to select another course.|What else can I choose?|Anything else?|Any other offer?|Any other course?|Do you have another suggestion?|Can you suggest a different course?|What other courses are available?|Any other course for a matric student?|Any other course for an FSc student?|Any other course for a computer science student?|I am not interested in this course.|I don\'t like this course.|I don\'t have any interest in this field.|I am not interested in this subject.|This course doesn\'t suit me.|I don\'t understand this course.|I don\'t understand what this course is about.|Can you explain it in simple words?|I don\'t think this course is right for me.|I want to choose something else.|Can you suggest a course according to my interests?|Do you have another option?|Suggest another course|Alternative course recommendations|Other options available',
+  'No problem! You don\'t have to select a course that doesn\'t match your interests. Choosing the right course is important, so let\'s explore other options.\n\nPFTP offers courses in Digital Marketing, Freelancing, Graphic Design, Video Editing, Content Writing, SEO, Full Stack Web Development, Python, Artificial Intelligence, Cyber Security, Data Science, E-commerce, QuickBooks, YouTube Automation, English Language, and IELTS.\n\nIf you don\'t understand the previously suggested course, I can explain what it covers, what skills you will learn, and how those skills can be useful.\n\nIf you are simply not interested in that field, I can suggest a different course based on your educational qualification, interests, and future goals.\n\nCould you tell me what kind of work or field interests you?',
+  'not interested in this course, don\'t like this course, no interest in this field, doesn\'t suit me, don\'t understand this course, explain in simple words, choose something else, according to my interests, another option, select another course, what else can i choose, anything else, another course, alternative courses',
+  '16 Alternative IT, Creative, Business & Freelancing Tracks',
+  'active'
+),
+(
+  'Alternative Course Recommendations',
+  'ur',
+  'کیا آپ کوئی دوسرا یا متبادل کورس تجویز کر سکتے ہیں؟',
+  'مجھے کوئی اور کورس منتخب کرنا ہے|اس کے علاوہ کوئی اور کورس ہے؟|کوئی اور تجویز دیں|کیا کوئی دوسرا کورس دستیاب ہے؟|میرے لیے کوئی اور کورس تجویز کریں|مجھے اس کورس میں دلچسپی نہیں ہے۔|مجھے یہ کورس پسند نہیں ہے۔|میری اس شعبے میں کوئی دلچسپی نہیں ہے۔|مجھے اس مضمون میں دلچسپی نہیں ہے۔|یہ کورس میرے لیے موزوں نہیں ہے۔|مجھے یہ کورس سمجھ نہیں آ رہا۔|مجھے سمجھ نہیں آیا کہ اس کورس میں کیا سکھایا جاتا ہے۔|کیا آپ آسان الفاظ میں سمجھا سکتے ہیں؟|مجھے نہیں لگتا کہ یہ کورس میرے لیے مناسب ہے۔|میں کوئی دوسرا کورس منتخب کرنا چاہتا ہوں۔|میں کوئی دوسرا کورس منتخب کرنا چاہتی ہوں۔|میری دلچسپی کے مطابق کوئی کورس تجویز کریں۔|کیا کوئی اور آپشن موجود ہے؟|کوئی اور آپشن|متبادل کورسز|کوئی دوسرا کورس',
+  'کوئی بات نہیں! آپ کو ایسا کورس منتخب کرنے کی ضرورت نہیں جو آپ کی دلچسپی کے مطابق نہ ہو۔ صحیح کورس کا انتخاب اہم ہے، اس لیے آئیے آپ کے لیے دوسرے آپشنز دیکھتے ہیں۔\n\nپی ایف ٹی پی میں ڈیجیٹل مارکیٹنگ، فری لانسنگ، گرافک ڈیزائننگ، ویڈیو ایڈیٹنگ، کانٹینٹ رائٹنگ، ایس ای او، فل اسٹیک ویب ڈویلپمنٹ، پائتھن، مصنوعی ذہانت، سائبر سیکیورٹی، ڈیٹا سائنس، ای کامرس، کوئیک بکس، یوٹیوب آٹومیشن، انگلش لینگویج اور آئیلٹس کے کورسز دستیاب ہیں۔\n\nاگر آپ کو پہلے تجویز کیا گیا کورس سمجھ نہیں آیا تو میں آپ کو آسان الفاظ میں بتا سکتا ہوں کہ اس میں کیا سکھایا جاتا ہے، آپ کون سی مہارتیں حاصل کریں گے اور وہ آپ کے لیے کس طرح مفید ہو سکتی ہیں۔\n\nاگر آپ کو اس شعبے میں دلچسپی نہیں ہے تو میں آپ کی تعلیمی قابلیت، دلچسپی اور مستقبل کے اہداف کے مطابق کوئی دوسرا کورس تجویز کر سکتا ہوں۔\n\nکیا آپ بتا سکتے ہیں کہ آپ کو کس قسم کے کام یا شعبے میں دلچسپی ہے؟',
+  'دلچسپی نہیں ہے, کورس پسند نہیں ہے, شعبے میں دلچسپی نہیں, موزوں نہیں ہے, سمجھ نہیں آ رہا, آسان الفاظ میں سمجھائیں, مناسب نہیں ہے, دوسرا کورس, کوئی اور کورس, متبادل کورسز, اس کے علاوہ, کوئی اور تجویز',
+  '16 Alternative IT, Creative, Business & Freelancing Tracks',
+  'active'
+),
+(
+  'Alternative Course Recommendations',
+  'roman_ur',
+  'Mujhe koi aur course select karna hai.',
+  'Mujhe koi aur course select karna hai.|Is ke ilawa koi aur course hai?|Koi aur suggestion dein.|Kya koi doosra course available hai?|Mere liye koi aur course suggest karein.|Mujhe is course mein interest nahi hai.|Mujhe yeh course pasand nahi.|Mera is field mein koi interest nahi hai.|Mujhe is subject mein dilchaspi nahi.|Yeh course mere liye suitable nahi hai.|Mujhe yeh course samajh nahi aa raha.|Mujhe samajh nahi aaya ke is course mein kya sikhaya jata hai.|Kya aap asaan alfaaz mein samjha sakte hain?|Mujhe nahi lagta ke yeh course mere liye theek hai.|Mujhe koi aur course choose karna hai.|Meri interest ke mutabiq koi course suggest karein.|Koi aur option hai?|Anything else?|What else can I choose?|Any other course?|Different course recommendation',
+  'Koi baat nahi! Aapko aisa course select karne ki zaroorat nahi jo aapki interest ke mutabiq na ho. Sahi course ka intikhab important hai, is liye aaiye aapke liye doosre options explore karte hain.\n\nPFTP mein Digital Marketing, Freelancing, Graphic Design, Video Editing, Content Writing, SEO, Full Stack Web Development, Python, Artificial Intelligence, Cyber Security, Data Science, E-commerce, QuickBooks, YouTube Automation, English Language aur IELTS ke courses available hain.\n\nAgar aapko pehle suggest kiya gaya course samajh nahi aaya to main aapko asaan alfaaz mein samjha sakta hoon ke is course mein kya sikhaya jata hai, aap konsi skills hasil karenge aur woh aapke liye kis tarah useful ho sakti hain.\n\nAgar aapko us field mein interest nahi hai to main aapki educational qualification, interest aur future goals ke mutabiq koi doosra course suggest kar sakta hoon.\n\nKya aap bata sakte hain ke aapko kis tarah ke kaam ya field mein interest hai?',
+  'is course mein interest nahi hai, yeh course pasand nahi, mera is field mein koi interest nahi hai, dilchaspi nahi, suitable nahi hai, samajh nahi aa raha, asaan alfaaz mein samjha sakte hain, theek nahi hai, koi aur course choose karna hai, meri interest ke mutabiq, koi aur option hai, alternative courses, doosra course',
+  '16 Alternative IT, Creative, Business & Freelancing Tracks',
+  'active'
+);
+
+-- ===================================================================
+-- 25. LEARNING FREELANCING AND ONLINE EARNING
+-- ===================================================================
+INSERT INTO `knowledge_base` (`category`, `language`, `question`, `question_variations`, `answer`, `keywords`, `possible_careers`, `status`) VALUES
+(
+  'Learning Freelancing and Online Earning',
+  'en',
+  'How can I learn freelancing and start earning online?',
+  'I need to learn freelancing.|I need to learn online earning.|How can I learn online earning?|How can I learn online?|How to learn freelancing and start earning online?|Online earning guidance|Learning freelancing at PFTP|How to start earning online?|How can I start freelancing?|Learn freelancing and online earning',
+  'If you want to learn freelancing and start earning online, PFTP can help you develop practical digital skills that you can use to work with clients online.\n\nFreelancing means offering your skills and services to clients independently rather than working as a regular employee for one company. You can provide services such as graphic design, website development, digital marketing, SEO, content writing, video editing, and other professional services.\n\nTo get started, you should:\n1. Choose a skill that matches your interests and abilities.\n2. Enroll in a relevant PFTP training course.\n3. Learn the fundamentals and practice regularly.\n4. Complete practical projects and build a portfolio to demonstrate your skills.\n5. Learn how to communicate with clients, understand their requirements, and present your services.\n6. Explore freelancing platforms and other ways to find potential clients.\n\nPFTP offers courses including Freelancing, Graphic Design, Digital Marketing, SEO, Video Editing, Content Writing, Full Stack Web Development, and other IT-related fields.\n\nRemember that freelancing is not an instant earning method. It takes time, consistent practice, professional skills, and patience to find clients and start earning. Completing a course does not guarantee income, but it can help you build a foundation.\n\nTo guide you toward the right course, could you tell me your current educational qualification and which type of work interests you most?',
+  'i need to learn freelancing, i need to learn online earning, how can i learn online earning, how can i learn online, learning freelancing, start earning online, work with clients online, freelancing platforms, earn money online, work from home',
+  'Freelance Service Provider; Remote Specialist; Independent Contractor; Digital Freelancer',
+  'active'
+),
+(
+  'Learning Freelancing and Online Earning',
+  'ur',
+  'میں آن لائن کمائی اور فری لانسنگ کیسے سیکھ سکتا ہوں؟',
+  'آن لائن کمائی کیسے سیکھ سکتا ہوں؟|فری لانسنگ سیکھنے کا طریقہ کیا ہے؟|میں گھر بیٹھے آن لائن کام کیسے کر سکتا ہوں؟|فری لانسنگ شروع کرنے کا طریقہ کیا ہے؟|آن لائن ارننگ کیسے سیکھیں؟|مجھے فری لانسنگ اور آن لائن کمائی سیکھنی ہے|فری لانسنگ اور آن لائن کمائی',
+  'اگر آپ فری لانسنگ سیکھنا اور آن لائن کمائی شروع کرنا چاہتے ہیں تو پی ایف ٹی پی آپ کو ایسی عملی ڈیجیٹل مہارتیں سیکھنے میں مدد دے سکتا ہے جنہیں استعمال کرتے ہوئے آپ آن لائن کلائنٹس کے ساتھ کام کر سکتے ہیں۔\n\nفری لانسنگ کا مطلب ہے کہ آپ کسی ایک کمپنی کے مستقل ملازم بننے کے بجائے اپنی مہارت اور خدمات مختلف کلائنٹس کو فراہم کرتے ہیں۔ آپ گرافک ڈیزائننگ، ویب سائٹ ڈویلپمنٹ، ڈیجیٹل مارکیٹنگ، ایس ای او، کانٹینٹ رائٹنگ، ویڈیو ایڈیٹنگ اور دیگر پیشہ ورانہ شعبوں میں کام کر سکتے ہیں۔\n\nشروع کرنے کے لیے آپ کو:\n1. اپنی دلچسپی اور صلاحیت کے مطابق کسی ایک مہارت کا انتخاب کرنا چاہیے۔\n2. پی ایف ٹی پی کے متعلقہ تربیتی کورس میں داخلہ لینا چاہیے۔\n3. بنیادی چیزیں سیکھ کر باقاعدگی سے پریکٹس کرنی چاہیے۔\n4. عملی پراجیکٹس مکمل کرکے اپنا پورٹ فولیو تیار کرنا چاہیے تاکہ آپ اپنی مہارت دکھا سکیں۔\n5. کلائنٹس سے بات چیت، ان کی ضروریات سمجھنے اور اپنی خدمات پیش کرنے کا طریقہ سیکھنا چاہیے۔\n6. فری لانسنگ پلیٹ فارمز اور دیگر ذرائع سے کلائنٹس تلاش کرنے کی کوشش کرنی چاہیے۔\n\nپی ایف ٹی پی میں فری لانسنگ، گرافک ڈیزائننگ، ڈیجیٹل مارکیٹنگ، ایس ای او، ویڈیو ایڈیٹنگ، کانٹینٹ رائٹنگ، فل اسٹیک ویب ڈویلپمنٹ اور دیگر آئی ٹی سے متعلق کورسز دستیاب ہیں۔\n\nیاد رکھیں کہ فری لانسنگ فوری کمائی کا ذریعہ نہیں ہے۔ کلائنٹس حاصل کرنے اور آمدنی شروع کرنے کے لیے وقت، مسلسل مشق، پیشہ ورانہ مہارت اور صبر کی ضرورت ہوتی ہے۔ صرف کورس مکمل کرنے سے آمدنی کی ضمانت نہیں ہوتی، لیکن یہ آپ کی بنیاد مضبوط بنانے میں مدد دے سکتا ہے۔\n\nآپ کو مناسب کورس تجویز کرنے کے لیے بتائیں کہ آپ کی موجودہ تعلیمی قابلیت کیا ہے اور آپ کس قسم کے کام میں دلچسپی رکھتے ہیں؟',
+  'آن لائن کمائی, فری لانسنگ سیکھنا, آن لائن کام, گھر بیٹھے کام, فری لانسنگ شروع کرنے کا طریقہ, آن لائن ارننگ, پی ایف ٹی پی کورسز, پورٹ فولیو',
+  'Freelance Service Provider; Remote Specialist; Independent Contractor; Digital Freelancer',
+  'active'
+),
+(
+  'Learning Freelancing and Online Earning',
+  'roman_ur',
+  'Mujhy freelancing sikhni hy.',
+  'Mujhy freelancing sikhni hy.|Mujhe freelancing seekhni hai.|Online earning kaisay seekh sakta hoon?|Online earning kaisay seekh sakti hoon?|Online earning kaise seekhein?|Freelancing start karnay ka tareeqa kya hai?|Main ghar bethay online kaam kaisay kar sakta hoon?|Main ghar bethay online kaam kaisay kar sakti hoon?|Ghar bethay online earning|Freelancing aur online earning guidance|Online kaam kaise shuru karein?',
+  'Agar aap freelancing seekhna aur online earning shuru karna chahte hain to PFTP aapko aisi practical digital skills seekhne mein madad de sakta hai jinhein use karke aap online clients ke saath kaam kar sakte hain.\n\nFreelancing ka matlab hai ke aap kisi ek company ke permanent employee banne ke bajaye apni skills aur services mukhtalif clients ko provide karte hain. Aap graphic designing, website development, digital marketing, SEO, content writing, video editing aur doosre professional fields mein kaam kar sakte hain.\n\nShuru karne ke liye aapko:\n1. Apni dilchaspi aur salahiyat ke mutabiq kisi ek skill ka intikhab karna chahiye.\n2. PFTP ke relevant training course mein admission lena chahiye.\n3. Basic cheezein seekh kar regular practice karni chahiye.\n4. Practical projects complete karke apna portfolio tayyar karna chahiye taake aap apni skills dikha sakein.\n5. Clients se communication, unki requirements samajhne aur apni services offer karne ka tareeqa seekhna chahiye.\n6. Freelancing platforms aur doosre zariye istemal karke clients talash karne chahiye.\n\nPFTP mein Freelancing, Graphic Design, Digital Marketing, SEO, Video Editing, Content Writing, Full Stack Web Development aur doosre IT-related courses available hain.\n\nYaad rakhein ke freelancing foran earning shuru karne ka tareeqa nahi hai. Clients hasil karne aur earning shuru karne ke liye waqt, regular practice, professional skills aur sabr ki zaroorat hoti hai. Sirf course complete karne se earning ki guarantee nahi hoti, lekin yeh aapki foundation mazboot banane mein madad de sakta hai.\n\nAapko suitable course suggest karne ke liye batayein ke aapki current educational qualification kya hai aur aap kis tarah ke kaam mein interest rakhte hain?',
+  'mujhy freelancing sikhni hy, mujhe freelancing seekhni hai, online earning kaisay seekh sakta hoon, online earning kaisay seekh sakti hoon, freelancing start karnay ka tareeqa kya hai, main ghar bethay online kaam kaisay kar sakta hoon, online earning, freelancing seekhna, ghar bethay online kaam',
+  'Freelance Service Provider; Remote Specialist; Independent Contractor; Digital Freelancer',
+  'active'
+);
+
+-- ===================================================================
+-- 26. COURSE EXECUTION, TRAINING & COMPLETION PROCESS
+-- ===================================================================
+INSERT INTO `knowledge_base` (`category`, `language`, `question`, `question_variations`, `answer`, `keywords`, `possible_careers`, `status`) VALUES
+(
+  'Course Execution, Training & Completion Process',
+  'en',
+  'How is the course executed, and what is the training and completion process?',
+  'How is the course executed?|How do you train students?|What is the course roadmap?|What is the course completion process?|What happens after admission?|How are classes conducted?|How do students complete their courses?|Course training roadmap and process|What is the training journey at PFTP?|After admission what is the process?|Course ka complete process kya hai?',
+  'At PFTP, the training process follows a structured sequence, starting from course selection and admission and continuing through training, practical assessments, examinations, certification, and potential post-course opportunities.\n\nHere is the complete course journey:\n\n1. Course Selection\n\nThe student explores the available PFTP courses and selects a course according to their educational background, interests, and career goals.\n\n2. Admission\n\nAfter selecting a course, the student completes the admission registration process through the PFTP website and provides the required information.\n\n3. Payment Through the Website\n\nThe student completes the applicable payment process through the website by following the provided payment instructions.\n\n4. Class Orientation\n\nAfter admission processing, students are guided through the class orientation process. They receive information about the course structure, class schedule, learning process, and how to participate in training.\n\n5. Live Classes and Training\n\nThe training begins with instructor-led online classes. Students learn the course topics step by step, understand the concepts, and develop practical skills.\n\n6. Class Recordings\n\nClass recordings are uploaded so students can revisit the lessons, revise important topics, and review the material when needed.\n\n7. Course Completion Modules\n\nStudents progress through the course modules according to the training roadmap. Each module covers specific topics and learning objectives that contribute to completing the course.\n\n8. Projects and Assignments\n\nStudents work on practical assignments and projects to apply what they have learned. These activities help them develop practical experience and demonstrate their understanding of the course.\n\n9. Examinations and Result Finalization\n\nStudents complete the required examinations and assessments. Their performance is evaluated, and the results are finalized according to the applicable assessment process.\n\n10. Certification\n\nStudents who successfully fulfill the course completion, project, and assessment requirements become eligible for the PFTP certificate, subject to the applicable certification criteria.\n\n11. Further Events and Opportunities\n\nAfter course completion, students may have opportunities to participate in relevant events and explore available job and internship opportunities. These opportunities may depend on availability, selection criteria, and the requirements of the relevant organizations. They are not guaranteed.\n\nThe complete training journey follows this sequence:\n\nCourse Selection → Admission → Website Payment → Class Orientation → Live Training → Class Recordings → Course Modules → Projects and Assignments → Examinations → Result Finalization → Certification → Further Events and Career Opportunities.',
+  'how is the course executed, how do you train students, what is the course roadmap, what is the course completion process, what happens after admission, how are classes conducted, how do students complete their courses, training roadmap, class orientation, live classes, course completion modules, certification, student journey',
+  '11-Stage Structured Training, Practical Projects, Assessments, Certification & Career Opportunities',
+  'active'
+),
+(
+  'Course Execution, Training & Completion Process',
+  'ur',
+  'کورس کا مکمل طریقہ کار اور تربیت کا عمل کیا ہے؟',
+  'کورس کا مکمل طریقہ کار کیا ہے؟|پی ایف ٹی پی میں تربیت کس طرح دی جاتی ہے؟|داخلے کے بعد کیا پروسیس ہوتا ہے؟|کلاسز کیسے کروائی جاتی ہیں؟|کورس کا روڈ میپ کیا ہے؟|کورس مکمل کرنے کا طریقہ کیا ہے؟|طلباء کی تربیت کا طریقہ|داخلہ کے بعد کیا پروسیس ہوتا ہے',
+  'پی ایف ٹی پی میں تربیت کا عمل ایک منظم ترتیب کے تحت مکمل ہوتا ہے، جس کا آغاز کورس کے انتخاب اور داخلے سے ہوتا ہے اور پھر کلاسز، عملی اسائنمنٹس، پراجیکٹس، امتحانات، سرٹیفکیشن اور کورس کے بعد ممکنہ مواقع تک جاری رہتا ہے۔\n\nکورس کا مکمل طریقہ کار درج ذیل ہے:\n\n1. کورس کا انتخاب\n\nطالب علم پی ایف ٹی پی کے دستیاب کورسز کا جائزہ لیتا ہے اور اپنی تعلیمی قابلیت، دلچسپی اور مستقبل کے اہداف کے مطابق کورس منتخب کرتا ہے۔\n\n2. داخلہ\n\nکورس منتخب کرنے کے بعد طالب علم پی ایف ٹی پی کی ویب سائٹ کے ذریعے داخلے کا رجسٹریشن عمل مکمل کرتا ہے اور مطلوبہ معلومات فراہم کرتا ہے۔\n\n3. ویب سائٹ کے ذریعے ادائیگی\n\nطالب علم ویب سائٹ پر فراہم کردہ ادائیگی کی ہدایات کے مطابق متعلقہ فیس یا چارجز کی ادائیگی مکمل کرتا ہے۔\n\n4. کلاس اورینٹیشن\n\nداخلے کی کارروائی مکمل ہونے کے بعد طلبہ کو کلاس اورینٹیشن کے عمل سے گزارا جاتا ہے۔ اس میں کورس کے ڈھانچے، کلاس شیڈول، سیکھنے کے طریقہ کار اور تربیت میں شرکت کے بارے میں رہنمائی فراہم کی جاتی ہے۔\n\n5. لائیو کلاسز اور تربیت\n\nاس کے بعد انسٹرکٹر کی رہنمائی میں آن لائن لائیو کلاسز شروع ہوتی ہیں۔ طلبہ کو کورس کے موضوعات مرحلہ وار سمجھائے جاتے ہیں اور عملی مہارتیں سکھائی جاتی ہیں۔\n\n6. کلاس ریکارڈنگز\n\nکلاسز کی ریکارڈنگز اپ لوڈ کی جاتی ہیں تاکہ طلبہ ضرورت کے مطابق دوبارہ لیکچرز دیکھ سکیں، اہم موضوعات کی دہرائی کر سکیں اور سیکھے گئے مواد کا جائزہ لے سکیں۔\n\n7. کورس مکمل کرنے کے ماڈیولز\n\nطلبہ تربیتی روڈ میپ کے مطابق کورس کے مختلف ماڈیولز مکمل کرتے ہیں۔ ہر ماڈیول میں مخصوص موضوعات اور سیکھنے کے مقاصد شامل ہوتے ہیں جو کورس کی تکمیل میں مدد دیتے ہیں۔\n\n8. پراجیکٹس اور اسائنمنٹس\n\nطلبہ سیکھی گئی مہارتوں کو عملی طور پر استعمال کرنے کے لیے مختلف اسائنمنٹس اور پراجیکٹس مکمل کرتے ہیں۔ ان سرگرمیوں سے ان کا عملی تجربہ بڑھتا ہے اور کورس کے بارے میں ان کی سمجھ کا جائزہ لیا جاتا ہے۔\n\n9. امتحانات اور نتائج کی تکمیل\n\nطلبہ مطلوبہ امتحانات اور اسیسمنٹس میں حصہ لیتے ہیں۔ ان کی کارکردگی کا جائزہ لیا جاتا ہے اور متعلقہ جانچ کے طریقہ کار کے مطابق نتائج کو حتمی شکل دی جاتی ہے۔\n\n10. سرٹیفکیشن\n\nجو طلبہ کورس کی تکمیل، پراجیکٹس اور اسیسمنٹس کے مطلوبہ تقاضے کامیابی سے پورے کرتے ہیں، وہ متعلقہ سرٹیفکیشن کے معیار کے مطابق پی ایف ٹی پی سرٹیفکیٹ حاصل کرنے کے اہل ہوتے ہیں۔\n\n11. مزید ایونٹس اور مواقع\n\nکورس مکمل کرنے کے بعد طلبہ کو متعلقہ ایونٹس میں شرکت اور دستیاب ملازمتوں یا انٹرن شپ کے مواقع تلاش کرنے کا موقع مل سکتا ہے۔ یہ مواقع دستیابی، انتخاب کے معیار اور متعلقہ اداروں کی ضروریات سے مشروط ہوتے ہیں، اس لیے ان کی ضمانت نہیں ہوتی۔\n\nکورس کا مکمل سفر اس ترتیب سے ہوتا ہے:\n\nکورس کا انتخاب → داخلہ → ویب سائٹ کے ذریعے ادائیگی → کلاس اورینٹیشن → لائیو ٹریننگ → کلاس ریکارڈنگز → کورس ماڈیولز → پراجیکٹس اور اسائنمنٹس → امتحانات → نتائج کی تکمیل → سرٹیفکیشن → مزید ایونٹس اور کیریئر کے مواقع۔',
+  'کورس کا طریقہ کار, تربیت کا عمل, داخلے کے بعد, لائیو کلاسز, کلاس ریکارڈنگز, پراجیکٹس اور اسائنمنٹس, امتحانات, سرٹیفکیشن, روڈ میپ, کیریئر کے مواقع',
+  '11-Stage Structured Training, Practical Projects, Assessments, Certification & Career Opportunities',
+  'active'
+),
+(
+  'Course Execution, Training & Completion Process',
+  'roman_ur',
+  'Course ka complete process kya hai?',
+  'Course ka complete process kya hai?|How is the course executed?|How do you train students?|What is the course roadmap?|What is the course completion process?|What happens after admission?|How are classes conducted?|How do students complete their courses?|PFTP mein training kis tarah di jati hai?|Admission ke baad kya process hota hai?|Classes kaise conduct hoti hain?|Course completion process kya hai?|Training ka procedure kya hai?|Classes kaisay hoti hain?|Admission k baad kya hota hai?',
+  'PFTP mein training ka process aik munazzam sequence ke tehat complete hota hai. Iska aaghaz course selection aur admission se hota hai aur phir classes, practical assignments, projects, examinations, certification aur course ke baad mumkin opportunities tak jari rehta hai.\n\nCourse ka complete process darj-e-zail hai:\n\n1. Course Selection\n\nStudent PFTP ke available courses ka jaiza leta hai aur apni educational qualification, interest aur future goals ke mutabiq course select karta hai.\n\n2. Admission\n\nCourse select karne ke baad student PFTP ki website ke zariye admission registration process complete karta hai aur required information provide karta hai.\n\n3. Website Ke Zariye Payment\n\nStudent website par di gayi payment instructions ke mutabiq applicable fee ya charges ki payment complete karta hai.\n\n4. Class Orientation\n\nAdmission processing complete hone ke baad students ko class orientation ke process se guzara jata hai. Is mein course structure, class schedule, learning process aur training mein participate karne ke tareeqe ke bare mein guidance di jati hai.\n\n5. Live Classes Aur Training\n\nIske baad instructor-led online live classes shuru hoti hain. Students course ke topics step by step seekhte hain, concepts samajhte hain aur practical skills develop karte hain.\n\n6. Class Recordings\n\nClasses ki recordings upload ki jati hain taake students zaroorat ke mutabiq lectures dobara dekh sakein, important topics revise kar sakein aur learning material ka review kar sakein.\n\n7. Course Completion Modules\n\nStudents training roadmap ke mutabiq course ke mukhtalif modules complete karte hain. Har module mein specific topics aur learning objectives shamil hote hain jo course complete karne mein madad dete hain.\n\n8. Projects Aur Assignments\n\nStudents seekhi hui skills ko practically apply karne ke liye mukhtalif assignments aur projects complete karte hain. In activities se unka practical experience barhta hai aur course ke bare mein unki understanding evaluate hoti hai.\n\n9. Examinations Aur Result Finalization\n\nStudents required examinations aur assessments complete karte hain. Unki performance evaluate ki jati hai aur applicable assessment process ke mutabiq results finalize kiye jate hain.\n\n10. Certification\n\nJo students course completion, projects aur assessments ke required criteria successfully fulfill karte hain, woh applicable certification requirements ke mutabiq PFTP certificate hasil karne ke eligible hote hain.\n\n11. Further Events Aur Opportunities\n\nCourse complete karne ke baad students ko relevant events mein participate karne aur available job ya internship opportunities explore karne ka mauqa mil sakta hai. Yeh opportunities availability, selection criteria aur relevant organizations ki requirements par depend karti hain. Inki guarantee nahi hoti.\n\nCourse ka complete journey is sequence ke mutabiq hota hai:\n\nCourse Selection → Admission → Website Payment → Class Orientation → Live Training → Class Recordings → Course Modules → Projects Aur Assignments → Examinations → Result Finalization → Certification → Further Events Aur Career Opportunities.',
+  'course ka complete process kya hai, pftp mein training kis tarah di jati hai, admission ke baad kya process hota hai, how is the course executed, how do you train students, what is the course roadmap, how are classes conducted, live classes, class recordings, orientation, certification, complete training journey',
+  '11-Stage Structured Training, Practical Projects, Assessments, Certification & Career Opportunities',
+  'active'
+);
+
+-- ===================================================================
+-- 27. ALTERNATIVE COURSE RECOMMENDATIONS
+-- ===================================================================
+INSERT INTO `knowledge_base` (`category`, `language`, `question`, `question_variations`, `answer`, `keywords`, `possible_careers`, `status`) VALUES
+(
+  'Alternative Course Recommendations',
+  'en',
+  'Can you suggest another or alternative course?',
+  'No, I need to select another course.|What else can I choose?|Anything else?|Any other offer?|Any other course?|Do you have another suggestion?|Can you suggest a different course?|What other courses are available?|Any other course for a matric student?|Any other course for an FSc student?|Any other course for a computer science student?|I am not interested in this course.|I don\'t like this course.|I don\'t have any interest in this field.|I am not interested in this subject.|This course doesn\'t suit me.|I don\'t understand this course.|I don\'t understand what this course is about.|Can you explain it in simple words?|I don\'t think this course is right for me.|I want to choose something else.|Can you suggest a course according to my interests?|Do you have another option?|Suggest another course|Alternative course recommendations|Other options available',
+  'No problem! You don\'t have to select a course that doesn\'t match your interests. Choosing the right course is important, so let\'s explore other options.\n\nPFTP offers courses in Digital Marketing, Freelancing, Graphic Design, Video Editing, Content Writing, SEO, Full Stack Web Development, Python, Artificial Intelligence, Cyber Security, Data Science, E-commerce, QuickBooks, YouTube Automation, English Language, and IELTS.\n\nIf you don\'t understand the previously suggested course, I can explain what it covers, what skills you will learn, and how those skills can be useful.\n\nIf you are simply not interested in that field, I can suggest a different course based on your educational qualification, interests, and future goals.\n\nCould you tell me what kind of work or field interests you?',
+  'not interested in this course, don\'t like this course, no interest in this field, doesn\'t suit me, don\'t understand this course, explain in simple words, choose something else, according to my interests, another option, select another course, what else can i choose, anything else, another course, alternative courses',
+  '16 Alternative IT, Creative, Business & Freelancing Tracks',
+  'active'
+),
+(
+  'Alternative Course Recommendations',
+  'ur',
+  'کیا آپ کوئی دوسرا یا متبادل کورس تجویز کر سکتے ہیں؟',
+  'مجھے کوئی اور کورس منتخب کرنا ہے|اس کے علاوہ کوئی اور کورس ہے؟|کوئی اور تجویز دیں|کیا کوئی دوسرا کورس دستیاب ہے؟|میرے لیے کوئی اور کورس تجویز کریں|مجھے اس کورس میں دلچسپی نہیں ہے۔|مجھے یہ کورس پسند نہیں ہے۔|میری اس شعبے میں کوئی دلچسپی نہیں ہے۔|مجھے اس مضمون میں دلچسپی نہیں ہے۔|یہ کورس میرے لیے موزوں نہیں ہے۔|مجھے یہ کورس سمجھ نہیں آ رہا۔|مجھے سمجھ نہیں آیا کہ اس کورس میں کیا سکھایا جاتا ہے۔|کیا آپ آسان الفاظ میں سمجھا سکتے ہیں؟|مجھے نہیں لگتا کہ یہ کورس میرے لیے مناسب ہے۔|میں کوئی دوسرا کورس منتخب کرنا چاہتا ہوں۔|میں کوئی دوسرا کورس منتخب کرنا چاہتی ہوں۔|میری دلچسپی کے مطابق کوئی کورس تجویز کریں۔|کیا کوئی اور آپشن موجود ہے؟|کوئی اور آپشن|متبادل کورسز|کوئی دوسرا کورس',
+  'کوئی بات نہیں! آپ کو ایسا کورس منتخب کرنے کی ضرورت نہیں جو آپ کی دلچسپی کے مطابق نہ ہو۔ صحیح کورس کا انتخاب اہم ہے، اس لیے آئیے آپ کے لیے دوسرے آپشنز دیکھتے ہیں۔\n\nپی ایف ٹی پی میں ڈیجیٹل مارکیٹنگ، فری لانسنگ، گرافک ڈیزائننگ، ویڈیو ایڈیٹنگ، کانٹینٹ رائٹنگ، ایس ای او، فل اسٹیک ویب ڈویلپمنٹ، پائتھن، مصنوعی ذہانت، سائبر سیکیورٹی، ڈیٹا سائنس، ای کامرس، کوئیک بکس، یوٹیوب آٹومیشن، انگلش لینگویج اور آئیلٹس کے کورسز دستیاب ہیں۔\n\nاگر آپ کو پہلے تجویز کیا گیا کورس سمجھ نہیں آیا تو میں آپ کو آسان الفاظ میں بتا سکتا ہوں کہ اس میں کیا سکھایا جاتا ہے، آپ کون سی مہارتیں حاصل کریں گے اور وہ آپ کے لیے کس طرح مفید ہو سکتی ہیں۔\n\nاگر آپ کو اس شعبے میں دلچسپی نہیں ہے تو میں آپ کی تعلیمی قابلیت، دلچسپی اور مستقبل کے اہداف کے مطابق کوئی دوسرا کورس تجویز کر سکتا ہوں۔\n\nکیا آپ بتا سکتے ہیں کہ آپ کو کس قسم کے کام یا شعبے میں دلچسپی ہے؟',
+  'دلچسپی نہیں ہے, کورس پسند نہیں ہے, شعبے میں دلچسپی نہیں, موزوں نہیں ہے, سمجھ نہیں آ رہا, آسان الفاظ میں سمجھائیں, مناسب نہیں ہے, دوسرا کورس, کوئی اور کورس, متبادل کورسز, اس کے علاوہ, کوئی اور تجویز',
+  '16 Alternative IT, Creative, Business & Freelancing Tracks',
+  'active'
+),
+(
+  'Alternative Course Recommendations',
+  'roman_ur',
+  'Mujhe koi aur course select karna hai.',
+  'Mujhe koi aur course select karna hai.|Is ke ilawa koi aur course hai?|Koi aur suggestion dein.|Kya koi doosra course available hai?|Mere liye koi aur course suggest karein.|Mujhe is course mein interest nahi hai.|Mujhe yeh course pasand nahi.|Mera is field mein koi interest nahi hai.|Mujhe is subject mein dilchaspi nahi.|Yeh course mere liye suitable nahi hai.|Mujhe yeh course samajh nahi aa raha.|Mujhe samajh nahi aaya ke is course mein kya sikhaya jata hai.|Kya aap asaan alfaaz mein samjha sakte hain?|Mujhe nahi lagta ke yeh course mere liye theek hai.|Mujhe koi aur course choose karna hai.|Meri interest ke mutabiq koi course suggest karein.|Koi aur option hai?|Anything else?|What else can I choose?|Any other course?|Different course recommendation',
+  'Koi baat nahi! Aapko aisa course select karne ki zaroorat nahi jo aapki interest ke mutabiq na ho. Sahi course ka intikhab important hai, is liye aaiye aapke liye doosre options explore karte hain.\n\nPFTP mein Digital Marketing, Freelancing, Graphic Design, Video Editing, Content Writing, SEO, Full Stack Web Development, Python, Artificial Intelligence, Cyber Security, Data Science, E-commerce, QuickBooks, YouTube Automation, English Language aur IELTS ke courses available hain.\n\nAgar aapko pehle suggest kiya gaya course samajh nahi aaya to main aapko asaan alfaaz mein samjha sakta hoon ke is course mein kya sikhaya jata hai, aap konsi skills hasil karenge aur woh aapke liye kis tarah useful ho sakti hain.\n\nAgar aapko us field mein interest nahi hai to main aapki educational qualification, interest aur future goals ke mutabiq koi doosra course suggest kar sakta hoon.\n\nKya aap bata sakte hain ke aapko kis tarah ke kaam ya field mein interest hai?',
+  'is course mein interest nahi hai, yeh course pasand nahi, mera is field mein koi interest nahi hai, dilchaspi nahi, suitable nahi hai, samajh nahi aa raha, asaan alfaaz mein samjha sakte hain, theek nahi hai, koi aur course choose karna hai, meri interest ke mutabiq, koi aur option hai, alternative courses, doosra course',
+  '16 Alternative IT, Creative, Business & Freelancing Tracks',
+  'active'
+);

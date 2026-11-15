@@ -1,0 +1,55 @@
+# ===================================================================
+# PFTP AI Chatbot - Apache URL Rewrite & Security Configuration
+# Compatible with Root Domain (/), Subdirectories (/pftp-bot/), cPanel & Apache
+# ===================================================================
+
+# Block access to sensitive and configuration files
+<FilesMatch "\.(sql|env|yml|yaml|git|log|ini|sh|bat)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Allow CORS for static assets & embed script
+<IfModule mod_headers.c>
+    <FilesMatch "\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$">
+        Header set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Methods "GET, OPTIONS"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Prevent directory listing
+    Options -Indexes
+
+    # Route /login or /login/ to login.php
+    RewriteRule ^login/?$ login.php [L,QSA]
+
+    # Route /dashboard or /dashboard/ to dashboard.php
+    RewriteRule ^dashboard/?$ dashboard.php [L,QSA]
+
+    # Route /logout or /logout/ to logout.php
+    RewriteRule ^logout/?$ logout.php [L,QSA]
+
+    # Route /install or /install/ to install.php
+    RewriteRule ^install/?$ install.php [L,QSA]
+
+    # Route /health or /api/health to api/health.php
+    RewriteRule ^health/?$ api/health.php [L,QSA]
+    RewriteRule ^api/health/?$ api/health.php [L,QSA]
+
+    # Route /assets/... directly to chatbot/admin/assets/...
+    RewriteRule ^assets/(.*)$ chatbot/admin/assets/$1 [L,QSA]
+
+    # Route clean URLs for chatbot/admin and chatbot/api if accessed without .php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.*)$ $1.php [L,QSA]
+</IfModule>
