@@ -16,6 +16,7 @@ require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../includes/response.php';
 require_once __DIR__ . '/../includes/validation.php';
 require_once __DIR__ . '/../includes/session.php';
+require_once __DIR__ . '/../includes/static_provider.php';
 
 setupApiHeaders();
 
@@ -56,6 +57,29 @@ $quickReplies = [
     ['label' => '💼 Freelancing', 'query' => 'Why should I take the Freelancing course?'],
     ['label' => '🇵🇰 داخلہ کیسے لیں؟', 'query' => 'داخلے کے لیے مجھے ویب سائٹ پر کہاں جانا ہوگا؟']
 ];
+
+// Cloud / Offline Static Fallback Mode (Runs if MySQL is not connected)
+if (!isDBConnected()) {
+    $staticRes = findOrCreateStaticVisitor($cleanName, $cleanEmail, $phoneClean);
+    $visitor = $staticRes['visitor'];
+    $isExisting = $staticRes['is_existing'];
+
+    $conv = getOrCreateStaticConversation((int)$visitor['id'], !$isExisting);
+
+    jsonSuccess($isExisting ? 'Existing conversation restored.' : 'New conversation started.', [
+        'conversation_id'     => $conv['id'],
+        'session_token'       => $conv['session_token'],
+        'visitor'             => [
+            'id'        => $visitor['id'],
+            'full_name' => $visitor['full_name'],
+            'email'     => $visitor['email']
+        ],
+        'is_existing_visitor' => $isExisting,
+        'is_new'              => !$isExisting,
+        'messages'            => $conv['messages'] ?? [],
+        'quick_replies'       => $quickReplies
+    ]);
+}
 
 try {
     $db = getDBConnection();

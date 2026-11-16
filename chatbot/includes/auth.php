@@ -36,9 +36,9 @@ function startAdminSession(): void
 }
 
 /**
- * Attempt admin login
+ * Attempt admin login with database verification or static cloud fallback
  */
-function adminLogin(PDO $db, string $usernameOrEmail, string $password): array
+function adminLogin(?PDO $db, string $usernameOrEmail, string $password): array
 {
     $usernameOrEmail = trim($usernameOrEmail);
 
@@ -46,20 +46,50 @@ function adminLogin(PDO $db, string $usernameOrEmail, string $password): array
         return ['success' => false, 'error' => 'Please provide both username and password.'];
     }
 
-    $stmt = $db->prepare("
-        SELECT id, username, email, password_hash, role
-        FROM admins
-        WHERE username = :val1 OR email = :val2
-        LIMIT 1
-    ");
-    $stmt->execute([
-        ':val1' => $usernameOrEmail,
-        ':val2' => $usernameOrEmail
-    ]);
-    $admin = $stmt->fetch();
+    $admin = null;
 
-    if (!$admin || !password_verify($password, $admin['password_hash'])) {
-        return ['success' => false, 'error' => 'Invalid username/email or password.'];
+    if ($db !== null) {
+        try {
+            $stmt = $db->prepare("
+                SELECT id, username, email, password_hash, role
+                FROM admins
+                WHERE username = :val1 OR email = :val2
+                LIMIT 1
+            ");
+            $stmt->execute([
+                ':val1' => $usernameOrEmail,
+                ':val2' => $usernameOrEmail
+            ]);
+            $admin = $stmt->fetch();
+        } catch (Throwable $e) {
+            $admin = null;
+        }
+    }
+
+    if ($admin !== null && isset($admin['password_hash'])) {
+        if (!password_verify($password, $admin['password_hash'])) {
+            return ['success' => false, 'error' => 'Invalid username/email or password.'];
+        }
+    } else {
+        // Static / Cloud Demo fallback credentials
+        $validUser = pftpGetEnv('ADMIN_USER') ?: 'admin';
+        $validEmail = 'admin@pftp.com.pk';
+        $validPass = pftpGetEnv('ADMIN_PASS') ?: 'AdminPassword123!';
+
+        $isUserMatch = (strcasecmp($usernameOrEmail, $validUser) === 0 || strcasecmp($usernameOrEmail, $validEmail) === 0);
+        $isPassMatch = ($password === $validPass);
+
+        if (!$isUserMatch || !$isPassMatch) {
+            return ['success' => false, 'error' => 'Invalid username/email or password.'];
+        }
+
+        $admin = [
+            'id'            => 1,
+            'username'      => $validUser,
+            'email'         => $validEmail,
+            'password_hash' => password_hash($validPass, PASSWORD_BCRYPT),
+            'role'          => 'super_admin'
+        ];
     }
 
     startAdminSession();
@@ -73,9 +103,12 @@ function adminLogin(PDO $db, string $usernameOrEmail, string $password): array
     $_SESSION['admin_role'] = $admin['role'];
     $_SESSION['admin_logged_in_at'] = time();
 
-    // Update last_login timestamp
-    $updateStmt = $db->prepare("UPDATE admins SET last_login = NOW() WHERE id = :id");
-    $updateStmt->execute([':id' => $admin['id']]);
+    if ($db !== null) {
+        try {
+            $updateStmt = $db->prepare("UPDATE admins SET last_login = NOW() WHERE id = :id");
+            $updateStmt->execute([':id' => $admin['id']]);
+        } catch (Throwable $e) {}
+    }
 
     return ['success' => true, 'admin' => $admin];
 }

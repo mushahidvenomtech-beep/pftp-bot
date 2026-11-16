@@ -142,6 +142,41 @@ function getChatbotSetting(string $key, ?string $default = null, bool $forceRefr
 }
 
 /**
+ * Safely attempt database connection without throwing exceptions
+ */
+function getSafeDBConnection(): ?PDO
+{
+    try {
+        return getDBConnection();
+    } catch (Throwable $e) {
+        return null;
+    }
+}
+
+/**
+ * Check whether database is live and reachable
+ */
+function isDBConnected(): bool
+{
+    static $status = null;
+    if ($status !== null) {
+        return $status;
+    }
+    $pdo = getSafeDBConnection();
+    if ($pdo === null) {
+        $status = false;
+        return false;
+    }
+    try {
+        $pdo->query("SELECT 1");
+        $status = true;
+    } catch (Throwable $e) {
+        $status = false;
+    }
+    return $status;
+}
+
+/**
  * Reset settings in-memory cache
  */
 function clearChatbotSettingsCache(): void

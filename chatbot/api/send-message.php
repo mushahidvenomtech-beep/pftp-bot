@@ -14,6 +14,7 @@ require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../includes/response.php';
 require_once __DIR__ . '/../includes/validation.php';
 require_once __DIR__ . '/../includes/session.php';
+require_once __DIR__ . '/../includes/static_provider.php';
 require_once __DIR__ . '/../ai/ai-client.php';
 
 setupApiHeaders();
@@ -35,6 +36,52 @@ $messageRaw = (string) ($payload['message'] ?? '');
 $msgVal = validateMessageText($messageRaw);
 if (!$msgVal['valid']) {
     jsonError($msgVal['error'], 422, ['field' => 'message']);
+}
+
+// Cloud / Offline Static Fallback Mode (Runs if MySQL is not connected)
+if (!isDBConnected()) {
+    $conversation = getStaticConversationByToken($sessionToken);
+    if (!$conversation) {
+        jsonError('Conversation session not found or expired. Please re-enter your details.', 404);
+    }
+
+    $convId = (int) $conversation['id'];
+    $visitorId = (int) $conversation['visitor_id'];
+
+    // 1. Record visitor message
+    $userMsg = addStaticMessage($sessionToken, 'visitor', $msgVal['value']);
+
+    // 2. Process AI Pipeline in static mode
+    $aiClient = new AiClient(null);
+    $visitorName = $conversation['full_name'] ?? null;
+    $aiResult = $aiClient->processMessage($msgVal['value'], $convId, $visitorId, $visitorName);
+
+    // 3. Record bot message
+    $botMsg = addStaticMessage(
+        $sessionToken,
+        'bot',
+        $aiResult['message'],
+        $aiResult['matched_kb_id'],
+        (bool) $aiResult['is_fallback']
+    );
+
+    jsonSuccess('Message processed successfully.', [
+        'user_message' => [
+            'id'         => $userMsg['id'],
+            'message'    => $msgVal['value'],
+            'created_at' => $userMsg['created_at']
+        ],
+        'bot_message' => [
+            'id'               => $botMsg['id'],
+            'message'          => $aiResult['message'],
+            'matched_kb_id'    => $aiResult['matched_kb_id'],
+            'is_fallback'      => $aiResult['is_fallback'] ? 1 : 0,
+            'possible_careers' => $aiResult['possible_careers'],
+            'category'         => $aiResult['category'],
+            'confidence'       => $aiResult['confidence'],
+            'created_at'       => $botMsg['created_at']
+        ]
+    ]);
 }
 
 try {

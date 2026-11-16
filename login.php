@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
 
     try {
-        $db = getDBConnection();
+        $db = getSafeDBConnection();
         $result = adminLogin($db, $usernameOrEmail, $password);
         if ($result['success']) {
             header('Location: ' . url('/dashboard'));

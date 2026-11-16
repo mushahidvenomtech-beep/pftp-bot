@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/chatbot/config/database.php';
 require_once __DIR__ . '/chatbot/includes/auth.php';
+require_once __DIR__ . '/chatbot/includes/static_provider.php';
 
 // Enforce admin authentication
 requireAdminAuth();
@@ -15,55 +16,75 @@ requireAdminAuth();
 $currentAdmin = getCurrentAdmin();
 $activePage = 'dashboard';
 
-$db = getDBConnection();
+$db = getSafeDBConnection();
+$isDbMode = ($db !== null && isDBConnected());
 
-// Fetch live statistics
-$totalVisitors = (int) $db->query("SELECT COUNT(*) FROM visitors")->fetchColumn();
-$totalConversations = (int) $db->query("SELECT COUNT(*) FROM conversations")->fetchColumn();
-$activeConversations = (int) $db->query("SELECT COUNT(*) FROM conversations WHERE status = 'active'")->fetchColumn();
-$totalKB = (int) $db->query("SELECT COUNT(*) FROM knowledge_base WHERE status = 'active'")->fetchColumn();
-$unansweredCount = (int) $db->query("SELECT COUNT(*) FROM unanswered_queries WHERE status = 'pending'")->fetchColumn();
+if ($isDbMode) {
+    try {
+        // Fetch live statistics
+        $totalVisitors = (int) $db->query("SELECT COUNT(*) FROM visitors")->fetchColumn();
+        $totalConversations = (int) $db->query("SELECT COUNT(*) FROM conversations")->fetchColumn();
+        $activeConversations = (int) $db->query("SELECT COUNT(*) FROM conversations WHERE status = 'active'")->fetchColumn();
+        $totalKB = (int) $db->query("SELECT COUNT(*) FROM knowledge_base WHERE status = 'active'")->fetchColumn();
+        $unansweredCount = (int) $db->query("SELECT COUNT(*) FROM unanswered_queries WHERE status = 'pending'")->fetchColumn();
 
-// Fetch message count and today's activity
-$totalMessages = 0;
-try {
-    $totalMessages = (int) $db->query("SELECT COUNT(*) FROM messages")->fetchColumn();
-} catch (Throwable $e) {}
+        // Fetch message count and today's activity
+        $totalMessages = 0;
+        try {
+            $totalMessages = (int) $db->query("SELECT COUNT(*) FROM messages")->fetchColumn();
+        } catch (Throwable $e) {}
 
-$todayConversations = 0;
-try {
-    $todayConversations = (int) $db->query("SELECT COUNT(*) FROM conversations WHERE DATE(created_at) = CURDATE()")->fetchColumn();
-} catch (Throwable $e) {}
+        $todayConversations = 0;
+        try {
+            $todayConversations = (int) $db->query("SELECT COUNT(*) FROM conversations WHERE DATE(created_at) = CURDATE()")->fetchColumn();
+        } catch (Throwable $e) {}
 
-// Fetch recent conversations
-$stmt = $db->query("
-    SELECT
-        c.id,
-        c.session_token,
-        c.status,
-        c.created_at,
-        c.updated_at,
-        v.full_name,
-        v.email,
-        (SELECT COUNT(*) FROM messages WHERE conversation_id = c.id) as msg_count,
-        (SELECT message FROM messages WHERE conversation_id = c.id ORDER BY id DESC LIMIT 1) as last_msg
-    FROM conversations c
-    INNER JOIN visitors v ON c.visitor_id = v.id
-    ORDER BY c.updated_at DESC
-    LIMIT 8
-");
-$recentConversations = $stmt->fetchAll();
+        // Fetch recent conversations
+        $stmt = $db->query("
+            SELECT
+                c.id,
+                c.session_token,
+                c.status,
+                c.created_at,
+                c.updated_at,
+                v.full_name,
+                v.email,
+                (SELECT COUNT(*) FROM messages WHERE conversation_id = c.id) as msg_count,
+                (SELECT message FROM messages WHERE conversation_id = c.id ORDER BY id DESC LIMIT 1) as last_msg
+            FROM conversations c
+            INNER JOIN visitors v ON c.visitor_id = v.id
+            ORDER BY c.updated_at DESC
+            LIMIT 8
+        ");
+        $recentConversations = $stmt->fetchAll();
 
-// Fetch recent unanswered questions
-$unansweredStmt = $db->query("
-    SELECT u.id, u.query_text, u.created_at, v.full_name, v.email
-    FROM unanswered_queries u
-    LEFT JOIN visitors v ON u.visitor_id = v.id
-    WHERE u.status = 'pending'
-    ORDER BY u.id DESC
-    LIMIT 5
-");
-$recentUnanswered = $unansweredStmt->fetchAll();
+        // Fetch recent unanswered questions
+        $unansweredStmt = $db->query("
+            SELECT u.id, u.query_text, u.created_at, v.full_name, v.email
+            FROM unanswered_queries u
+            LEFT JOIN visitors v ON u.visitor_id = v.id
+            WHERE u.status = 'pending'
+            ORDER BY u.id DESC
+            LIMIT 5
+        ");
+        $recentUnanswered = $unansweredStmt->fetchAll();
+    } catch (Throwable $e) {
+        $isDbMode = false;
+    }
+}
+
+if (!$isDbMode) {
+    $stats = getStaticDashboardStats();
+    $totalVisitors = $stats['totalVisitors'];
+    $totalConversations = $stats['totalConversations'];
+    $activeConversations = $stats['activeConversations'];
+    $totalKB = $stats['totalKB'];
+    $unansweredCount = $stats['unansweredCount'];
+    $totalMessages = $stats['totalMessages'];
+    $todayConversations = $stats['todayConversations'];
+    $recentConversations = getStaticConversationsList();
+    $recentUnanswered = [];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

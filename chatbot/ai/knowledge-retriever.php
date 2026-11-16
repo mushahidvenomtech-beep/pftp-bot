@@ -13,10 +13,10 @@ require_once __DIR__ . '/../config/database.php';
 
 class KnowledgeRetriever
 {
-    private PDO $db;
+    private ?PDO $db;
     private float $acceptanceThreshold;
 
-    public function __construct(PDO $db, float $acceptanceThreshold = 22.0)
+    public function __construct(?PDO $db = null, float $acceptanceThreshold = 22.0)
     {
         $this->db = $db;
         $this->acceptanceThreshold = $acceptanceThreshold;
@@ -53,14 +53,24 @@ class KnowledgeRetriever
         $normalizedInput = $this->normalizeText($searchQuery);
         $userTokens = $this->tokenize($normalizedInput);
 
-        // Fetch all active KB records
-        $stmt = $this->db->prepare("
-            SELECT id, category, language, question, question_variations, answer, keywords, possible_careers
-            FROM knowledge_base
-            WHERE status = 'active'
-        ");
-        $stmt->execute();
-        $records = $stmt->fetchAll();
+        // Fetch active KB records (MySQL or Static fallback)
+        if ($this->db !== null) {
+            try {
+                $stmt = $this->db->prepare("
+                    SELECT id, category, language, question, question_variations, answer, keywords, possible_careers
+                    FROM knowledge_base
+                    WHERE status = 'active'
+                ");
+                $stmt->execute();
+                $records = $stmt->fetchAll();
+            } catch (Throwable $e) {
+                require_once __DIR__ . '/../includes/static_provider.php';
+                $records = getStaticKBRecords();
+            }
+        } else {
+            require_once __DIR__ . '/../includes/static_provider.php';
+            $records = getStaticKBRecords();
+        }
 
         $bestScore = 0.0;
         $secondBestScore = 0.0;
@@ -86,7 +96,9 @@ class KnowledgeRetriever
 
         if ($bestRecord !== null && $bestScore >= $this->acceptanceThreshold) {
             // Increment view counter
-            $this->incrementViews((int) $bestRecord['id']);
+            if ($this->db !== null) {
+                $this->incrementViews((int) $bestRecord['id']);
+            }
 
             $normalizedConfidence = round(min(1.0, $bestScore / 70.0), 2);
 
@@ -105,7 +117,9 @@ class KnowledgeRetriever
         }
 
         // Fallback: log unanswered query for administrator review
-        $this->logUnansweredQuery($analysis['raw_query'], $conversationId, $visitorId);
+        if ($this->db !== null) {
+            $this->logUnansweredQuery($analysis['raw_query'], $conversationId, $visitorId);
+        }
 
         return [
             'found'            => false,

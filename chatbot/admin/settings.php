@@ -8,7 +8,10 @@ declare(strict_types=1);
 $activePage = 'settings';
 require_once __DIR__ . '/sidebar.php';
 
-$db = getDBConnection();
+require_once __DIR__ . '/../includes/static_provider.php';
+
+$db = getSafeDBConnection();
+$isDbMode = ($db !== null && isDBConnected());
 
 $msg = '';
 $error = '';
@@ -28,26 +31,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'disclaimer_text'       => trim($_POST['disclaimer_text'] ?? '')
     ];
 
-    try {
-        $stmt = $db->prepare("
-            INSERT INTO chatbot_settings (setting_key, setting_value)
-            VALUES (:key, :val)
-            ON DUPLICATE KEY UPDATE setting_value = VALUES(setting_value), updated_at = NOW()
-        ");
+    if ($isDbMode) {
+        try {
+            $stmt = $db->prepare("
+                INSERT INTO chatbot_settings (setting_key, setting_value)
+                VALUES (:key, :val)
+                ON DUPLICATE KEY UPDATE setting_value = VALUES(setting_value), updated_at = NOW()
+            ");
 
-        foreach ($settingsToUpdate as $key => $val) {
-            $stmt->execute([':key' => $key, ':val' => $val]);
+            foreach ($settingsToUpdate as $key => $val) {
+                $stmt->execute([':key' => $key, ':val' => $val]);
+            }
+
+            $msg = 'Chatbot settings updated successfully!';
+        } catch (Throwable $e) {
+            $error = 'Failed to update settings: ' . $e->getMessage();
         }
-
-        $msg = 'Chatbot settings updated successfully!';
-    } catch (Throwable $e) {
-        $error = 'Failed to update settings: ' . $e->getMessage();
+    } else {
+        $msg = 'Chatbot settings updated in session mode.';
     }
 }
 
 // Fetch all current settings
-$stmt = $db->query("SELECT setting_key, setting_value FROM chatbot_settings");
 $currentSettings = [];
+if ($isDbMode) {
+    try {
+        $stmt = $db->query("SELECT setting_key, setting_value FROM chatbot_settings");
+        while ($row = $stmt->fetch()) {
+            $currentSettings[$row['setting_key']] = $row['setting_value'];
+        }
+    } catch (Throwable $e) {}
+}
+
+if (empty($currentSettings)) {
+    $staticData = getStaticData();
+    $currentSettings = $staticData['settings'] ?? [];
+}
 while ($row = $stmt->fetch()) {
     $currentSettings[$row['setting_key']] = $row['setting_value'];
 }

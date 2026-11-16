@@ -18,13 +18,13 @@ require_once __DIR__ . '/response-generator.php';
 
 class AiClient
 {
-    private PDO $db;
+    private ?PDO $db;
     private ContextManager $contextManager;
     private QueryAnalyzer $queryAnalyzer;
     private KnowledgeRetriever $knowledgeRetriever;
     private ResponseGenerator $responseGenerator;
 
-    public function __construct(PDO $db)
+    public function __construct(?PDO $db = null)
     {
         $this->db = $db;
         $this->contextManager = new ContextManager($db);

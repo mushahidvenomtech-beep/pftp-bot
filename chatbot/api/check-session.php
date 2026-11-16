@@ -11,6 +11,7 @@ require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../includes/response.php';
 require_once __DIR__ . '/../includes/validation.php';
 require_once __DIR__ . '/../includes/session.php';
+require_once __DIR__ . '/../includes/static_provider.php';
 
 setupApiHeaders();
 
@@ -44,6 +45,36 @@ if (empty($sessionToken) || !validateSessionToken($sessionToken)) {
         'is_authenticated' => false,
         'settings'         => $botSettings,
         'quick_replies'    => $quickReplies
+    ]);
+}
+
+// Cloud / Offline Static Fallback Mode (Runs if MySQL is not connected)
+if (!isDBConnected()) {
+    $conv = getStaticConversationByToken($sessionToken);
+    if (!$conv) {
+        jsonSuccess('Session expired or not found.', [
+            'is_authenticated' => false,
+            'settings'         => $botSettings,
+            'quick_replies'    => $quickReplies
+        ]);
+    }
+
+    jsonSuccess('Active session verified.', [
+        'is_authenticated' => true,
+        'settings'         => $botSettings,
+        'quick_replies'    => $quickReplies,
+        'visitor'          => [
+            'id'        => (int) ($conv['visitor']['id'] ?? $conv['visitor_id']),
+            'full_name' => $conv['visitor']['full_name'] ?? $conv['full_name'],
+            'email'     => $conv['visitor']['email'] ?? $conv['email'],
+            'phone'     => $conv['visitor']['phone'] ?? null
+        ],
+        'conversation'     => [
+            'id'         => (int) $conv['id'],
+            'status'     => $conv['status'],
+            'created_at' => $conv['created_at']
+        ],
+        'messages'         => $conv['messages'] ?? []
     ]);
 }
 

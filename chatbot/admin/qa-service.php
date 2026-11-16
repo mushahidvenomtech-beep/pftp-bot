@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 class QAService
 {
-    private PDO $db;
+    private ?PDO $db;
 
-    public function __construct(PDO $db)
+    public function __construct(?PDO $db = null)
     {
         $this->db = $db;
     }
@@ -51,19 +51,43 @@ class QAService
 
         $whereSql = !empty($where) ? 'WHERE ' . implode(' AND ', $where) : '';
 
-        $stmt = $this->db->prepare("
-            SELECT *
-            FROM knowledge_base
-            {$whereSql}
-            ORDER BY id ASC
-        ");
-        $stmt->execute($params);
-        $allRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($this->db !== null) {
+            try {
+                $stmt = $this->db->prepare("
+                    SELECT *
+                    FROM knowledge_base
+                    {$whereSql}
+                    ORDER BY id ASC
+                ");
+                $stmt->execute($params);
+                $allRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            } catch (Throwable $e) {
+                require_once __DIR__ . '/../includes/static_provider.php';
+                $allRows = getStaticKBRecords();
+            }
+        } else {
+            require_once __DIR__ . '/../includes/static_provider.php';
+            $rawRows = getStaticKBRecords();
+            $allRows = [];
+            foreach ($rawRows as $row) {
+                if ($category !== '' && ($row['category'] ?? '') !== $category) continue;
+                if ($status !== '' && ($row['status'] ?? 'active') !== $status) continue;
+                if ($search !== '') {
+                    $haystack = ($row['question'] ?? '') . ' ' . ($row['answer'] ?? '') . ' ' . ($row['keywords'] ?? '') . ' ' . ($row['category'] ?? '') . ' ' . ($row['question_variations'] ?? '');
+                    if (mb_stripos($haystack, $search) === false) continue;
+                }
+                $allRows[] = $row;
+            }
+        }
 
         // Group rows by intent_id (or category slug if intent_id is empty)
         $grouped = [];
         foreach ($allRows as $row) {
             $intentKey = !empty($row['intent_id']) ? $row['intent_id'] : 'intent_' . strtolower(preg_replace('/[^a-z0-9]+/i', '_', $row['category']));
+
+            $rowCreatedAt = $row['created_at'] ?? '2026-01-01 00:00:00';
+            $rowUpdatedAt = $row['updated_at'] ?? '2026-01-01 00:00:00';
+            $rowViewsCount = (int) ($row['views_count'] ?? 0);
 
             if (!isset($grouped[$intentKey])) {
                 $grouped[$intentKey] = [
@@ -71,14 +95,14 @@ class QAService
                     'primary_id'          => (int) $row['id'],
                     'all_ids'             => [(int) $row['id']],
                     'category'            => $row['category'],
-                    'status'              => $row['status'],
+                    'status'              => $row['status'] ?? 'active',
                     'main_question'       => '',
                     'question_variations' => '',
                     'keywords'            => '',
                     'possible_careers'    => '',
-                    'views_count'         => 0,
-                    'created_at'          => $row['created_at'],
-                    'updated_at'          => $row['updated_at'],
+                    'views_count'         => $rowViewsCount,
+                    'created_at'          => $rowCreatedAt,
+                    'updated_at'          => $rowUpdatedAt,
                     'answer_en'           => '',
                     'answer_ur'           => '',
                     'answer_roman_ur'     => '',
@@ -89,14 +113,14 @@ class QAService
                 ];
             } else {
                 $grouped[$intentKey]['all_ids'][] = (int) $row['id'];
-                $grouped[$intentKey]['views_count'] += (int) $row['views_count'];
-                if ($row['created_at'] < $grouped[$intentKey]['created_at']) {
-                    $grouped[$intentKey]['created_at'] = $row['created_at'];
+                $grouped[$intentKey]['views_count'] += $rowViewsCount;
+                if ($rowCreatedAt < $grouped[$intentKey]['created_at']) {
+                    $grouped[$intentKey]['created_at'] = $rowCreatedAt;
                 }
-                if ($row['updated_at'] > $grouped[$intentKey]['updated_at']) {
-                    $grouped[$intentKey]['updated_at'] = $row['updated_at'];
+                if ($rowUpdatedAt > $grouped[$intentKey]['updated_at']) {
+                    $grouped[$intentKey]['updated_at'] = $rowUpdatedAt;
                 }
-                if ($row['status'] === 'active') {
+                if (($row['status'] ?? 'active') === 'active') {
                     $grouped[$intentKey]['status'] = 'active';
                 }
             }
@@ -190,13 +214,29 @@ class QAService
      */
     public function getUnifiedRecord(string $intentId): ?array
     {
-        $stmt = $this->db->prepare("
-            SELECT * FROM knowledge_base
-            WHERE intent_id = :intent OR id = :id
-            ORDER BY id ASC
-        ");
-        $stmt->execute([':intent' => $intentId, ':id' => is_numeric($intentId) ? (int)$intentId : 0]);
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $rows = [];
+        if ($this->db !== null) {
+            try {
+                $stmt = $this->db->prepare("
+                    SELECT * FROM knowledge_base
+                    WHERE intent_id = :intent OR id = :id
+                    ORDER BY id ASC
+                ");
+                $stmt->execute([':intent' => $intentId, ':id' => is_numeric($intentId) ? (int)$intentId : 0]);
+                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            } catch (Throwable $e) {
+                $rows = [];
+            }
+        }
+        if (empty($rows)) {
+            require_once __DIR__ . '/../includes/static_provider.php';
+            $allKB = getStaticKBRecords();
+            foreach ($allKB as $r) {
+                if (($r['intent_id'] ?? '') === $intentId || (string)($r['id'] ?? '') === (string)$intentId) {
+                    $rows[] = $r;
+                }
+            }
+        }
 
         if (empty($rows)) {
             return null;

@@ -8,7 +8,10 @@ declare(strict_types=1);
 $activePage = 'conversations';
 require_once __DIR__ . '/sidebar.php';
 
-$db = getDBConnection();
+require_once __DIR__ . '/../includes/static_provider.php';
+
+$db = getSafeDBConnection();
+$isDbMode = ($db !== null && isDBConnected());
 
 $msg = '';
 $error = '';
@@ -19,16 +22,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $convId = (int) ($_POST['conversation_id'] ?? 0);
 
     if ($action === 'close' && $convId > 0) {
-        $stmt = $db->prepare("UPDATE conversations SET status = 'closed' WHERE id = :id");
-        $stmt->execute([':id' => $convId]);
+        if ($isDbMode) {
+            $stmt = $db->prepare("UPDATE conversations SET status = 'closed' WHERE id = :id");
+            $stmt->execute([':id' => $convId]);
+        }
         $msg = "Conversation #{$convId} marked as closed.";
     } elseif ($action === 'reopen' && $convId > 0) {
-        $stmt = $db->prepare("UPDATE conversations SET status = 'active' WHERE id = :id");
-        $stmt->execute([':id' => $convId]);
+        if ($isDbMode) {
+            $stmt = $db->prepare("UPDATE conversations SET status = 'active' WHERE id = :id");
+            $stmt->execute([':id' => $convId]);
+        }
         $msg = "Conversation #{$convId} reopened.";
     } elseif ($action === 'delete' && $convId > 0) {
-        $stmt = $db->prepare("DELETE FROM conversations WHERE id = :id");
-        $stmt->execute([':id' => $convId]);
+        if ($isDbMode) {
+            $stmt = $db->prepare("DELETE FROM conversations WHERE id = :id");
+            $stmt->execute([':id' => $convId]);
+        }
         $msg = "Conversation #{$convId} deleted permanently.";
     }
 }
@@ -38,66 +47,96 @@ $search = trim($_GET['search'] ?? '');
 $statusFilter = trim($_GET['status'] ?? 'all');
 $selectedConvId = isset($_GET['id']) ? (int) $_GET['id'] : null;
 
-// Build query
-$where = [];
-$params = [];
-
-if ($search !== '') {
-    $where[] = "(v.full_name LIKE :s1 OR v.email LIKE :s2 OR c.session_token LIKE :s3)";
-    $params[':s1'] = "%{$search}%";
-    $params[':s2'] = "%{$search}%";
-    $params[':s3'] = "%{$search}%";
-}
-
-if ($statusFilter === 'active' || $statusFilter === 'closed') {
-    $where[] = "c.status = :status";
-    $params[':status'] = $statusFilter;
-}
-
-$whereSql = !empty($where) ? 'WHERE ' . implode(' AND ', $where) : '';
-
-$stmt = $db->prepare("
-    SELECT
-        c.id,
-        c.session_token,
-        c.status,
-        c.created_at,
-        c.updated_at,
-        v.full_name,
-        v.email,
-        v.phone,
-        (SELECT COUNT(*) FROM messages WHERE conversation_id = c.id) as msg_count
-    FROM conversations c
-    INNER JOIN visitors v ON c.visitor_id = v.id
-    {$whereSql}
-    ORDER BY c.updated_at DESC
-");
-$stmt->execute($params);
-$conversations = $stmt->fetchAll();
-
-// If a specific conversation is selected, load its messages
+$conversations = [];
 $selectedConversation = null;
 $selectedMessages = [];
-if ($selectedConvId) {
-    $cStmt = $db->prepare("
-        SELECT c.*, v.full_name, v.email, v.phone, v.ip_address, v.user_agent
-        FROM conversations c
-        INNER JOIN visitors v ON c.visitor_id = v.id
-        WHERE c.id = :id
-    ");
-    $cStmt->execute([':id' => $selectedConvId]);
-    $selectedConversation = $cStmt->fetch();
 
-    if ($selectedConversation) {
-        $mStmt = $db->prepare("
-            SELECT m.*, kb.category as matched_category
-            FROM messages m
-            LEFT JOIN knowledge_base kb ON m.matched_kb_id = kb.id
-            WHERE m.conversation_id = :id
-            ORDER BY m.id ASC
+if ($isDbMode) {
+    try {
+        // Build query
+        $where = [];
+        $params = [];
+
+        if ($search !== '') {
+            $where[] = "(v.full_name LIKE :s1 OR v.email LIKE :s2 OR c.session_token LIKE :s3)";
+            $params[':s1'] = "%{$search}%";
+            $params[':s2'] = "%{$search}%";
+            $params[':s3'] = "%{$search}%";
+        }
+
+        if ($statusFilter === 'active' || $statusFilter === 'closed') {
+            $where[] = "c.status = :status";
+            $params[':status'] = $statusFilter;
+        }
+
+        $whereSql = !empty($where) ? 'WHERE ' . implode(' AND ', $where) : '';
+
+        $stmt = $db->prepare("
+            SELECT
+                c.id,
+                c.session_token,
+                c.status,
+                c.created_at,
+                c.updated_at,
+                v.full_name,
+                v.email,
+                v.phone,
+                (SELECT COUNT(*) FROM messages WHERE conversation_id = c.id) as msg_count
+            FROM conversations c
+            INNER JOIN visitors v ON c.visitor_id = v.id
+            {$whereSql}
+            ORDER BY c.updated_at DESC
         ");
-        $mStmt->execute([':id' => $selectedConvId]);
-        $selectedMessages = $mStmt->fetchAll();
+        $stmt->execute($params);
+        $conversations = $stmt->fetchAll();
+
+        // If a specific conversation is selected, load its messages
+        if ($selectedConvId) {
+            $cStmt = $db->prepare("
+                SELECT c.*, v.full_name, v.email, v.phone, v.ip_address, v.user_agent
+                FROM conversations c
+                INNER JOIN visitors v ON c.visitor_id = v.id
+                WHERE c.id = :id
+            ");
+            $cStmt->execute([':id' => $selectedConvId]);
+            $selectedConversation = $cStmt->fetch();
+
+            if ($selectedConversation) {
+                $mStmt = $db->prepare("
+                    SELECT m.*, kb.category as matched_category
+                    FROM messages m
+                    LEFT JOIN knowledge_base kb ON m.matched_kb_id = kb.id
+                    WHERE m.conversation_id = :id
+                    ORDER BY m.id ASC
+                ");
+                $mStmt->execute([':id' => $selectedConvId]);
+                $selectedMessages = $mStmt->fetchAll();
+            }
+        }
+    } catch (Throwable $e) {
+        $isDbMode = false;
+    }
+}
+
+if (!$isDbMode) {
+    $allStaticConvs = getStaticConversationsList();
+    foreach ($allStaticConvs as $c) {
+        if ($search !== '') {
+            $matches = (stripos($c['full_name'], $search) !== false || stripos($c['email'], $search) !== false || stripos($c['session_token'], $search) !== false);
+            if (!$matches) continue;
+        }
+        if ($statusFilter === 'active' || $statusFilter === 'closed') {
+            if ($c['status'] !== $statusFilter) continue;
+        }
+        $conversations[] = $c;
+        if ($selectedConvId && (int)$c['id'] === $selectedConvId) {
+            $selectedConversation = $c;
+            $selectedMessages = $c['messages'] ?? [];
+        }
+    }
+    if (!$selectedConvId && !empty($conversations)) {
+        $selectedConversation = $conversations[0];
+        $selectedMessages = $conversations[0]['messages'] ?? [];
     }
 }
 ?>

@@ -11,6 +11,7 @@ require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../includes/response.php';
 require_once __DIR__ . '/../includes/validation.php';
 require_once __DIR__ . '/../includes/session.php';
+require_once __DIR__ . '/../includes/static_provider.php';
 
 setupApiHeaders();
 
@@ -21,6 +22,27 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 $sessionToken = $_SERVER['HTTP_X_SESSION_TOKEN'] ?? ($_GET['session_token'] ?? '');
 if (!validateSessionToken($sessionToken)) {
     jsonError('Invalid or missing session token.', 401);
+}
+
+// Cloud / Offline Static Fallback Mode (Runs if MySQL is not connected)
+if (!isDBConnected()) {
+    $conv = getStaticConversationByToken($sessionToken);
+    if (!$conv) {
+        jsonError('Conversation not found or expired.', 404);
+    }
+
+    jsonSuccess('Messages loaded.', [
+        'conversation' => [
+            'id'         => (int) $conv['id'],
+            'status'     => $conv['status'],
+            'created_at' => $conv['created_at']
+        ],
+        'visitor' => [
+            'full_name'  => $conv['visitor']['full_name'] ?? $conv['full_name'],
+            'email'      => $conv['visitor']['email'] ?? $conv['email'],
+        ],
+        'messages' => $conv['messages'] ?? []
+    ]);
 }
 
 try {

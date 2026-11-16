@@ -18,10 +18,10 @@ require_once __DIR__ . '/../config/database.php';
 
 class MatchingEngine
 {
-    private PDO $db;
+    private ?PDO $db;
     private string $fallbackResponse;
 
-    public function __construct(PDO $db)
+    public function __construct(?PDO $db = null)
     {
         $this->db = $db;
         $this->fallbackResponse = getChatbotSetting(
@@ -58,13 +58,23 @@ class MatchingEngine
         }
 
         // 3. Fetch all active KB records for scoring
-        $stmt = $this->db->prepare("
-            SELECT id, category, language, question, question_variations, answer, keywords, possible_careers
-            FROM knowledge_base
-            WHERE status = 'active'
-        ");
-        $stmt->execute();
-        $records = $stmt->fetchAll();
+        if ($this->db !== null) {
+            try {
+                $stmt = $this->db->prepare("
+                    SELECT id, category, language, question, question_variations, answer, keywords, possible_careers
+                    FROM knowledge_base
+                    WHERE status = 'active'
+                ");
+                $stmt->execute();
+                $records = $stmt->fetchAll();
+            } catch (Throwable $e) {
+                require_once __DIR__ . '/static_provider.php';
+                $records = getStaticKBRecords();
+            }
+        } else {
+            require_once __DIR__ . '/static_provider.php';
+            $records = getStaticKBRecords();
+        }
 
         $bestScore = 0.0;
         $bestRecord = null;
@@ -84,7 +94,9 @@ class MatchingEngine
 
         if ($bestRecord !== null && $bestScore >= $threshold) {
             // Update views count for the matched KB item
-            $this->incrementViews((int) $bestRecord['id']);
+            if ($this->db !== null) {
+                $this->incrementViews((int) $bestRecord['id']);
+            }
 
             return [
                 'answer'           => $bestRecord['answer'],
@@ -97,7 +109,9 @@ class MatchingEngine
         }
 
         // 4. Fallback: Log unanswered question for admin review
-        $this->logUnansweredQuery($userInput, $conversationId, $visitorId);
+        if ($this->db !== null) {
+            $this->logUnansweredQuery($userInput, $conversationId, $visitorId);
+        }
 
         return [
             'answer'           => $this->fallbackResponse,

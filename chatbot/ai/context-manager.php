@@ -12,7 +12,7 @@ require_once __DIR__ . '/../config/database.php';
 
 class ContextManager
 {
-    private PDO $db;
+    private ?PDO $db;
 
     // The 16 canonical PFTP course names & aliases
     private const COURSE_CATALOG = [
@@ -34,46 +34,50 @@ class ContextManager
         'Freelancing'                   => ['freelancing', 'fiverr', 'upwork', 'freelance']
     ];
 
-    public function __construct(PDO $db)
+    public function __construct(?PDO $db = null)
     {
         $this->db = $db;
     }
 
-    public function getDb(): PDO
+    public function getDb(): ?PDO
     {
         return $this->db;
     }
 
     /**
-     * Load existing context from database or initialize default
+     * Load existing context from database or session storage
      */
     public function loadContext(int $conversationId): array
     {
-        try {
-            $stmt = $this->db->prepare("
-                SELECT current_topic, last_mentioned_course, user_education_status,
-                       last_intent, pending_clarification, context_data
-                FROM conversation_context
-                WHERE conversation_id = :cid
-                LIMIT 1
-            ");
-            $stmt->execute([':cid' => $conversationId]);
-            $row = $stmt->fetch();
+        if ($this->db !== null) {
+            try {
+                $stmt = $this->db->prepare("
+                    SELECT current_topic, last_mentioned_course, user_education_status,
+                           last_intent, pending_clarification, context_data
+                    FROM conversation_context
+                    WHERE conversation_id = :cid
+                    LIMIT 1
+                ");
+                $stmt->execute([':cid' => $conversationId]);
+                $row = $stmt->fetch();
 
-            if ($row) {
-                $contextData = !empty($row['context_data']) ? json_decode($row['context_data'], true) : [];
-                return [
-                    'current_topic'          => $row['current_topic'],
-                    'last_mentioned_course'  => $row['last_mentioned_course'],
-                    'user_education_status'  => $row['user_education_status'],
-                    'last_intent'            => $row['last_intent'],
-                    'pending_clarification'  => $row['pending_clarification'],
-                    'recent_entities'        => $contextData['recent_entities'] ?? [],
-                    'discussed_courses'      => $contextData['discussed_courses'] ?? []
-                ];
+                if ($row) {
+                    $contextData = !empty($row['context_data']) ? json_decode($row['context_data'], true) : [];
+                    return [
+                        'current_topic'          => $row['current_topic'],
+                        'last_mentioned_course'  => $row['last_mentioned_course'],
+                        'user_education_status'  => $row['user_education_status'],
+                        'last_intent'            => $row['last_intent'],
+                        'pending_clarification'  => $row['pending_clarification'],
+                        'recent_entities'        => $contextData['recent_entities'] ?? [],
+                        'discussed_courses'      => $contextData['discussed_courses'] ?? []
+                    ];
+                }
+            } catch (Throwable $e) {
+                error_log('[ContextManager Load Error] ' . $e->getMessage());
             }
-        } catch (Throwable $e) {
-            error_log('[ContextManager Load Error] ' . $e->getMessage());
+        } elseif (isset($_SESSION['pftp_context'][$conversationId])) {
+            return $_SESSION['pftp_context'][$conversationId];
         }
 
         return [
@@ -88,43 +92,47 @@ class ContextManager
     }
 
     /**
-     * Save updated context state to database
+     * Save updated context state to database or session storage
      */
     public function saveContext(int $conversationId, array $context): void
     {
-        try {
-            $contextData = json_encode([
-                'recent_entities'   => array_slice($context['recent_entities'] ?? [], -8),
-                'discussed_courses' => array_values(array_unique($context['discussed_courses'] ?? []))
-            ], JSON_UNESCAPED_UNICODE);
+        if ($this->db !== null) {
+            try {
+                $contextData = json_encode([
+                    'recent_entities'   => array_slice($context['recent_entities'] ?? [], -8),
+                    'discussed_courses' => array_values(array_unique($context['discussed_courses'] ?? []))
+                ], JSON_UNESCAPED_UNICODE);
 
-            $stmt = $this->db->prepare("
-                INSERT INTO conversation_context
-                (conversation_id, current_topic, last_mentioned_course, user_education_status,
-                 last_intent, pending_clarification, context_data, updated_at)
-                VALUES
-                (:cid, :topic, :course, :edu, :intent, :clar, :cdata, NOW())
-                ON DUPLICATE KEY UPDATE
-                    current_topic = VALUES(current_topic),
-                    last_mentioned_course = VALUES(last_mentioned_course),
-                    user_education_status = VALUES(user_education_status),
-                    last_intent = VALUES(last_intent),
-                    pending_clarification = VALUES(pending_clarification),
-                    context_data = VALUES(context_data),
-                    updated_at = NOW()
-            ");
+                $stmt = $this->db->prepare("
+                    INSERT INTO conversation_context
+                    (conversation_id, current_topic, last_mentioned_course, user_education_status,
+                     last_intent, pending_clarification, context_data, updated_at)
+                    VALUES
+                    (:cid, :topic, :course, :edu, :intent, :clar, :cdata, NOW())
+                    ON DUPLICATE KEY UPDATE
+                        current_topic = VALUES(current_topic),
+                        last_mentioned_course = VALUES(last_mentioned_course),
+                        user_education_status = VALUES(user_education_status),
+                        last_intent = VALUES(last_intent),
+                        pending_clarification = VALUES(pending_clarification),
+                        context_data = VALUES(context_data),
+                        updated_at = NOW()
+                ");
 
-            $stmt->execute([
-                ':cid'    => $conversationId,
-                ':topic'  => $context['current_topic'] ?? null,
-                ':course' => $context['last_mentioned_course'] ?? null,
-                ':edu'    => $context['user_education_status'] ?? null,
-                ':intent' => $context['last_intent'] ?? null,
-                ':clar'   => $context['pending_clarification'] ?? null,
-                ':cdata'  => $contextData
-            ]);
-        } catch (Throwable $e) {
-            error_log('[ContextManager Save Error] ' . $e->getMessage());
+                $stmt->execute([
+                    ':cid'    => $conversationId,
+                    ':topic'  => $context['current_topic'] ?? null,
+                    ':course' => $context['last_mentioned_course'] ?? null,
+                    ':edu'    => $context['user_education_status'] ?? null,
+                    ':intent' => $context['last_intent'] ?? null,
+                    ':clar'   => $context['pending_clarification'] ?? null,
+                    ':cdata'  => $contextData
+                ]);
+            } catch (Throwable $e) {
+                error_log('[ContextManager Save Error] ' . $e->getMessage());
+            }
+        } else {
+            $_SESSION['pftp_context'][$conversationId] = $context;
         }
     }
 

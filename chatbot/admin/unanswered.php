@@ -8,11 +8,12 @@ declare(strict_types=1);
 $activePage = 'unanswered';
 require_once __DIR__ . '/sidebar.php';
 
-$db = getDBConnection();
+$db = getSafeDBConnection();
+$isDbMode = ($db !== null && isDBConnected());
 
 $msg = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $isDbMode) {
     $action = $_POST['action'] ?? '';
     $id = (int) ($_POST['id'] ?? 0);
 
@@ -33,26 +34,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $statusFilter = $_GET['status'] ?? 'pending';
 
-$where = [];
-$params = [];
-if ($statusFilter !== 'all') {
-    $where[] = "u.status = :status";
-    $params[':status'] = $statusFilter;
-}
-$whereSql = !empty($where) ? 'WHERE ' . implode(' AND ', $where) : '';
+$queries = [];
+if ($isDbMode) {
+    try {
+        $where = [];
+        $params = [];
+        if ($statusFilter !== 'all') {
+            $where[] = "u.status = :status";
+            $params[':status'] = $statusFilter;
+        }
+        $whereSql = !empty($where) ? 'WHERE ' . implode(' AND ', $where) : '';
 
-$stmt = $db->prepare("
-    SELECT
-        u.*,
-        v.full_name,
-        v.email
-    FROM unanswered_queries u
-    LEFT JOIN visitors v ON u.visitor_id = v.id
-    {$whereSql}
-    ORDER BY u.id DESC
-");
-$stmt->execute($params);
-$queries = $stmt->fetchAll();
+        $stmt = $db->prepare("
+            SELECT
+                u.*,
+                v.full_name,
+                v.email
+            FROM unanswered_queries u
+            LEFT JOIN visitors v ON u.visitor_id = v.id
+            {$whereSql}
+            ORDER BY u.id DESC
+        ");
+        $stmt->execute($params);
+        $queries = $stmt->fetchAll();
+    } catch (Throwable $e) {
+        $queries = [];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
