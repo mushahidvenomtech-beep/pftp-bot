@@ -46,16 +46,16 @@ $phoneClean = $phoneRaw !== null ? sanitizeString($phoneRaw, 30) : null;
 $cleanEmail = mb_strtolower(trim($emailVal['value']));
 $cleanName  = trim($nameVal['value']);
 
-// Quick replies for easy student navigation
+// Quick replies for easy student navigation across all 3 language modes
 $quickReplies = [
+    ['label' => '🇬🇧 English Roadmap', 'query' => 'What is the complete 12-week roadmap for course completion and admission?'],
+    ['label' => '🇵🇰 Roman Urdu Roadmap', 'query' => 'Course completion ka mukammal roadmap kya hai aur dakhla kaise milega?'],
+    ['label' => '🇵🇰 اردو داخلہ روڈ میپ', 'query' => 'کورس کی تکمیل کا مکمل 12 ہفتوں کا روڈ میپ کیا ہے اور داخلہ کیسے ہوگا؟'],
+    ['label' => '🎓 Course Suggestion', 'query' => 'I have completed intermediate / ICS. Which course is best suited for my study details?'],
     ['label' => '📝 How to Apply', 'query' => 'Where should I go to apply for admission?'],
     ['label' => '💳 Fee & How to Pay', 'query' => 'How do I pay the admission processing fee?'],
     ['label' => '📚 All 16 Courses', 'query' => 'What courses are offered at PFTP?'],
-    ['label' => '💻 Web Development', 'query' => 'Why should I take the Full Stack Web Development course?'],
-    ['label' => '🤖 Artificial Intelligence', 'query' => 'Why should I take the Artificial Intelligence (AI) course?'],
-    ['label' => '📈 Digital Marketing', 'query' => 'Why should I take the Digital Marketing course?'],
-    ['label' => '💼 Freelancing', 'query' => 'Why should I take the Freelancing course?'],
-    ['label' => '🇵🇰 داخلہ کیسے لیں؟', 'query' => 'داخلے کے لیے مجھے ویب سائٹ پر کہاں جانا ہوگا؟']
+    ['label' => '💻 Web Development', 'query' => 'Why should I take the Full Stack Web Development course?']
 ];
 
 // Cloud / Offline Static Fallback Mode (Runs if MySQL is not connected)

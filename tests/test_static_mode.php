@@ -37,16 +37,16 @@ echo "Test 1: Static Knowledge Base Preload\n";
 $kb = getStaticKBRecords();
 assertStatic("Loaded 239 KB records from static_data.json", count($kb) === 239, "Got " . count($kb));
 
-// Test 2: Pre-existing Testing Visitor Conversation Recovery
-echo "\nTest 2: Seeded Testing Visitor Conversation Recovery (Muhammad Bilal)\n";
-$visResult = findOrCreateStaticVisitor("Muhammad Bilal", "bilal.student@example.com");
+// Test 2: Pre-existing Testing Visitor Conversation Recovery (Mushahid Majeed)
+echo "\nTest 2: Seeded Testing Visitor Conversation Recovery (Mushahid Majeed)\n";
+$visResult = findOrCreateStaticVisitor("Mushahid Majeed", "mushahid@gmail.com");
 assertStatic("Visitor recognized as existing", $visResult['is_existing'] === true);
 assertStatic("Visitor ID matches seed ID 1", $visResult['visitor']['id'] === 1);
 
 $conv = getOrCreateStaticConversation(1, false);
 assertStatic("Conversation found for visitor", !empty($conv['id']));
-assertStatic("Existing conversation has multiple messages", count($conv['messages']) >= 8, "Got " . count($conv['messages']));
-assertStatic("Conversation contains Python job inquiry", strpos(json_encode($conv['messages']), 'guarantee') !== false);
+assertStatic("Existing conversation has multiple messages", count($conv['messages']) >= 18, "Got " . count($conv['messages']));
+assertStatic("Conversation contains roadmap", strpos(json_encode($conv['messages']), 'Roadmap') !== false);
 
 // Test 3: Live Tester Recovery
 echo "\nTest 3: Live Tester Recovery\n";

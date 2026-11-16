@@ -511,14 +511,49 @@
   }
 
   /**
-   * Client-side fallback responder to guarantee zero-freeze conversation
+   * Client-side fallback responder to guarantee zero-freeze conversation across all 3 language modes
    */
   function getClientSideFallback(query) {
     const q = (query || '').toLowerCase().trim();
 
+    // 1. Trilingual Roadmaps & Admission Closing
+    if (q.includes('روڈ میپ') || q.includes('تکمیل')) {
+      return {
+        message: "کورس کی مرحلہ وار تکمیل کا حتمی 12 ہفتوں کا روڈ میپ:\n\n🎯 **پہلا مرحلہ (ہفتہ 1 تا 4)**: فرنٹ اینڈ ڈیزائننگ (HTML5, CSS3, JavaScript).\n🎯 **دوسرا مرحلہ (ہفتہ 5 تا 8)**: بیک اینڈ پروگرامنگ اور ڈیٹا بیس (PHP, MySQL).\n🎯 **تیسرا مرحلہ (ہفتہ 9 تا 10)**: لائیو پورٹ فولیو پروجیکٹ کی تکمیل۔\n🎯 **چوتھا مرحلہ (ہفتہ 11 تا 12)**: اپ ورک اور فائیور پر فری لانسنگ اور سرٹیفیکیشن۔\n\n👉 **حتمی داخلہ لنک**: https://pftpedu.org/registration",
+        careers: "فل اسٹیک ویب ڈویلپر؛ تصدیق شدہ گریجویٹ؛ پی ایف ٹی پی ایڈمیشنز"
+      };
+    }
+    if ((q.includes('roadmap') || q.includes('complete')) && (q.includes('kaise') || q.includes('kya') || q.includes('hafton') || q.includes('mukammal'))) {
+      return {
+        message: "Yeh raha aap ka mukammal 12 Hafton ka Study Roadmap:\n\n📌 **Hafta 1 se 4**: HTML5, CSS3, Flexbox aur JavaScript UI basics.\n📌 **Hafta 5 se 8**: PHP backend, MySQL database aur secure login forms.\n📌 **Hafta 9 aur 10**: Live Commercial Project banakar portfolio mein add karna.\n📌 **Hafta 11 aur 12**: Fiverr aur Upwork par freelance launch aur verified PFTP Certificate.\n\n👉 **Dakhla Finalize Karne Ka Tareeqa**: https://pftpedu.org/registration",
+        careers: "Web Developer; Freelance Specialist; Certified PFTP Graduate"
+      };
+    }
+    if (q.includes('roadmap') || q.includes('12-week') || q.includes('12 week') || q.includes('how course completed')) {
+      return {
+        message: "Here is the complete 12-Week Course Completion Roadmap:\n\n🚀 **Phase 1 (Weeks 1–4)**: Core Web Foundations & Responsive UI (HTML5, CSS3, JavaScript DOM).\n🚀 **Phase 2 (Weeks 5–8)**: Backend Engineering & Database Systems (PHP, MySQL, REST APIs).\n🚀 **Phase 3 (Weeks 9–10)**: Capstone Live Commercial Web Application.\n🚀 **Phase 4 (Weeks 11–12)**: Freelancing Launch on Upwork & Fiverr, Proposal Mastery & Official PFTP Certification.\n\n👉 **Final Step to Enroll**: https://pftpedu.org/registration",
+        careers: "Full Stack Web Developer; Freelance Software Engineer; Certified PFTP Graduate"
+      };
+    }
+
+    // 2. Study Background & Course Suggestion
+    if (q.includes('تعلیمی') || q.includes('تجویز') || q.includes('پس منظر')) {
+      return {
+        message: "آپ کے انٹرمیڈیٹ (ICS / پری انجینئرنگ) کے پس منظر کے مطابق **فل اسٹیک ویب ڈویلپمنٹ اور ماڈرن سافٹ ویئر انجینئرنگ** سب سے بہترین انتخاب ہے۔ اس میں آپ ویب سائٹس اور سوفٹ ویئر بنانا سیکھتے ہیں جس کی اپ ورک پر زبردست بین الاقوامی مانگ ہے۔",
+        careers: "ویب ڈویلپر؛ سافٹ ویئر انجینئر؛ فری لانسر"
+      };
+    }
+    if (q.includes('intermediate') || q.includes('ics') || q.includes('study background') || q.includes('study detail') || q.includes('suggest')) {
+      return {
+        message: "With an Intermediate (ICS / Pre-Engineering) background, **Full Stack Web Development & Modern Software Engineering** is the highest-ROI pathway for you. You will master both frontend (HTML5/CSS3/JS) and backend (PHP/MySQL) architecture with immediate freelance viability on Upwork & Fiverr.",
+        careers: "Full Stack Web Developer; Frontend Specialist; Backend Developer; Freelance Web Master"
+      };
+    }
+
+    // 3. Application & Fees
     if (q.includes('apply') || q.includes('admission') || q.includes('register') || q.includes('داخلہ') || q.includes('registration') || q.includes('enroll')) {
       return {
-        message: "To apply for admission at PFTP, visit our official admissions portal at https://pftpedu.org. Click on **Apply Now**, choose your course from the 16 available tracks, fill in your details, and submit your application.",
+        message: "To apply for admission at PFTP, visit our official admissions portal at https://pftpedu.org/registration. Click on **Apply Now**, choose your course from the 16 available tracks, fill in your details, and submit your application.",
         careers: "Full Stack Developer; AI Specialist; Digital Marketer; Freelancer"
       };
     }
@@ -572,7 +607,7 @@
     }
 
     return {
-      message: "Thank you for reaching out! PFTP admissions are currently open across 16 domains. You can apply directly at https://pftpedu.org or connect with our student counselling desk on WhatsApp at **+92 300 1234567**.",
+      message: "Thank you for reaching out! PFTP admissions are currently open across 16 domains. You can apply directly at https://pftpedu.org/registration or connect with our student counselling desk on WhatsApp at **+92 300 1234567**.",
       careers: "Full Stack Development; AI; Digital Marketing; Freelancing"
     };
   }

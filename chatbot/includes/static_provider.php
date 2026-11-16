@@ -103,9 +103,10 @@ function findOrCreateStaticVisitor(string $fullName, string $email, ?string $pho
         $dbName = mb_strtolower(trim($v['full_name']));
         $dbEmail = mb_strtolower(trim($v['email']));
 
-        // Muhammad Bilal credential detection (matches even with slight name or email variation)
+        // Mushahid Majeed credential detection (primary test student with complete admission roadmap)
         if ((int) $v['id'] === 1) {
-            if ($cleanEmail === $dbEmail || mb_stripos($inputName, 'bilal') !== false || mb_stripos($cleanEmail, 'bilal') !== false) {
+            if ($cleanEmail === $dbEmail || mb_stripos($inputName, 'mushahid') !== false || mb_stripos($cleanEmail, 'mushahid') !== false ||
+                mb_stripos($inputName, 'bilal') !== false || mb_stripos($cleanEmail, 'bilal') !== false) {
                 return ['visitor' => $v, 'is_existing' => true];
             }
         }
@@ -209,8 +210,8 @@ function getStaticConversationByToken(string $token): ?array
         $synthetic = [
             'id'            => 1,
             'visitor_id'    => 1,
-            'full_name'     => 'Muhammad Bilal',
-            'email'         => 'bilal.student@example.com',
+            'full_name'     => 'Mushahid Majeed',
+            'email'         => 'mushahid@gmail.com',
             'session_token' => $token,
             'status'        => 'active',
             'conversation_id' => 1,
@@ -220,8 +221,8 @@ function getStaticConversationByToken(string $token): ?array
             'updated_at'    => date('Y-m-d H:i:s'),
             'visitor'       => [
                 'id'        => 1,
-                'full_name' => 'Muhammad Bilal',
-                'email'     => 'bilal.student@example.com'
+                'full_name' => 'Mushahid Majeed',
+                'email'     => 'mushahid@gmail.com'
             ],
             'messages'      => []
         ];
