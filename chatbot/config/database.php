@@ -124,6 +124,11 @@ function getChatbotSetting(string $key, ?string $default = null, bool $forceRefr
 {
     static $settingsCache = null;
 
+    if (!isDBConnected()) {
+        require_once __DIR__ . '/../includes/static_provider.php';
+        return getStaticSettingValue($key, $default);
+    }
+
     if ($settingsCache === null || $forceRefresh) {
         $settingsCache = [];
         try {
@@ -134,7 +139,8 @@ function getChatbotSetting(string $key, ?string $default = null, bool $forceRefr
             }
         } catch (Throwable $e) {
             error_log('[Chatbot Settings Error] ' . $e->getMessage());
-            return $default;
+            require_once __DIR__ . '/../includes/static_provider.php';
+            return getStaticSettingValue($key, $default);
         }
     }
 
@@ -162,6 +168,18 @@ function isDBConnected(): bool
     if ($status !== null) {
         return $status;
     }
+
+    // Optimization for serverless hosts without configured MySQL:
+    // If running on Vercel and no external DB host/URL is configured, immediately return false
+    if (pftpGetEnv('VERCEL') || pftpGetEnv('VERCEL_ENV')) {
+        $dbUrl = pftpGetEnv('DATABASE_URL') ?: pftpGetEnv('MYSQL_URL');
+        $dbHost = pftpGetEnv('DB_HOST') ?: pftpGetEnv('MYSQLHOST') ?: pftpGetEnv('MYSQL_HOST');
+        if (!$dbUrl && (!$dbHost || $dbHost === '127.0.0.1' || $dbHost === 'localhost')) {
+            $status = false;
+            return false;
+        }
+    }
+
     $pdo = getSafeDBConnection();
     if ($pdo === null) {
         $status = false;

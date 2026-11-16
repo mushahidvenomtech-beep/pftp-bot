@@ -71,6 +71,17 @@ if (!isDBConnected()) {
             'message'    => $msgVal['value'],
             'created_at' => $userMsg['created_at']
         ],
+        'bot_response' => [
+            'id'               => $botMsg['id'],
+            'message'          => $aiResult['message'],
+            'response_type'    => $aiResult['response_type'] ?? 'direct_answer',
+            'matched_kb_id'    => $aiResult['matched_kb_id'],
+            'is_fallback'      => $aiResult['is_fallback'] ? 1 : 0,
+            'possible_careers' => $aiResult['possible_careers'],
+            'category'         => $aiResult['category'],
+            'confidence'       => $aiResult['confidence'],
+            'created_at'       => $botMsg['created_at']
+        ],
         'bot_message' => [
             'id'               => $botMsg['id'],
             'message'          => $aiResult['message'],

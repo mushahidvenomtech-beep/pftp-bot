@@ -440,6 +440,7 @@
     // Show typing indicator
     showTyping(true);
     state.isSubmitting = true;
+    if (dom.btnSend) dom.btnSend.disabled = true;
 
     try {
       const res = await fetch(basePath + '/api/send-message.php', {
@@ -455,18 +456,26 @@
       });
       const data = await res.json();
 
-      // Realistic typing delay (400ms - 700ms)
-      await new Promise(r => setTimeout(r, 550));
+      // Realistic typing delay (350ms - 500ms)
+      await new Promise(r => setTimeout(r, 400));
 
       showTyping(false);
 
-      if (data.success && data.data) {
-        const bot = data.data.bot_response;
-        appendMessageToDOM('bot', bot.message, {
-          time: formatTime(bot.created_at),
-          careers: bot.possible_careers,
-          isFallback: bot.is_fallback
-        });
+      if (data && data.success && data.data) {
+        const bot = data.data.bot_response || data.data.bot_message || data.data;
+        if (bot && bot.message) {
+          appendMessageToDOM('bot', bot.message, {
+            time: formatTime(bot.created_at) || 'Just now',
+            careers: bot.possible_careers,
+            isFallback: !!bot.is_fallback
+          });
+        } else {
+          const fallback = getClientSideFallback(text);
+          appendMessageToDOM('bot', fallback.message, {
+            time: 'Just now',
+            careers: fallback.careers
+          });
+        }
       } else if (res.status === 401) {
         // Session expired
         state.sessionToken = null;
@@ -474,22 +483,98 @@
         showIntroView();
         alert('Your conversation session has expired. Please enter your name to start a new chat.');
       } else {
-        appendMessageToDOM('bot', data.error || "I'm sorry, I could not process your message right now. Please try again.", {
+        const fallback = getClientSideFallback(text);
+        appendMessageToDOM('bot', fallback.message, {
           time: 'Just now',
-          isFallback: true
+          careers: fallback.careers
         });
       }
     } catch (err) {
       showTyping(false);
-      console.error('[Send Message Error]', err);
-      appendMessageToDOM('bot', "Connection issue. Please verify your internet connection and try again.", {
+      console.warn('[Send Message Network Fallback]', err);
+      const fallback = getClientSideFallback(text);
+      appendMessageToDOM('bot', fallback.message, {
         time: 'Just now',
-        isFallback: true
+        careers: fallback.careers
       });
     } finally {
       state.isSubmitting = false;
+      if (dom.msgInput) {
+        dom.msgInput.disabled = false;
+        dom.msgInput.focus();
+      }
+      if (dom.btnSend) {
+        dom.btnSend.disabled = dom.msgInput ? dom.msgInput.value.trim().length === 0 : true;
+      }
       scrollToBottom();
     }
+  }
+
+  /**
+   * Client-side fallback responder to guarantee zero-freeze conversation
+   */
+  function getClientSideFallback(query) {
+    const q = (query || '').toLowerCase().trim();
+
+    if (q.includes('apply') || q.includes('admission') || q.includes('register') || q.includes('داخلہ') || q.includes('registration') || q.includes('enroll')) {
+      return {
+        message: "To apply for admission at PFTP, visit our official admissions portal at https://pftpedu.org. Click on **Apply Now**, choose your course from the 16 available tracks, fill in your details, and submit your application.",
+        careers: "Full Stack Developer; AI Specialist; Digital Marketer; Freelancer"
+      };
+    }
+    if (q.includes('fee') || q.includes('pay') || q.includes('cost') || q.includes('فیس') || q.includes('payment') || q.includes('challan')) {
+      return {
+        message: "PFTP maintains subsidized, affordable admission processing fees. You can pay securely via Bank Transfer, JazzCash, or Easypaisa after submitting your application on https://pftpedu.org.",
+        careers: null
+      };
+    }
+    if (q.includes('python')) {
+      return {
+        message: "Python is widely used in software development, automation, data science, and Artificial Intelligence. Learning Python provides an excellent foundation to build careers in programming and data engineering.",
+        careers: "Python Developer; Junior Software Developer; Automation Engineer; Data Analyst"
+      };
+    }
+    if (q.includes('web') || q.includes('full stack') || q.includes('html') || q.includes('frontend') || q.includes('backend')) {
+      return {
+        message: "The Full Stack Web Development course covers HTML5, CSS3, JavaScript, PHP, MySQL, and modern front-end & back-end tools for building responsive commercial websites and web apps.",
+        careers: "Full Stack Web Developer; Frontend Developer; Backend Developer; Freelance Web Master"
+      };
+    }
+    if (q.includes('ai') || q.includes('artificial intelligence') || q.includes('machine learning')) {
+      return {
+        message: "The Artificial Intelligence (AI) course introduces modern neural architectures, machine learning models, computer vision, and prompt engineering for real-world automation.",
+        careers: "AI Specialist; Prompt Engineer; Machine Learning Associate"
+      };
+    }
+    if (q.includes('marketing') || q.includes('digital') || q.includes('seo') || q.includes('ads')) {
+      return {
+        message: "The Digital Marketing course teaches social media marketing (Meta, Instagram), Google Ads, SEO, and lead generation funnels for client acquisition.",
+        careers: "Digital Marketing Specialist; Social Media Manager; Performance Marketer"
+      };
+    }
+    if (q.includes('graphic') || q.includes('design') || q.includes('photoshop') || q.includes('illustrator')) {
+      return {
+        message: "Graphic Design covers visual identity, branding, Adobe Photoshop, Illustrator, and typography to create high-impact marketing assets and freelancing portfolios.",
+        careers: "Graphic Designer; Visual Identity Artist; UI Designer"
+      };
+    }
+    if (q.includes('course') || q.includes('program') || q.includes('تمام کورسز') || q.includes('offer')) {
+      return {
+        message: "PFTP offers 16 specialized courses including Full Stack Web Development, Artificial Intelligence (AI), Python Programming, Graphic Design, Digital Marketing, Freelancing & Upwork Mastery, Cyber Security, Mobile App Development, UI/UX Design, and English Language Communication.",
+        careers: "Web Development; AI & Data Science; Digital Marketing; Freelancing"
+      };
+    }
+    if (q.includes('guarantee') || q.includes('job') || q.includes('نوکری') || q.includes('placement')) {
+      return {
+        message: "PFTP focuses on practical hands-on skill mastery, freelancing profile optimization, and portfolio building. While no institution can legally guarantee jobs, our alumni work successfully on Upwork, Fiverr, and in top tech agencies.",
+        careers: null
+      };
+    }
+
+    return {
+      message: "Thank you for reaching out! PFTP admissions are currently open across 16 domains. You can apply directly at https://pftpedu.org or connect with our student counselling desk on WhatsApp at **+92 300 1234567**.",
+      careers: "Full Stack Development; AI; Digital Marketing; Freelancing"
+    };
   }
 
   /**
@@ -546,6 +631,8 @@
     safe = safe.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     // Auto-link URLs
     safe = safe.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer" style="color: #0d9488; text-decoration: underline; font-weight: 600; word-break: break-all;">$1</a>');
+    // Auto-link domain pftpedu.org if bare
+    safe = safe.replace(/(^|[\s(])(pftpedu\.org(?:\/[^\s<)]*)?)/gi, '$1<a href="https://$2" target="_blank" rel="noopener noreferrer" style="color: #0d9488; text-decoration: underline; font-weight: 600; word-break: break-all;">$2</a>');
     return safe;
   }
 
